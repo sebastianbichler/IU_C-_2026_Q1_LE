@@ -174,17 +174,14 @@ eignen sich hervorragend als Einstieg für die Literaturrecherche.
 
 * *Warum:* Meijer erklärt hier die mathematische Dualität zwischen `IEnumerable` und `IObservable` (Push vs. Pull).
 
-
 2. **Bierman, G., et al. (2007). "The Functional Side of C#."**
 
 * *Warum:* Ein Paper über die Integration funktionaler Konzepte in eine primär imperative Sprache.
-
 
 3. **Syme, D., et al. (2011). "F# for Scientists."** (Kapitel über Computation Expressions)
 
 * *Warum:* Da LINQ stark von F# inspiriert wurde, hilft dieses Paper, die theoretischen Wurzeln von Abfrage-Sprachen in
   .NET zu verstehen.
-
 
 4. **Vorgarten, N., et al. (2020). "Extending LINQ for Provenance Tracking."**
 
@@ -280,23 +277,16 @@ Quellenpfade empfohlen:
 
 ### Struktur der wichtigen Dateien, Ordner und Projekte im Kurs-Repository
 
+#### Wichtige Dateien im Root-Verzeichnis
 - editorconfig - Enthält die Code-Stil-Richtlinien für C#
 - .gitignore - Enthält die Liste der auszuschließenden Dateien/Ordner im Git-Repository
 - .github/workflows - CI/CD Pipeline Definitionen
 
-- src/ - Enthält alle Quellcode-Projekte
-    - ProjectName.Domain - Domänenmodell und Geschäftslogik
-    - ProjectName.Infrastructure - Datenzugriff und externe Integrationen
-    - ProjectName.Application - Anwendungslogik und Services
-    - ProjectName.UI - Benutzeroberfläche (Avalonia)
-- tests/ - Enthält alle Testprojekte
-    - ProjectName.Domain.Tests - Unit-Tests für das Domänenmodell
-    - ProjectName.Application.Tests - Unit-Tests für die Anwendungslogik
-    - ProjectName.Infrastructure.Tests - Integrationstests für den Datenzugriff
-    - ProjectName.UI.Tests - UI-Tests für die Benutzeroberfläche
-    - docs/ - Enthält zusätzliche Dokumentationen und Ressourcen
-
 #### Basisprojekte (für alle Gruppen)
+
+Alle Projekte für die Produktiv- und Demo-Anwendungen befinden sich unter _src_.
+Die zugehörigen Testprojekte (PROJEKT_NAME.Tests) befinden sich im Ordner _tests_.
+Die Projekte nutzen folgende Templates.
 
 | **Projektname**  | **Template**  | **Zweck**                                                 |
 |------------------|---------------|-----------------------------------------------------------|
@@ -309,11 +299,10 @@ Quellenpfade empfohlen:
 
 | **Gruppe** | **Projektname**      | **Template**    | **Fokus**                                           |
 |------------|----------------------|-----------------|-----------------------------------------------------|
-| **1**      | **GP1.Performance**  | Console App     | High-Perf Telemetry (Span<T>, Structs).             |
-| **2**      | **GP2.Intelligence** | Console App/Lib | LINQ-Provider, Data Processing.                     |
-| **3**      | **GP3.Crawler**      | Avalonia App    | Async-Handling, Parallel Requests, GUI-Fortschritt. |
-| **4**      | **GP4.SupplyChain**  | Avalonia App    | DDD-Umsetzung, komplexe Geschäftslogik.             |
-
+| **1**      | **App.Performance**  | Console App     | High-Perf Telemetry (Span<T>, Structs).             |
+| **2**      | **App.Intelligence** | Console App/Lib | LINQ-Provider, Data Processing.                     |
+| **3**      | **App.Crawler**      | Avalonia App    | Async-Handling, Parallel Requests, GUI-Fortschritt. |
+| **4**      | **App.SupplyChain**  | Avalonia App    | DDD-Umsetzung, komplexe Geschäftslogik.             |
 
 ---
 
