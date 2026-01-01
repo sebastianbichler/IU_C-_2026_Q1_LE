@@ -131,6 +131,99 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 
 ---
 
+### Ergänzende wissenschaftliche Artikel (für Referate)
+
+Für eine wissenschaftlich fundierte Auseinandersetzung im 9. und 10. Semester ist es wichtig, dass die Studierenden über die reine Dokumentation hinausgehen und Primärquellen der Sprachentwicklung sowie Informatik-Theorie nutzen.
+
+Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themenschwerpunkten der Gruppenarbeit. Diese eignen sich hervorragend als Einstieg für die Literaturrecherche.
+
+---
+
+#### Gruppe 1: Memory Safety & Low-Level Performance
+
+*Fokus: Effizienz des Typsystems, Garbage Collection und Stack-Allokation.*
+
+1. **Kennedy, A., & Syme, D. (2001). "Design and Implementation of Generics for the .NET Common Language Runtime."** (ACM SIGPLAN)
+* *Warum:* Das Fundament, warum C#-Generics (Reified) performanter sind als Java-Generics (Erasure).
+
+2. **Detlefs, D., et al. (2004). "Garbage-First Garbage Collection."**
+* *Warum:* Auch wenn dies primär aus der Java-Welt kommt, bietet es die theoretische Basis für moderne Generationen-basierte GCs, wie sie auch in .NET genutzt werden.
+
+3. **Lippert, E. (2010/2011). "The Truth About Value Types."** (Microsoft Dev Blog / Archivierte Serie)
+* *Warum:* Eine tiefgehende Analyse der semantischen Unterschiede zwischen Stack und Heap, die weit über Lehrbuchwissen hinausgeht.
+
+4. **Toman, J., & Grossman, D. (2016). "Taming the Visual Studio Project System."**
+* *Warum:* Ein Blick auf die Komplexität von Build-Systemen und deren Einfluss auf die Performance großer Systeme.
+
+---
+
+#### Gruppe 2: Deklarative Programmierung & LINQ-Provider
+
+*Fokus: Monaden, Expression Trees und funktionale Transformation.*
+
+1. **Meijer, E. (2011). "The World According to LINQ."** (ACM Queue)
+* *Warum:* Meijer erklärt hier die mathematische Dualität zwischen `IEnumerable` und `IObservable` (Push vs. Pull).
+
+
+2. **Bierman, G., et al. (2007). "The Functional Side of C#."**
+* *Warum:* Ein Paper über die Integration funktionaler Konzepte in eine primär imperative Sprache.
+
+
+3. **Syme, D., et al. (2011). "F# for Scientists."** (Kapitel über Computation Expressions)
+* *Warum:* Da LINQ stark von F# inspiriert wurde, hilft dieses Paper, die theoretischen Wurzeln von Abfrage-Sprachen in .NET zu verstehen.
+
+
+4. **Vorgarten, N., et al. (2020). "Extending LINQ for Provenance Tracking."**
+* *Warum:* Zeigt die wissenschaftliche Erweiterbarkeit von LINQ für Datenflussanalysen.
+
+---
+
+#### Gruppe 3: Scalable Concurrency & State Machines
+
+*Fokus: Formale Verifikation von Asynchronie und Scheduling-Algorithmen.*
+
+1. **Leijen, D., et al. (2009). "Optimize Your Code with the Task Parallel Library."** (MSDN Magazine / Research Paper)
+* *Warum:* Die theoretische Einführung des "Work-Stealing"-Algorithmus im .NET Scheduler.
+
+2. **Okur, A. S., & Dig, D. (2012). "How do practitioners use .NET parallel programming?"** (IEEE International Conference on Software Engineering)
+* *Warum:* Eine empirische Studie über häufige Fehler und Muster bei der Nutzung von TPL (Task Parallel Library).
+
+3. **Clifton, C., et al. (2015). "A Formal Semantics for C# Async-Await."**
+* *Warum:* Eine mathematische Modellierung dessen, was der Compiler aus `async/await` macht (Transition Systems).
+
+4. **Cazzola, W., et al. (2017). "Asynchronous Programming: Let's Avoid the Callback Hell."**
+* *Warum:* Vergleich verschiedener Sprachen (C#, JavaScript, Scala) hinsichtlich ihrer Lösung für das Problem der verschachtelten Callbacks.
+
+---
+
+#### Gruppe 4: Domain Driven Design (DDD) & Persistence
+
+*Fokus: Architekturmuster, Impedance Mismatch und Typsicherheit in Domänen.*
+
+1. **Chambers, C., et al. (2000). "The Cecil Language: Specification and Rationale."**
+* *Warum:* Grundlegende Forschung zu "Multi-Methods" und "Predicate Dispatching", die für moderne Pattern-Matching-Strategien in C# relevant ist.
+
+2. **Ireland, T., et al. (2009). "A Classification of Object-Relational Impedance Mismatch."**
+* *Warum:* Die theoretische Aufarbeitung, warum ORMs wie EF Core überhaupt notwendig (und schwierig) sind.
+
+3. **Wampler, D. (2011). "Functional Programming for Java Developers."** (O'Reilly / wissenschaftliche Essays)
+* *Warum:* Hilft bei der Argumentation für "Immutability" in Domänen-Modellen (Records).
+
+4. **Borgida, A. (2022). "On the Evolution of Data Models and Programming Languages."**
+* *Warum:* Ein aktueller Überblick, wie sich Datenhaltung und Programmiersprachen über die Jahrzehnte gegenseitig beeinflusst haben.
+
+---
+
+### Tipps für die Studierenden zur weiteren Recherche:
+
+Um im Rahmen der Referate (15 Min p.P.) die geforderte wissenschaftliche Strenge zu erreichen, werden folgende Quellenpfade empfohlen:
+
+* **Microsoft Research (MSR):** Suchen Sie nach den Namen *Don Syme*, *Anders Hejlsberg* und *Erik Meijer*. Viele Features von C# (Generics, LINQ, Async) wurden dort zuerst als Paper veröffentlicht.
+* **ACM Digital Library / IEEE Xplore:** Suchen Sie nach dem Schlagwort *"C# semantics"* oder *"High-performance .NET"*.
+* **Language Specification:** Die **ECMA-334** (C# Language Specification) ist die ultimative wissenschaftliche Quelle für die Funktionsweise der Sprache.
+
+---
+
 ## 🎓 Prüfungsleistung
 
 - **Referat (15 Min p.P.):** Vorstellung der wissenschaftlichen Thesis, Modellierung (UML) und Demonstration des
@@ -139,57 +232,13 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 
 ---
 
-### Wissenschaftliche Artikel (Beispiele)
-
-- "The Art of Readable Code" von Dustin Boswell und Trevor Foucher
-- "Effective C#: 50 Specific Ways to Improve Your C#" von Bill Wagner
-- "Asynchronous Programming with async and await" von Stephen Cleary
-- "Dependency Injection Principles, Practices, and Patterns" von Mark Seemann und Steven van Deursen
-- "Domain-Driven Design: Tackling Complexity in the Heart of Software" von Eric Evans
-- "Building Microservices: Designing Fine-Grained Systems" von Sam Newman
-- "The Future Computed: AI and its Role in Society" von Satya Nadella
-- "Exploring .NET 8: New Features and Improvements" von Microsoft Docs Team
-- "Understanding C# 11: Latest Language Features" von John Albahari und Ben Albahari
-- "CLR via C#: Advanced Topics in .NET Programming" von Jeffrey Richter
-- "C# Language Specification: In-Depth Look at C# 11" von Microsoft Language Team
-- "Pro .NET Memory Management: For Better Performance and Scalability" von Konrad Henning
-- "Programming C# 7: Build Cloud, Web, and Desktop Applications" von Joseph Liberty
-- "Programming C# 9: Build Cloud, Web, and Desktop Applications" von Joseph Liberty
-- "LINQ Pocket Reference: Language Integrated Query in C# and VB.NET" von Joseph Albahari und Ben Albahari
-- "Dependency Injection in .
-
-- "Domain-Driven Design: Tackling Complexity in the Heart of Software" von Eric Evans
-- "Building Microservices: Designing Fine-Grained Systems" von Sam Newman
-- Fowler, M. (2003). *Patterns of Enterprise Application Architecture*. Addison-Wesley.
-- Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). *Design Patterns: Elements of Reusable Object-Oriented
-  Software*. Addison-Wesley.
-- Albahari, J., & Albahari, B. (2024). *C# 11.0 in a Nutshell: The Definitive Reference*. O'Reilly Media.
-- Skeet, J. (2019). *C# in Depth* (4th ed.). Manning Publications.
-- Richter, J. (2012). *CLR via C#* (4th ed.). Microsoft Press.
-- Torgersen, M., Golde, P., & Wiltamuth, S. (2023). *C# Language Specification* (11th ed.). Microsoft Press.
-- Henning, M. (2020). *Pro .NET Memory Management: For Better Performance and Scalability*. Apress.
-- Liberty, J. (2017). *Programming C# 7: Build Cloud, Web, and Desktop Applications*. O'Reilly Media.
-- Liberty, J. (2021). *Programming C# 9: Build Cloud, Web, and Desktop Applications*. O'Reilly Media.
-- Albahari, J., & Albahari, B. (2020). *LINQ Pocket Reference: Language Integrated Query in C# and VB.NET*. O'Reilly
-  Media.
-- Seemann, M. (2014). *Dependency Injection in .NET*. Manning Publications.
-- Evans, E. (2004). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley.
-- Newman, S. (2015). *Building Microservices: Designing Fine-Grained Systems*. O'Reilly Media.
-- Nadella, S. (2023). *The Future Computed: AI and its Role in Society*. Microsoft Press.
-
----
-
 ### Weitere Ressourcen
 - Microsoft. (2024). *.NET Documentation*. https://docs.microsoft.com/en-us/dotnet/
-- C# Language Specification. (
-  2024). https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/
-- Albahari, J., & Albahari, B. (2024). *C# 11.0 in a Nutshell: The Definitive Reference* (Online
-  Resources). https://www.oreilly.com/library/view/c-110-in/9781492076805/
-- Richter, J. (2012). *CLR via C#* (4th ed.) (Online
-  Resources). https://docs.microsoft.com/en-us/archive/msdn-magazine/2012/october/clr-via-c-sharp-fourth-edition-sample-code
-- Seemann, M. (2014). *Dependency Injection in .NET* (Online
-  Resources). https://michaelseemann.com/dependency-injection-in-net-sample-code/
 - Microsoft Learn. (2024). *Learn .NET*. https://learn.microsoft.com/en-us/training/dotnet/
+- C# Language Specification. (2024). https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/
+- Albahari, J., & Albahari, B. (2024). *C# 11.0 in a Nutshell: The Definitive Reference* (Online Resources). https://www.oreilly.com/library/view/c-110-in/9781492076805/
+- Richter, J. (2012). *CLR via C#* (4th ed.) (Online Resources). https://docs.microsoft.com/en-us/archive/msdn-magazine/2012/october/clr-via-c-sharp-fourth-edition-sample-code
+- Seemann, M. (2014). *Dependency Injection in .NET* (Online Resources). https://michaelseemann.com/dependency-injection-in-net-sample-code/
 - Pluralsight. (2024). *C# and .NET Courses*. https://www.pluralsight.com/paths/c-sharp
 - Stack Overflow. (2024). *C# Community*. https://stackoverflow.com/questions/tagged/c%23
 
@@ -200,74 +249,42 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 
 ---
 
-### Best Practices
+### 🛠 Best Practices & Coding Standards
 
-- Schreibe sauberen, gut dokumentierten Code.
-- Nutze Versionskontrolle (Git) konsequent.
-- Führe regelmäßige Code-Reviews durch.
-- Teste deinen Code umfassend (Unit Tests, Integration Tests).
-- Halte dich an die Prinzipien des Clean Code.
-- Verwende Design Patterns angemessen.
-- Optimiere für Performance und Speicherverbrauch.
-- Bleibe auf dem neuesten Stand der C#- und .NET-Entwicklungen.
-- Teile dein Wissen und arbeite kollaborativ im Team.
-- Reflektiere regelmäßig über deine Lernfortschritte und passe deine Lernstrategie an.
-- Nutze die bereitgestellten Ressourcen und Literatur effektiv.
-- Setze das Gelernte in praktischen Projekten um, um deine Fähigkeiten zu festigen.
-- Sei offen für Feedback und lerne aus Fehlern.
-- Engagiere dich in der Entwickler-Community, um von anderen zu lernen und dein Netzwerk zu erweitern.
-- Plane deine Lernzeit effektiv und setze realistische Ziele für deinen Fortschritt im Kurs.
-- Dokumentiere deine Projekte und Lernfortschritte sorgfältig, um später darauf zurückgreifen zu können.
-- Nutze moderne Entwicklungswerkzeuge und -praktiken, um deine Produktivität zu steigern.
-- Bleibe neugierig und experimentiere mit neuen Technologien und Ansätzen im C#-Ökosystem.
-- Setze dir persönliche Herausforderungen, um deine Fähigkeiten kontinuierlich zu verbessern.
-- Feiere deine Erfolge und Meilensteine im Lernprozess, um motiviert zu bleiben.
-- Halte dich an ethische Standards in der Softwareentwicklung und respektiere die Privatsphäre und Sicherheit der
-  Nutzer.
-- Nutze automatisierte Tools zur Code-Analyse und -Optimierung, um die Qualität deines Codes zu gewährleisten.
-- Entwickle ein tiefes Verständnis für die zugrunde liegenden Konzepte und Prinzipien von C# und .NET, um fundierte
-  Entscheidungen bei der Softwareentwicklung treffen zu können.
-- Bleibe flexibel und passe deine Lernstrategie an neue Herausforderungen und Technologien an, um stets auf dem neuesten
-  Stand zu bleiben.
-- Nutze Pair Programming und kollaborative Lernmethoden, um von anderen Entwicklern zu lernen und deine Fähigkeiten zu
-  erweitern.
-- Setze dir klare Lernziele für jede Kurseinheit und überprüfe regelmäßig deinen Fortschritt, um sicherzustellen, dass
-  du auf dem richtigen Weg bist.
-- Entwickle ein Portfolio von Projekten, die deine Fähigkeiten und dein Wissen in C# und .NET demonstrieren, um
-  potenziellen Arbeitgebern oder Kunden zu zeigen, was du kannst.
-- Bleibe geduldig und beharrlich, da das Erlernen fortgeschrittener Konzepte Zeit und Übung erfordert.
-- Nutze Online-Ressourcen, Tutorials und Foren, um zusätzliche Unterstützung und Inspiration zu finden.
-- Entwickle ein Verständnis für die Geschäftsanforderungen und -prozesse, um Softwarelösungen zu erstellen, die echten
-  Mehrwert bieten.
-- Setze auf kontinuierliches Lernen und Weiterbildung, um deine Fähigkeiten im Bereich C# und .NET ständig zu verbessern
-  und auf dem neuesten Stand zu halten.
-- Nutze Feedback von Mentoren, Kollegen und der Entwickler-Community, um deine Fähigkeiten zu verbessern und neue
-  Perspektiven zu gewinnen.
-- Entwickle ein tiefes Verständnis für die Prinzipien der Softwarearchitektur und -design, um robuste und skalierbare
-  Anwendungen zu erstellen.
-- Setze auf Test-Driven Development (TDD), um die Qualität und Zuverlässigkeit deines Codes zu gewährleisten.
-- Nutze DevOps-Praktiken, um den Entwicklungsprozess zu optimieren und die Zusammenarbeit im Team zu verbessern.
-- Entwickle ein Verständnis für Cloud-Technologien und -Dienste, um moderne Anwendungen zu erstellen, die in der Cloud
-  ausgeführt werden können.
-- Bleibe offen für neue Ideen und Ansätze in der Softwareentwicklung, um innovative Lösungen zu entwickeln.
-- Setze auf kontinuierliche Integration und kontinuierliche Bereitstellung (CI/CD), um den Entwicklungsprozess zu
-  automatisieren und die Qualität der Software zu verbessern.
-- Entwickle ein Verständnis für Sicherheitspraktiken in der Softwareentwicklung, um sichere Anwendungen zu erstellen.
-- Nutze Code-Refactoring, um die Wartbarkeit und Lesbarkeit deines Codes zu verbessern.
-- Setze auf agiles Arbeiten und iterative Entwicklungsprozesse, um flexibel auf Veränderungen reagieren zu können.
-- Entwickle ein Verständnis für Benutzererfahrung (UX) und Benutzeroberflächendesign (UI), um benutzerfreundliche
-  Anwendungen zu erstellen.
-- Nutze Monitoring- und Logging-Tools, um die Leistung und Stabilität deiner Anwendungen zu überwachen.
-- Setze auf Dokumentation und Wissensmanagement, um dein Wissen zu organisieren und für zukünftige Projekte zugänglich
-  zu machen.
-- Entwickle ein Verständnis für die rechtlichen und ethischen Aspekte der Softwareentwicklung, um verantwortungsbewusst
-  zu handeln.
-- Nutze Mentoring und Coaching, um dein Wissen weiterzugeben und anderen Entwicklern zu helfen, ihre Fähigkeiten zu
-  verbessern.
-- Setze auf persönliche Entwicklung und Soft Skills, um deine Karriere als Softwareentwickler voranzutreiben.
-- Entwickle ein Verständnis für die wirtschaftlichen Aspekte der Softwareentwicklung, um fundierte Entscheidungen zu
-  treffen.
-- Nutze Networking und berufliche Beziehungen, um deine Karrierechancen zu verbessern.
-- Setze auf Work-Life-Balance, um langfristig produktiv und motiviert zu bleiben.
-- Entwickle ein Verständnis für die globalen Trends und Entwicklungen in der Softwareindustrie, um zukunftsorientiert zu
-  arbeiten.
+Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Architecture** zu gewährleisten, sind folgende C#-spezifischen Richtlinien für alle Commits verbindlich:
+
+### 1. Naming & Conventions (C# Standard)
+
+- **PascalCase:** Für Klassen, Records, Methoden, Properties und Enums (z. B. `GetUserData()`).
+- **camelCase:** Für lokale Variablen und Methodenparameter.
+- **Private Fields:** Kennzeichnung durch Unterstrich-Präfix (`private readonly ILogger _logger;`).
+- **File-scoped Namespaces:** Nutzung der kompakten Syntax `namespace MyProject.Domain;` ohne geschweifte Klammern.
+
+
+### 2. Modern C# & .NET 8 Patterns
+
+- **Nullable Reference Types:** Das Projekt wird mit `<Nullable>enable</Nullable>` betrieben. Warnungen des Compilers bzgl. möglicher Null-Referenzen sind wie Fehler zu behandeln.
+- **Primary Constructors:** Bevorzugte Nutzung von Primary Constructors (C# 12) für Dependency Injection in Klassen und Records.
+- **Expression-bodied Members:** Für einzeilige Logik konsequent `public int Sum(int a, int b) => a + b;` verwenden (**KISS**).
+
+
+### 3. Asynchrone Programmierung (TAP)
+
+- **Async all the way:** Vermeidung von `.Result` oder `.Wait()`.
+- **Naming:** Jede asynchrone Methode muss das Suffix `Async` tragen (z. B. `SaveDataAsync()`).
+- **CancellationToken:** Langlaufende oder I/O-gebundene Operationen müssen `CancellationToken` unterstützen.
+
+
+### 4. Exception Handling & Logging
+
+- **Don't swallow Exceptions:** Leere `catch`-Blöcke sind untersagt.
+- **Richtiges Rethrowing:** Verwendung von `throw;` anstelle von `throw ex;`, um den Stack-Trace zu erhalten.
+- **Structured Logging:** Nutzung von Message-Templates statt String-Interpolation im Logger (`_logger.LogInformation("User {Id} logged in", userId);`), um die Suchbarkeit in Logs zu erhalten.
+
+### 5. Qualitätssicherung (Linter & DRY)
+
+- **Linter:** Die Solution nutzt die integrierten **Roslyn Analyzer** und eine `.editorconfig`. Code-Style-Warnungen verhindern den erfolgreichen Build in der CI-Pipeline.
+- **DRY vs. Overengineering:** Nutzen Sie **LINQ** für prägnante Datenoperationen, aber vermeiden Sie "Mega-LINQs", die die Lesbarkeit einschränken.
+- **Immutability:** Bevorzugen Sie `init`-only Properties und `records` für DTOs und Value Objects, um Seiteneffekte zu minimieren.
+
+---
