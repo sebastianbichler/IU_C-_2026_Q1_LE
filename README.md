@@ -232,7 +232,7 @@ Um im Rahmen der Referate (15 Min p.P.) die geforderte wissenschaftliche Strenge
 
 ---
 
-### Weitere Ressourcen
+### Weitere Dokumentationen & Ressourcen
 - Microsoft. (2024). *.NET Documentation*. https://docs.microsoft.com/en-us/dotnet/
 - Microsoft Learn. (2024). *Learn .NET*. https://learn.microsoft.com/en-us/training/dotnet/
 - C# Language Specification. (2024). https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/
@@ -288,3 +288,8 @@ Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Archite
 - **Immutability:** Bevorzugen Sie `init`-only Properties und `records` für DTOs und Value Objects, um Seiteneffekte zu minimieren.
 
 ---
+
+## .NET 8 Templates & Snippets
+
+- dotnet.exe new install Avalonia.Templates
+- Define code convention in .github/workflows/main.yml

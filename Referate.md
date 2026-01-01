@@ -73,7 +73,7 @@ Für alle Gruppen ist folgendes Abgabeschema (im GitHub Repo) verpflichtend:
 
 ---
 
-## Umsetzung der alltäglichen Aufgaben (Login/User)
+## Umsetzung von Standardufgaben (Login/User)
 
 Um den Fokus auf der Wissenschaft zu halten, sollten die Studierenden hier **"Best Practices"** von .NET nutzen, statt das Rad neu zu erfinden:
 
