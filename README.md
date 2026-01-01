@@ -41,7 +41,6 @@ Grundlage für technologische Evaluationen.
 | 14      | **Referatsslot III**     | Nachbereitung & Deep-Dive                    | -                    |
 | 15      | **Review & Reflection**  | Final Code Review & Repository Audit         | -                    |
 
-
 | **Einheit** | **Thema**                             | **Fokus & Methodik**                                                                                  | **Literatur-Bezug**                |
 |-------------|---------------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------|
 | **01**      | **Einführung & Toolchain**            | GitHub Flow, Pre-commit Hooks, .NET 8 SDK unter Linux/Mac, Linter (StyleCop/EditorConfig).            | Kotz/Wenz Kap. 1 & 2               |
@@ -64,7 +63,8 @@ Grundlage für technologische Evaluationen.
 
 ## 🏗️ Gruppenprojekte (Referatsthemen)
 
-Die Studierenden arbeiten in 4er-Gruppen an einem Forschungsprototypen. Jede Gruppe muss ein technisches Problem wissenschaftlich beleuchten und implementieren.
+Die Studierenden arbeiten in 4er-Gruppen an einem Forschungsprototypen. Jede Gruppe muss ein technisches Problem
+wissenschaftlich beleuchten und implementieren.
 
 ### Gruppe 1: Memory Safety & Low-Level Performance
 
@@ -133,9 +133,11 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 
 ### Ergänzende wissenschaftliche Artikel (für Referate)
 
-Für eine wissenschaftlich fundierte Auseinandersetzung im 9. und 10. Semester ist es wichtig, dass die Studierenden über die reine Dokumentation hinausgehen und Primärquellen der Sprachentwicklung sowie Informatik-Theorie nutzen.
+Für eine wissenschaftlich fundierte Auseinandersetzung im 9. und 10. Semester ist es wichtig, dass die Studierenden über
+die reine Dokumentation hinausgehen und Primärquellen der Sprachentwicklung sowie Informatik-Theorie nutzen.
 
-Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themenschwerpunkten der Gruppenarbeit. Diese eignen sich hervorragend als Einstieg für die Literaturrecherche.
+Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themenschwerpunkten der Gruppenarbeit. Diese
+eignen sich hervorragend als Einstieg für die Literaturrecherche.
 
 ---
 
@@ -143,16 +145,23 @@ Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themensc
 
 *Fokus: Effizienz des Typsystems, Garbage Collection und Stack-Allokation.*
 
-1. **Kennedy, A., & Syme, D. (2001). "Design and Implementation of Generics for the .NET Common Language Runtime."** (ACM SIGPLAN)
+1. **Kennedy, A., & Syme, D. (2001). "Design and Implementation of Generics for the .NET Common Language Runtime."** (
+   ACM SIGPLAN)
+
 * *Warum:* Das Fundament, warum C#-Generics (Reified) performanter sind als Java-Generics (Erasure).
 
 2. **Detlefs, D., et al. (2004). "Garbage-First Garbage Collection."**
-* *Warum:* Auch wenn dies primär aus der Java-Welt kommt, bietet es die theoretische Basis für moderne Generationen-basierte GCs, wie sie auch in .NET genutzt werden.
+
+* *Warum:* Auch wenn dies primär aus der Java-Welt kommt, bietet es die theoretische Basis für moderne
+  Generationen-basierte GCs, wie sie auch in .NET genutzt werden.
 
 3. **Lippert, E. (2010/2011). "The Truth About Value Types."** (Microsoft Dev Blog / Archivierte Serie)
-* *Warum:* Eine tiefgehende Analyse der semantischen Unterschiede zwischen Stack und Heap, die weit über Lehrbuchwissen hinausgeht.
+
+* *Warum:* Eine tiefgehende Analyse der semantischen Unterschiede zwischen Stack und Heap, die weit über Lehrbuchwissen
+  hinausgeht.
 
 4. **Toman, J., & Grossman, D. (2016). "Taming the Visual Studio Project System."**
+
 * *Warum:* Ein Blick auf die Komplexität von Build-Systemen und deren Einfluss auf die Performance großer Systeme.
 
 ---
@@ -162,18 +171,23 @@ Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themensc
 *Fokus: Monaden, Expression Trees und funktionale Transformation.*
 
 1. **Meijer, E. (2011). "The World According to LINQ."** (ACM Queue)
+
 * *Warum:* Meijer erklärt hier die mathematische Dualität zwischen `IEnumerable` und `IObservable` (Push vs. Pull).
 
 
 2. **Bierman, G., et al. (2007). "The Functional Side of C#."**
+
 * *Warum:* Ein Paper über die Integration funktionaler Konzepte in eine primär imperative Sprache.
 
 
 3. **Syme, D., et al. (2011). "F# for Scientists."** (Kapitel über Computation Expressions)
-* *Warum:* Da LINQ stark von F# inspiriert wurde, hilft dieses Paper, die theoretischen Wurzeln von Abfrage-Sprachen in .NET zu verstehen.
+
+* *Warum:* Da LINQ stark von F# inspiriert wurde, hilft dieses Paper, die theoretischen Wurzeln von Abfrage-Sprachen in
+  .NET zu verstehen.
 
 
 4. **Vorgarten, N., et al. (2020). "Extending LINQ for Provenance Tracking."**
+
 * *Warum:* Zeigt die wissenschaftliche Erweiterbarkeit von LINQ für Datenflussanalysen.
 
 ---
@@ -183,16 +197,22 @@ Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themensc
 *Fokus: Formale Verifikation von Asynchronie und Scheduling-Algorithmen.*
 
 1. **Leijen, D., et al. (2009). "Optimize Your Code with the Task Parallel Library."** (MSDN Magazine / Research Paper)
+
 * *Warum:* Die theoretische Einführung des "Work-Stealing"-Algorithmus im .NET Scheduler.
 
-2. **Okur, A. S., & Dig, D. (2012). "How do practitioners use .NET parallel programming?"** (IEEE International Conference on Software Engineering)
+2. **Okur, A. S., & Dig, D. (2012). "How do practitioners use .NET parallel programming?"** (IEEE International
+   Conference on Software Engineering)
+
 * *Warum:* Eine empirische Studie über häufige Fehler und Muster bei der Nutzung von TPL (Task Parallel Library).
 
 3. **Clifton, C., et al. (2015). "A Formal Semantics for C# Async-Await."**
+
 * *Warum:* Eine mathematische Modellierung dessen, was der Compiler aus `async/await` macht (Transition Systems).
 
 4. **Cazzola, W., et al. (2017). "Asynchronous Programming: Let's Avoid the Callback Hell."**
-* *Warum:* Vergleich verschiedener Sprachen (C#, JavaScript, Scala) hinsichtlich ihrer Lösung für das Problem der verschachtelten Callbacks.
+
+* *Warum:* Vergleich verschiedener Sprachen (C#, JavaScript, Scala) hinsichtlich ihrer Lösung für das Problem der
+  verschachtelten Callbacks.
 
 ---
 
@@ -201,26 +221,35 @@ Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themensc
 *Fokus: Architekturmuster, Impedance Mismatch und Typsicherheit in Domänen.*
 
 1. **Chambers, C., et al. (2000). "The Cecil Language: Specification and Rationale."**
-* *Warum:* Grundlegende Forschung zu "Multi-Methods" und "Predicate Dispatching", die für moderne Pattern-Matching-Strategien in C# relevant ist.
+
+* *Warum:* Grundlegende Forschung zu "Multi-Methods" und "Predicate Dispatching", die für moderne
+  Pattern-Matching-Strategien in C# relevant ist.
 
 2. **Ireland, T., et al. (2009). "A Classification of Object-Relational Impedance Mismatch."**
+
 * *Warum:* Die theoretische Aufarbeitung, warum ORMs wie EF Core überhaupt notwendig (und schwierig) sind.
 
 3. **Wampler, D. (2011). "Functional Programming for Java Developers."** (O'Reilly / wissenschaftliche Essays)
+
 * *Warum:* Hilft bei der Argumentation für "Immutability" in Domänen-Modellen (Records).
 
 4. **Borgida, A. (2022). "On the Evolution of Data Models and Programming Languages."**
-* *Warum:* Ein aktueller Überblick, wie sich Datenhaltung und Programmiersprachen über die Jahrzehnte gegenseitig beeinflusst haben.
+
+* *Warum:* Ein aktueller Überblick, wie sich Datenhaltung und Programmiersprachen über die Jahrzehnte gegenseitig
+  beeinflusst haben.
 
 ---
 
 ### Tipps für die Studierenden zur weiteren Recherche:
 
-Um im Rahmen der Referate (15 Min p.P.) die geforderte wissenschaftliche Strenge zu erreichen, werden folgende Quellenpfade empfohlen:
+Um im Rahmen der Referate (15 Min p.P.) die geforderte wissenschaftliche Strenge zu erreichen, werden folgende
+Quellenpfade empfohlen:
 
-* **Microsoft Research (MSR):** Suchen Sie nach den Namen *Don Syme*, *Anders Hejlsberg* und *Erik Meijer*. Viele Features von C# (Generics, LINQ, Async) wurden dort zuerst als Paper veröffentlicht.
+* **Microsoft Research (MSR):** Suchen Sie nach den Namen *Don Syme*, *Anders Hejlsberg* und *Erik Meijer*. Viele
+  Features von C# (Generics, LINQ, Async) wurden dort zuerst als Paper veröffentlicht.
 * **ACM Digital Library / IEEE Xplore:** Suchen Sie nach dem Schlagwort *"C# semantics"* oder *"High-performance .NET"*.
-* **Language Specification:** Die **ECMA-334** (C# Language Specification) ist die ultimative wissenschaftliche Quelle für die Funktionsweise der Sprache.
+* **Language Specification:** Die **ECMA-334** (C# Language Specification) ist die ultimative wissenschaftliche Quelle
+  für die Funktionsweise der Sprache.
 
 ---
 
@@ -233,25 +262,65 @@ Um im Rahmen der Referate (15 Min p.P.) die geforderte wissenschaftliche Strenge
 ---
 
 ### Weitere Dokumentationen & Ressourcen
+
 - Microsoft. (2024). *.NET Documentation*. https://docs.microsoft.com/en-us/dotnet/
 - Microsoft Learn. (2024). *Learn .NET*. https://learn.microsoft.com/en-us/training/dotnet/
-- C# Language Specification. (2024). https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/
-- Albahari, J., & Albahari, B. (2024). *C# 11.0 in a Nutshell: The Definitive Reference* (Online Resources). https://www.oreilly.com/library/view/c-110-in/9781492076805/
-- Richter, J. (2012). *CLR via C#* (4th ed.) (Online Resources). https://docs.microsoft.com/en-us/archive/msdn-magazine/2012/october/clr-via-c-sharp-fourth-edition-sample-code
-- Seemann, M. (2014). *Dependency Injection in .NET* (Online Resources). https://michaelseemann.com/dependency-injection-in-net-sample-code/
+- C# Language Specification. (
+  2024). https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/
+- Albahari, J., & Albahari, B. (2024). *C# 11.0 in a Nutshell: The Definitive Reference* (Online
+  Resources). https://www.oreilly.com/library/view/c-110-in/9781492076805/
+- Richter, J. (2012). *CLR via C#* (4th ed.) (Online
+  Resources). https://docs.microsoft.com/en-us/archive/msdn-magazine/2012/october/clr-via-c-sharp-fourth-edition-sample-code
+- Seemann, M. (2014). *Dependency Injection in .NET* (Online
+  Resources). https://michaelseemann.com/dependency-injection-in-net-sample-code/
 - Pluralsight. (2024). *C# and .NET Courses*. https://www.pluralsight.com/paths/c-sharp
 - Stack Overflow. (2024). *C# Community*. https://stackoverflow.com/questions/tagged/c%23
 
 ---
 
-### Ordnerstruktur im Kurs-Repository
+### Struktur der wichtigen Dateien, Ordner und Projekte im Kurs-Repository
+
+- editorconfig - Enthält die Code-Stil-Richtlinien für C#
+- .gitignore - Enthält die Liste der auszuschließenden Dateien/Ordner im Git-Repository
+- .github/workflows - CI/CD Pipeline Definitionen
+
+- src/ - Enthält alle Quellcode-Projekte
+    - ProjectName.Domain - Domänenmodell und Geschäftslogik
+    - ProjectName.Infrastructure - Datenzugriff und externe Integrationen
+    - ProjectName.Application - Anwendungslogik und Services
+    - ProjectName.UI - Benutzeroberfläche (Avalonia)
+- tests/ - Enthält alle Testprojekte
+    - ProjectName.Domain.Tests - Unit-Tests für das Domänenmodell
+    - ProjectName.Application.Tests - Unit-Tests für die Anwendungslogik
+    - ProjectName.Infrastructure.Tests - Integrationstests für den Datenzugriff
+    - ProjectName.UI.Tests - UI-Tests für die Benutzeroberfläche
+    - docs/ - Enthält zusätzliche Dokumentationen und Ressourcen
+
+#### Basisprojekte (für alle Gruppen)
+
+| **Projektname**  | **Template**  | **Zweck**                                                 |
+|------------------|---------------|-----------------------------------------------------------|
+| **Shared.Core**  | Class Library | Interfaces, Domain Models, globale Konstanten (für alle). |
+| **Shared.Data**  | Class Library | Entity Framework Core, DB-Context, Repositories.          |
+| **Demo.Console** | Console App   | Schnelle Code-Demos, LINQ-Experimente, Algorithmen.       |
+| **Demo.UI**      | Avalonia App  | Demonstration von MVVM, Bindings und GUI-Patterns.        |
+
+#### Gruppen-Projekte (Referats-Umsetzung)
+
+| **Gruppe** | **Projektname**      | **Template**    | **Fokus**                                           |
+|------------|----------------------|-----------------|-----------------------------------------------------|
+| **1**      | **GP1.Performance**  | Console App     | High-Perf Telemetry (Span<T>, Structs).             |
+| **2**      | **GP2.Intelligence** | Console App/Lib | LINQ-Provider, Data Processing.                     |
+| **3**      | **GP3.Crawler**      | Avalonia App    | Async-Handling, Parallel Requests, GUI-Fortschritt. |
+| **4**      | **GP4.SupplyChain**  | Avalonia App    | DDD-Umsetzung, komplexe Geschäftslogik.             |
 
 
 ---
 
 ### 🛠 Best Practices & Coding Standards
 
-Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Architecture** zu gewährleisten, sind folgende C#-spezifischen Richtlinien für alle Commits verbindlich:
+Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Architecture** zu gewährleisten, sind folgende
+C#-spezifischen Richtlinien für alle Commits verbindlich:
 
 ### 1. Naming & Conventions (C# Standard)
 
@@ -260,13 +329,14 @@ Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Archite
 - **Private Fields:** Kennzeichnung durch Unterstrich-Präfix (`private readonly ILogger _logger;`).
 - **File-scoped Namespaces:** Nutzung der kompakten Syntax `namespace MyProject.Domain;` ohne geschweifte Klammern.
 
-
 ### 2. Modern C# & .NET 8 Patterns
 
-- **Nullable Reference Types:** Das Projekt wird mit `<Nullable>enable</Nullable>` betrieben. Warnungen des Compilers bzgl. möglicher Null-Referenzen sind wie Fehler zu behandeln.
-- **Primary Constructors:** Bevorzugte Nutzung von Primary Constructors (C# 12) für Dependency Injection in Klassen und Records.
-- **Expression-bodied Members:** Für einzeilige Logik konsequent `public int Sum(int a, int b) => a + b;` verwenden (**KISS**).
-
+- **Nullable Reference Types:** Das Projekt wird mit `<Nullable>enable</Nullable>` betrieben. Warnungen des Compilers
+  bzgl. möglicher Null-Referenzen sind wie Fehler zu behandeln.
+- **Primary Constructors:** Bevorzugte Nutzung von Primary Constructors (C# 12) für Dependency Injection in Klassen und
+  Records.
+- **Expression-bodied Members:** Für einzeilige Logik konsequent `public int Sum(int a, int b) => a + b;` verwenden (*
+  *KISS**).
 
 ### 3. Asynchrone Programmierung (TAP)
 
@@ -274,18 +344,21 @@ Um eine industrielle Code-Qualität und Wartbarkeit im Sinne der **Clean Archite
 - **Naming:** Jede asynchrone Methode muss das Suffix `Async` tragen (z. B. `SaveDataAsync()`).
 - **CancellationToken:** Langlaufende oder I/O-gebundene Operationen müssen `CancellationToken` unterstützen.
 
-
 ### 4. Exception Handling & Logging
 
 - **Don't swallow Exceptions:** Leere `catch`-Blöcke sind untersagt.
 - **Richtiges Rethrowing:** Verwendung von `throw;` anstelle von `throw ex;`, um den Stack-Trace zu erhalten.
-- **Structured Logging:** Nutzung von Message-Templates statt String-Interpolation im Logger (`_logger.LogInformation("User {Id} logged in", userId);`), um die Suchbarkeit in Logs zu erhalten.
+- **Structured Logging:** Nutzung von Message-Templates statt String-Interpolation im Logger (
+  `_logger.LogInformation("User {Id} logged in", userId);`), um die Suchbarkeit in Logs zu erhalten.
 
 ### 5. Qualitätssicherung (Linter & DRY)
 
-- **Linter:** Die Solution nutzt die integrierten **Roslyn Analyzer** und eine `.editorconfig`. Code-Style-Warnungen verhindern den erfolgreichen Build in der CI-Pipeline.
-- **DRY vs. Overengineering:** Nutzen Sie **LINQ** für prägnante Datenoperationen, aber vermeiden Sie "Mega-LINQs", die die Lesbarkeit einschränken.
-- **Immutability:** Bevorzugen Sie `init`-only Properties und `records` für DTOs und Value Objects, um Seiteneffekte zu minimieren.
+- **Linter:** Die Solution nutzt die integrierten **Roslyn Analyzer** und eine `.editorconfig`. Code-Style-Warnungen
+  verhindern den erfolgreichen Build in der CI-Pipeline.
+- **DRY vs. Overengineering:** Nutzen Sie **LINQ** für prägnante Datenoperationen, aber vermeiden Sie "Mega-LINQs", die
+  die Lesbarkeit einschränken.
+- **Immutability:** Bevorzugen Sie `init`-only Properties und `records` für DTOs und Value Objects, um Seiteneffekte zu
+  minimieren.
 
 ---
 
