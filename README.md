@@ -281,6 +281,7 @@ Quellenpfade empfohlen:
 - editorconfig - Enthält die Code-Stil-Richtlinien für C#
 - .gitignore - Enthält die Liste der auszuschließenden Dateien/Ordner im Git-Repository
 - .github/workflows - CI/CD Pipeline Definitionen
+- .gitattributes - Git Attribute für Zeilenenden und Merge-Strategien
 
 #### Basisprojekte (für alle Gruppen)
 
