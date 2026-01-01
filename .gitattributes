@@ -1,0 +1,6 @@
+﻿# Automatisches Konvertieren von Zeilenendungen auf LF beim Commit
+* text=auto eol=lf
+
+# Explizit für C# Dateien
+*.cs text eol=lf
+*.sln text eol=crlf
