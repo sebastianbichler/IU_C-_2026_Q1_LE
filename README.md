@@ -355,3 +355,7 @@ C#-spezifischen Richtlinien für alle Commits verbindlich:
 
 - dotnet.exe new install Avalonia.Templates
 - Define code convention in .github/workflows/main.yml
+- Husky:
+  - dotnet new tool-manifest
+  - dotnet tool install Husky
+  - dotnet husky install
