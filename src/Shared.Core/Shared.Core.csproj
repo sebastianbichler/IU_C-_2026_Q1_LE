@@ -7,4 +7,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <Target Name="InstallHusky" BeforeTargets="Restore">
+        <Exec Command="dotnet tool restore"/>
+        <Exec Command="dotnet husky install"/>
+    </Target>
+
 </Project>
