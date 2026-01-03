@@ -18,6 +18,10 @@ Grundlage für technologische Evaluationen.
 
 ## 📅 Semesterplan (15 Einheiten à 3 UE)
 
+Der folgende Plan ist eine vorläufige Übersicht der Themen und Schwerpunkte pro Einheit. Änderungen sind
+möglich, um auf aktuelle Entwicklungen und Interessen der Studierenden einzugehen.
+(work in progress)
+
 ### Einfache Übersicht
 
 | **Nr.** | **Thema**                | **Fokus**                                    | **Literatur (Kern)** |
