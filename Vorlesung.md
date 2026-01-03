@@ -75,8 +75,23 @@ Grundlage für technologische Evaluationen.
 
 ---
 
+### Tools zur Modellierung
+- Empfohlen wird ein Markdown-Editor mit Diagramm-Support, z. B. **Obsidian** (https://obsidian.md/) mit dem **Mermaid**-Plugin.
+- **draw.io:** (https://app.diagrams.net/)
+- **PlantUML:** https://plantuml.com/de/
+- **graphviz:** (https://pypi.org/project/graphviz/)
+- **Excalidraw:** https://excalidraw.com/
+- **StarUML:** http://staruml.io/
+- **Lucidchart:** https://www.lucidchart.com/pages/examples/uml-diagram-tool
+- **Visual Paradigm:** https://www.visual-paradigm.com/
+- **Microsoft Visio:** https://www.microsoft.com/de-de/microsoft-365/vis
+- etc.
+
 ### Weitere Dokumentationen & Ressourcen
 
+- **Markdown Guide:** https://www.markdownguide.org/
+- **GitHub Docs:** https://docs.github.com/en
+- **Visual Studio Documentation:** https://docs.microsoft.com/en-us/visualstudio/
 - Microsoft. (2024). *.NET Documentation*. https://docs.microsoft.com/en-us/dotnet/
 - Microsoft Learn. (2024). *Learn .NET*. https://learn.microsoft.com/en-us/training/dotnet/
 - C# Language Specification. (
