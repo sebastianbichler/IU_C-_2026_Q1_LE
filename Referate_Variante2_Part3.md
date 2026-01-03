@@ -4,7 +4,7 @@
 
 # Detaillierte Anforderungen für die Gruppenprojekte (Referate)
 
-Für eine Master-Lehrveranstaltung im 10. Semester ist es sinnvoll, eine **Rahmenarchitektur** vorzugeben, die
+Für eine Lehrveranstaltung im 10. Semester ist es sinnvoll, eine **Rahmenarchitektur** vorzugeben, die
 industrielle Standards widerspiegelt.
 Die Studierenden sollen nicht „irgendetwas“ programmieren, sondern eine konsistente, schichtweise Architektur (N-Tier
 oder Clean Architecture) umsetzen.

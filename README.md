@@ -111,7 +111,7 @@ C#-spezifischen Richtlinien für alle Commits verbindlich:
 ---
 
 ## .NET 8 Templates & Snippets
-
+- dotnet restore um Abhängigkeiten zu installieren
 - 'dotnet format' um Code-Style automatisch anzuwenden und Dateifehler zu beheben
 - dotnet.exe new install Avalonia.Templates
 - Define code convention in .github/workflows/main.yml
