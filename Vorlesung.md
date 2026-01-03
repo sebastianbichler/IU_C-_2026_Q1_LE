@@ -79,7 +79,7 @@ Grundlage für technologische Evaluationen.
 - Empfohlen wird ein Markdown-Editor mit Diagramm-Support, z. B. **Obsidian** (https://obsidian.md/) mit dem **Mermaid**-Plugin.
 - **draw.io:** (https://app.diagrams.net/)
 - **PlantUML:** https://plantuml.com/de/
-- **graphviz:** (https://pypi.org/project/graphviz/)
+- **graphviz:** (https://pypi.org/project/graphviz/) (GUI: https://vincenthee.github.io/DotEditor/ , Online: https://dreampuf.github.io/GraphvizOnline/)
 - **Excalidraw:** https://excalidraw.com/
 - **StarUML:** http://staruml.io/
 - **Lucidchart:** https://www.lucidchart.com/pages/examples/uml-diagram-tool
