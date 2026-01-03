@@ -91,6 +91,9 @@ möglich, um auf aktuelle Entwicklungen und Interessen der Studierenden einzugeh
 - **Microsoft Visio:** https://www.microsoft.com/de-de/microsoft-365/vis
 - etc.
 
+Die Dokumentation in Kommentaren und Daten sollte in **Markdown** verfasst werden.
+Englisch sollte dabei durchgängig verwendet werden.
+
 ### Weitere Dokumentationen & Ressourcen
 
 - **Markdown Guide:** https://www.markdownguide.org/
