@@ -67,6 +67,10 @@ Die Projekte nutzen folgende Templates.
 | **3**      | **App.Crawler**      | Avalonia App    | Async-Handling, Parallel Requests, GUI-Fortschritt. |
 | **4**      | **App.SupplyChain**  | Avalonia App    | DDD-Umsetzung, komplexe Geschäftslogik.             |
 
+In C# werden die Modelle oft im Paket `Shared.Core` definiert und in den jeweiligen Projekten verwendet.
+Dahingegen werden die Datenzugriffsschichten im Paket `Shared.Data` implementiert.
+Ebenso ist es üblich `Shared.Infrastructure` für Infrastruktur-Komponenten wie Logging, Caching oder externe Services genutzt.
+
 ---
 
 ### 🛠 Best Practices & Coding Standards
