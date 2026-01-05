@@ -14,6 +14,7 @@ Software-Engineering-Prinzipien unter Verwendung des .NET 8 Ökosystems.
 ## Unterlagen & Dokumentationen
 
 Die wichtigsten Kursdokumente auf einen Blick:
+
 - **Vorlesungsplan & Ziele:** [Vorlesung.md](Vorlesung.md)
 - **Referatsaufgaben Variante 1:** [Referate_Variante1.md](Referate_Variante1.md)
 - **Referatsaufgaben Variante 2:** [Referate_Variante2.md](Referate_Variante2.md)
@@ -24,7 +25,7 @@ Die wichtigsten Kursdokumente auf einen Blick:
 
 Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 
-- **IDE:** JetBrains Rider, Visual Studio oder VS Code (mit C# Dev Kit).
+- **IDE:** JetBrains Rider, Visual Studio oder VS Code (mit C# Dev Kit) oder eigenes Setting ( csc, OmniSharp).
 - **Runtime:** .NET 8.0 SDK.
 - **GUI:** Avalonia UI (Cross-Platform).
 - **Quality Gate:** - `StyleCop.Analyzers` für statische Code-Analyse.
@@ -36,6 +37,7 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 ### Struktur der wichtigen Dateien, Ordner und Projekte im Kurs-Repository
 
 #### Wichtige Dateien im Root-Verzeichnis
+
 - editorconfig - Enthält die Code-Stil-Richtlinien für C#
 - .gitignore - Enthält die Liste der auszuschließenden Dateien/Ordner im Git-Repository
 - .github/workflows - CI/CD Pipeline Definitionen
@@ -55,7 +57,9 @@ Die Projekte nutzen folgende Templates.
 | **Demo.UI**      | Avalonia App  | Demonstration von MVVM, Bindings und GUI-Patterns.        |
 
 #### Gruppen-Projekte (Referats-Umsetzung)
+
 (work in progress)
+
 | **Gruppe** | **Projektname**      | **Template**    | **Fokus**                                           |
 |------------|----------------------|-----------------|-----------------------------------------------------|
 | **1**      | **App.Performance**  | Console App     | High-Perf Telemetry (Span<T>, Structs).             |
@@ -111,11 +115,12 @@ C#-spezifischen Richtlinien für alle Commits verbindlich:
 ---
 
 ## .NET 8 Templates & Snippets
+
 - dotnet restore um Abhängigkeiten zu installieren
 - 'dotnet format' um Code-Style automatisch anzuwenden und Dateifehler zu beheben
 - dotnet.exe new install Avalonia.Templates
 - Define code convention in .github/workflows/main.yml
 - Husky:
-  - dotnet new tool-manifest
-  - dotnet tool install Husky
-  - dotnet husky install
+    - dotnet new tool-manifest
+    - dotnet tool install Husky
+    - dotnet husky install

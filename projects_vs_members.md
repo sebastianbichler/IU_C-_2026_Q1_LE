@@ -2,9 +2,7 @@
 
 ---
 
-# # Referatsunterlagen Variante 2
-
-# Referatsgruppen
+# Referate: Themenverteilung einzeln oder in Gruppen
 
 (work in progress)
 | #      | Mitglied 1 | Mitglied 1 | Mitglied 2 | Mitglied 3 | Mitglied 4 | Thema   |
