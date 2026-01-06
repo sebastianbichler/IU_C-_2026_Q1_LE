@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.GUI", "src\Demo.GUI\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.GUI.Desktop", "src\Demo.GUI\Demo.GUI.Desktop\Demo.GUI.Desktop.csproj", "{748044C0-F902-4CBD-9F62-00630FB93C5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "src\Playground\Playground.csproj", "{EA56087A-887A-4980-927C-674EC4748412}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{748044C0-F902-4CBD-9F62-00630FB93C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{748044C0-F902-4CBD-9F62-00630FB93C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{748044C0-F902-4CBD-9F62-00630FB93C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA56087A-887A-4980-927C-674EC4748412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA56087A-887A-4980-927C-674EC4748412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA56087A-887A-4980-927C-674EC4748412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA56087A-887A-4980-927C-674EC4748412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
