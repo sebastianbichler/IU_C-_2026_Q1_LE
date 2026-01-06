@@ -6,7 +6,10 @@
 
 | Abbrivation | Full Form                                    | Description                                                                                                                |
 |-------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| ADO.net     |                                              |
 | API         | Application Programming Interface            | A set of rules and protocols for building and interacting with software applications.                                      |
+| APO         | Aspect Orientated Programming                | Targets Cross-Cutting Concerns                                                                                             |
+| ASP.NET     | Active Server Pages .NET                     | A web framework for building web applications and services with .NET and C#.                                               |
 | CI/CD       | Continuous Integration/Continuous Deployment | A set of practices that enable development teams to deliver code changes more frequently and reliably.                     |
 | DB-Context  | Database Context                             | An object that manages the database connections and is used to query and save data in Entity Framework.                    |
 | DDD         | Domain-Driven Design                         | An approach to software development that emphasizes the importance of the domain and domain logic.                         |
@@ -19,3 +22,6 @@
 | TAP         | Task-based Asynchronous Pattern              | A programming model for asynchronous programming in .NET using tasks.                                                      |
 | TDD         | Test-Driven Development                      | A software development approach where tests are written before the code that needs to be tested.                           |
 | SDK         | Software Development Kit                     | A collection of software tools and libraries that developers use to create applications for specific platforms.            |
+| WF          |                                              |
+| WCF         |                                              |
+| WPF         |                                              |
