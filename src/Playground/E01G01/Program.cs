@@ -1,4 +1,4 @@
-﻿namespace Playground.E01G01;
+namespace Playground.E01G01;
 
 public class Program : Launcher
 {

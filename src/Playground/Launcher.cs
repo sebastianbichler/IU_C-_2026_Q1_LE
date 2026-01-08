@@ -1,4 +1,4 @@
-﻿namespace Playground;
+namespace Playground;
 /*
  * Abstract base class for all playground launchers.
  */
