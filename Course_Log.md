@@ -39,7 +39,7 @@
   - Monaden, Lazy Evaluation, Expression Trees
 
 ## 2026-01-12, Monday (3 UE)
-- group and project (TOPICS)
+- group and project (TOPICS, MEMBERS) finalization (new idea for software projects)
 - Presentation of homework assignments (models and console implementations, docs)
   - Code reviews and feedback session
 - recap of data types and control structures in C# with exercises
