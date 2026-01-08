@@ -1,4 +1,4 @@
-﻿using Demo.Console.Game01;
+using Demo.Console.Game01;
 
 public class Launcher
 {
