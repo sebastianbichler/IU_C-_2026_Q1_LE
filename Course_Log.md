@@ -30,10 +30,16 @@
 
 ## 2026-01-19, Monday (3 UE)
 
+## 2026-01-08, Thursday
+- assigned members to github repo (some have to create accounts, anybody missing?)
+
 ## 2026-01-13, Tuesday (6 UE)
 - paper discussion::
   - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of Software Engineering, 30(4), pp. 250-265.
   - questions and answers session
+- Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
+  - P/Invoke, DllImport, COM Interop
+  - Is there anything like JNI in Java?
 - Modern paradigms in C#:
   - Functional programming features (lambdas, LINQ), Pattern Matching
   - Monaden, Lazy Evaluation, Expression Trees
