@@ -5,11 +5,13 @@
 # 🎓 Course Log - C# Master Class
 
 ## 2026-02-24 , Tuesday (3 UE)
+
 - Final project presentations
 - Code review of group projects
 - Course review and feedback session
 
 ## 2026-02-23, Monday (3 UE)
+
 - Final project presentations
 - Code review of group projects
 - Course review and feedback session
@@ -30,28 +32,39 @@
 
 ## 2026-01-19, Monday (3 UE)
 
-## 2026-01-08, Thursday
-- assigned members to github repo (some have to create accounts, anybody missing?)
+## (5) 2026-01-13, Tuesday (6 UE)
 
-## 2026-01-13, Tuesday (6 UE)
 - paper discussion::
-  - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of Software Engineering, 30(4), pp. 250-265.
-  - questions and answers session
+    - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
+      Software Engineering, 30(4), pp. 250-265.
+    - questions and answers session
 - Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
-  - P/Invoke, DllImport, COM Interop
-  - Is there anything like JNI in Java?
-- Modern paradigms in C#:
-  - Functional programming features (lambdas, LINQ), Pattern Matching
-  - Monaden, Lazy Evaluation, Expression Trees
+    - P/Invoke, DllImport, COM Interop
+    - Is there anything like JNI in Java?
+- Modern paradigms in C# (Part II):
+    - Functional programming features (lambdas, LINQ), Pattern Matching
+    - Monaden, Lazy Evaluation, Expression Trees
+- Memory & Runtime:
+    - Garbage Collection Generationen (Generation-Modell)
+    - LOH (Large Object Heap)
+    - IDisposable & Finalizer
 
-## 2026-01-12, Monday (3 UE)
+## (4) 2026-01-12, Monday (3 UE)
+
+- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
 - group and project (TOPICS, MEMBERS) finalization (new idea for software projects)
 - Presentation of homework assignments (models and console implementations, docs)
-  - Code reviews and feedback session
-- recap of data types and control structures in C# with exercises
-- Modern paradigms in C#: Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability
+    - Code reviews and feedback session
+- recap of data types and control structures in C# with exercises (slides + live coding)
+- Modern paradigms in C# (Part I):
+    - Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability
 
-## 2026-01-06, Tuesday (6 UE)
+## 2026-01-08, Thursday
+
+- assigned members to github repo (some have to create accounts, anybody missing?)
+
+## (2, 3) 2026-01-06, Tuesday (6 UE)
+
 - basic of OOP in C#
 - SOLID principles overview
 - Basics of C# syntax and semantics
@@ -60,7 +73,8 @@
 - students projects: [group formation](projects_vs_members.md)
 - homework assignment: model a simple game (inspired by PacMan) and start implementing it using OOP principles
 
-## 2026-01-05, Monday (3 UE)
+## (1) 2026-01-05, Monday (3 UE)
+
 - Introduction to .NET
 - Setup development environment
 - Overview of course structure and expectations
