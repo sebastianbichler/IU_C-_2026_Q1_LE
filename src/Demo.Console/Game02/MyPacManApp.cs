@@ -5,10 +5,12 @@ using PacMan.ConsoleUI;
 public class MyPacManApp
 {
     private readonly GameEngine _engine;
+    private readonly IRenderer _renderer;
 
     public MyPacManApp()
     {
-        _engine = new GameEngine(new ConsoleRenderer()); // later: use IRenderer and pass the Concrete Renderer via Constructor
+        _renderer = new ConsoleRenderer();
+        _engine = new GameEngine(_renderer);
         _engine.Setup();
     }
 
@@ -24,6 +26,7 @@ public class MyPacManApp
                 if (key == ConsoleKey.Escape)
                 {
                     _engine.StopGame();
+                    break;
                 }
                 else
                 {
@@ -45,5 +48,10 @@ public class MyPacManApp
             // 3. Geschwindigkeit (ca. 10 Frames pro Sekunde)
             Thread.Sleep(100);
         }
+
+        // NACH der while-Schleife (engine.IsRunning == false)
+        _renderer.ClearTile(0, 15); // Etwas Platz schaffen
+        _renderer.Message("Spiel beendet. Auf Wiedersehen!");
+        Console.CursorVisible = true;
     }
 }
