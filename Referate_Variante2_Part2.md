@@ -4,7 +4,7 @@
 
 # Ergänzende wissenschaftliche Artikel (für Referate)
 
-Für eine wissenschaftlich fundierte Auseinandersetzung im 9. und 10. Semester ist es wichtig, dass die Studierenden über
+Für eine wissenschaftlich fundierte Auseinandersetzung im höheren Semester ist es wichtig, dass die Studierenden über
 die reine Dokumentation hinausgehen und Primärquellen der Sprachentwicklung sowie Informatik-Theorie nutzen.
 
 Hier sind ergänzende wissenschaftliche Artikel, sortiert nach den vier Themenschwerpunkten der Gruppenarbeit. Diese

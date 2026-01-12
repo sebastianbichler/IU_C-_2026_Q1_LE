@@ -122,22 +122,15 @@ Da alle am selben Ökosystem arbeiten, ist Kommunikation essenziell:
 
 ---
 
-### Mein Tipp für die Umsetzung:
+### Ideen für die Umsetzung:
 
-Lassen Sie die Studierenden als konkretes Beispiel ein einfaches **"Snake"** oder **"Minesweeper"** implementieren, um
+Die Studierenden könnten als konkretes Beispiel ein einfaches **"Snake"** oder **"Minesweeper"** implementieren, um
 das Framework zu testen. Gruppe 2 könnte dann zeigen, wie sie Minesweeper-Regeln via LINQ ändert, während Gruppe 1
 demonstriert, dass die Highscores der Snake-KI keinerlei Garbage Collection verursachen.
-
-**Soll ich Ihnen für eines dieser Themen (z.B. Gruppe 1 oder 3) bereits ein konkretes Code-Skelett für die `Shared.Core`
-erstellen?**
-
---
 
 Für das Projekt **"The Grand Arcade Ecosystem" (GAE)** ist eine saubere physikalische Trennung der Projekte in der
 Solution entscheidend. Dies erzwingt die Einhaltung von Architekturregeln (wie die *Dependency Rule* der Clean
 Architecture) und ermöglicht das "Plug-and-Play"-Prinzip.
-
-Hier ist das vorgeschlagene Layout für Ihre .NET-Solution:
 
 ### Die GAE Solution-Struktur
 
