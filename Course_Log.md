@@ -4,44 +4,61 @@
 
 # 🎓 Course Log - C# Master Class
 
-## 2026-02-24 , Tuesday (3 UE)
+## (16) 2026-02-24 , Tuesday (3 UE)
 
 - Final project presentations
 - Code review of group projects
 - Course review and feedback session
 
-## 2026-02-23, Monday (3 UE)
+## (15) 2026-02-23, Monday (3 UE)
 
 - Final project presentations
 - Code review of group projects
 - Course review and feedback session
 
-## 2026-02-10 , Tuesday (3 UE)
+## (14) 2026-02-10 , Tuesday (3 UE)
 
-## 2026-02-09, Monday (3 UE)
+## (13) 2026-02-09, Monday (3 UE)
 
-## 2026-02-03 , Tuesday (3 UE)
+## (12) 2026-02-03 , Tuesday (3 UE)
 
-## 2026-02-02, Monday (3 UE)
+## (11) 2026-02-02, Monday (3 UE)
 
-## 2026-01-27 , Tuesday (3 UE)
+## (10) 2026-01-27 , Tuesday (3 UE)
 
-## 2026-01-26, Monday (3 UE)
+- Architektur & Daten
 
-## 2026-01-20 , Tuesday (3 UE)
+- Design Patterns II
 
-## 2026-01-19, Monday (3 UE)
+## (9) 2026-01-26, Monday (3 UE)
 
-## (5) 2026-01-13, Tuesday (6 UE)
+- Design Patterns I
 
+- Metaprogrammierung
+
+## (8) 2026-01-20 , Tuesday (3 UE)
+
+- Concurrency II
+
+## (7) 2026-01-19, Monday (3 UE)
+
+- Concurrency I
+
+## (5, 6) 2026-01-13, Tuesday (6 UE)
+
+- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
+    - OOP Wenz/Kotz Kapitel 4
+    - [APO](concepts/APO.md)
+- recap of data types and control structures in C# with exercises (slides + live coding)
 - paper discussion::
     - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
       Software Engineering, 30(4), pp. 250-265.
     - questions and answers session
 - Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
     - P/Invoke, DllImport, COM Interop
-    - Is there anything like JNI in Java?
-- Modern paradigms in C# (Part II):
+    - Is there anything like JNA/JNI in Java?
+- Modern paradigms in C#:
+    - Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability (Kotz/Wenz Kapitel 4 + 5)
     - Functional programming features (lambdas, LINQ), Pattern Matching
     - Monaden, Lazy Evaluation, Expression Trees
 - Memory & Runtime:
@@ -51,13 +68,11 @@
 
 ## (4) 2026-01-12, Monday (3 UE)
 
-- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
 - group and project (TOPICS, MEMBERS) finalization (new idea for software projects)
-- Presentation of homework assignments (models and console implementations, docs)
-    - Code reviews and feedback session
-- recap of data types and control structures in C# with exercises (slides + live coding)
-- Modern paradigms in C# (Part I):
-    - Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability
+- homework assignments (models and console implementations, docs)
+  - group work and improvements
+  - presentation
+  - Code reviews and feedback session
 
 ## 2026-01-08, Thursday
 
