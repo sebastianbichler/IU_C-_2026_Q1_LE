@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace GameOfBichler.Gui.Models
 {
     public interface IGridObject

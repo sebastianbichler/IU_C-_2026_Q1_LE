@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,17 +9,17 @@ namespace Rollenspiel
 {
     internal class Monster : Entitity, IAttacker
     {
-        public Monster(string name, int hp, int schaden) : base(name, hp, schaden) { }
+        public Monster(string Name, int hp, int schaden) : base(Name, hp, schaden) { }
 
-        public void Attack(Entitity target)
+        public void Attack(Entitity Target)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{name} hits {target.name}!");
+            Console.WriteLine($"{Name} hits {Target.Name}!");
 
             Random rnd = new Random();
-            int damage = rnd.Next(1, maxDamage);
+            int Damage = rnd.Next(1, MaxDamage);
 
-            target.takeDamage(damage);
+            Target.TakeDamage(Damage);
             Console.ResetColor();
         }
     }

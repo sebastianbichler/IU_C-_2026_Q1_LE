@@ -1,14 +1,10 @@
 using Avalonia.Media;
-using Avalonia.Threading;
-using Avalonia.Platform;
 using Avalonia.Media.Imaging;
-using CommunityToolkit.Mvvm.ComponentModel;
+using Avalonia.Platform;
+using Avalonia.Threading;
 using CommunityToolkit.Mvvm.Input;
 using GameOfBichler.Gui.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace GameOfBichler.Gui.ViewModels
 {
@@ -47,9 +43,9 @@ namespace GameOfBichler.Gui.ViewModels
                 if (_explosionImage == null) _explosionImage = null!;
             }
 
-            _board = new GameBoard(10, 10);
             var player = new Player(new Position(1, 1));
-            _board.Initialize(player);
+            _board = new GameBoard(10, 10, player);
+
 
             _board.OnBoardChanged += UpdateView;
             _board.OnMessage += (msg) => StatusText = msg;

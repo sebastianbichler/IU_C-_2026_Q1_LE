@@ -8,26 +8,26 @@ namespace Rollenspiel
 {
     internal abstract class Entitity
     {
-        protected string name { get; set; }
-        protected int healthPoints { get; set; }
-        protected int maxDamage { get; set; }
+        public string Name { get; set; }
+        public int HealthPoints { get; set; }
+        public int MaxDamage { get; set; }
 
-        public Entitity (string name, int healthPoints, int maxDamage)
+        public Entitity (string Name, int HealthPoints, int MaxDamage)
         {
-            this.name = name;
-            this.healthPoints = healthPoints;
-            this.maxDamage = maxDamage;
+            this.Name = Name;
+            this.HealthPoints = HealthPoints;
+            this.MaxDamage = MaxDamage;
         }
 
-        public void takeDamage(int damage)
-        { 
-            healthPoints -= damage;
-            if(healthPoints < 0) healthPoints = 0;
-            Console.WriteLine($"{name} killed {damage} damage! (Leftover-HP: {healthPoints})");
-        }
-        public bool isDeath()
+        public void TakeDamage(int Damage)
         {
-            return healthPoints <= 0;
+            HealthPoints -= Damage;
+            if(HealthPoints < 0) HealthPoints = 0;
+            Console.WriteLine($"{Name} killed {Damage} damage! (Leftover-HP: {HealthPoints})");
+        }
+        public bool IsDeath()
+        {
+            return HealthPoints <= 0;
         }
 
     }

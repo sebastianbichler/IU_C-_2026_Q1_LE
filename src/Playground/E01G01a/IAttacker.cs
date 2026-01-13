@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,6 @@ namespace Rollenspiel
 {
     internal interface IAttacker
     {
-        public void Attack(Entitity target);
+        public void Attack(Entitity Target);
     }
 }

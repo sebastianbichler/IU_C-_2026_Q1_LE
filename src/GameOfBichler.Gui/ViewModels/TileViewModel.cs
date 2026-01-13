@@ -1,6 +1,6 @@
-using CommunityToolkit.Mvvm.ComponentModel;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GameOfBichler.Gui.ViewModels
 {

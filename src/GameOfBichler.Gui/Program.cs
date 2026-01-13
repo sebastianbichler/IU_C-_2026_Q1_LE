@@ -1,5 +1,4 @@
-﻿using Avalonia;
-using System;
+using Avalonia;
 
 namespace GameOfBichler.Gui;
 

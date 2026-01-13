@@ -1,5 +1,3 @@
-using System;
-
 namespace GameOfBichler.Gui.Models
 {
     public class Enemy

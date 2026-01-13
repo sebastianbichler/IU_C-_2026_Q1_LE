@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,25 +9,25 @@ namespace Rollenspiel
 {
     internal class Hero : Entitity, IAttacker
     {
-        public Hero(string name) : base(name, 100, 20) { }
+        public Hero(string Name) : base(Name, 100, 20) { }
 
         public void Attack(Entitity target)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"{name} swings the sword {target.name}!");
+            Console.WriteLine($"{Name} swings the sword {target.Name}!");
 
             Random rnd = new Random();
-            int damage = rnd.Next(5, maxDamage);
+            int Damage = rnd.Next(5, MaxDamage);
 
-            target.takeDamage(damage);
+            target.TakeDamage(Damage);
             Console.ResetColor();
         }
 
         public void Healing()
         {
-            healthPoints += 15;
-            healthPoints += 15;
-            Console.WriteLine($"{name} drinks a health potion. HP: {healthPoints}");
+            HealthPoints += 15;
+            HealthPoints += 15;
+            Console.WriteLine($"{Name} drinks a health potion. HP: {HealthPoints}");
         }
     }
 }
