@@ -19,7 +19,7 @@ namespace Rollenspiel
             Random rnd = new Random();
             int Damage = rnd.Next(5, MaxDamage);
 
-            target.takeDamage(Damage);
+            target.TakeDamage(Damage);
             Console.ResetColor();
         }
 

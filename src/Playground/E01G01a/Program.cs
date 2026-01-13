@@ -27,11 +27,11 @@ public class Program : Launcher
 
         foreach (var enemy in enemyList)
         {
-            if (player.isDeath()) break;
+            if (player.IsDeath()) break;
 
             Console.WriteLine($"\n A Wild {enemy.Name} appeard!");
 
-            while (!enemy.isDeath() && !player.isDeath())
+            while (!enemy.IsDeath() && !player.IsDeath())
             {
                 Console.WriteLine("\n (A) Attack or (H) Healing");
                 string action = Console.ReadLine();
@@ -46,7 +46,7 @@ public class Program : Launcher
                 }
 
                 //enemy turn
-                if (!enemy.isDeath())
+                if (!enemy.IsDeath())
                 {
                     enemy.Attack(player);
                 }
@@ -55,7 +55,7 @@ public class Program : Launcher
                 Console.WriteLine($"Enemy health: {enemy.HealthPoints}");
             }
 
-            if (player.isDeath()) Console.WriteLine("You died...");
+            if (player.IsDeath()) Console.WriteLine("You died...");
             else Console.WriteLine($"{enemy.Name} was slain.");
 
         }

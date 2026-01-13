@@ -16,7 +16,7 @@ namespace Rollenspiel
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"{Name} spits fire on {Target.Name}!");
 
-            Target.takeDamage(25);
+            Target.TakeDamage(25);
             Console.ResetColor();
         }
     }
