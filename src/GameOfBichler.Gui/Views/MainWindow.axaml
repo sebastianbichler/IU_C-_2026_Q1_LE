@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GameOfBichler.Gui.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600"
+        x:Class="GameOfBichler.Gui.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="GameOfBichler"
+        Width="600" Height="700"
+        KeyDown="OnKeyDownHandler">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+
+	<DockPanel Margin="10">
+
+		<Border DockPanel.Dock="Top" Background="#EEE" Padding="10" Margin="0,0,0,10" CornerRadius="5">
+			<TextBlock Text="{Binding StatusText}"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Foreground="Black"/>
+		</Border>
+
+		<Button DockPanel.Dock="Bottom"
+                Command="{Binding StartNewGameCommand}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Margin="0,10,0,0"
+                Padding="10"
+                Background="CornflowerBlue"
+                Foreground="White"
+                FontWeight="Bold"
+                Content="Neues Level generieren (Reload)"/>
+
+		<Border BorderBrush="Black" BorderThickness="2">
+			<ItemsControl ItemsSource="{Binding GridTiles}">
+
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<UniformGrid Rows="{Binding Rows}" Columns="{Binding Columns}"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="#999" BorderThickness="0.5" Background="{Binding Color}">
+
+							<Panel>
+								<TextBlock Text="{Binding Symbol}"
+										   IsVisible="{Binding Image, Converter={x:Static ObjectConverters.IsNull}}"
+										   HorizontalAlignment="Center"
+										   VerticalAlignment="Center"
+										   FontSize="24"
+										   FontWeight="Bold"
+										   Foreground="Black"/>
+
+								<Image Source="{Binding Image}"
+									   IsVisible="{Binding Image, Converter={x:Static ObjectConverters.IsNotNull}}"
+									   HorizontalAlignment="Stretch"
+									   VerticalAlignment="Stretch"
+									   Stretch="Fill"/>
+							</Panel>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Border>
+	</DockPanel>
+
+</Window>
