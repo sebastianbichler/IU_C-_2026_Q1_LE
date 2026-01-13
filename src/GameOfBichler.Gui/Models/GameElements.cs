@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-
 namespace GameOfBichler.Gui.Models
 {
     public class EmptyTile : IGridObject

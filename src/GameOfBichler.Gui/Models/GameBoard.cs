@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace GameOfBichler.Gui.Models
 {
     public class GameBoard
@@ -78,7 +75,7 @@ namespace GameOfBichler.Gui.Models
                 return;
             }
 
- 
+
             if (targetObj.IsWalkable)
             {
                 Enemy.Position = nextPos;
@@ -111,13 +108,13 @@ namespace GameOfBichler.Gui.Models
                 if (stepX != 0)
                 {
                     stepY = dy > 0 ? 1 : -1;
-                    if (dy == 0) stepY = 1; 
+                    if (dy == 0) stepY = 1;
                     return new Position(Enemy.Position.X, Enemy.Position.Y + stepY);
                 }
                 else
                 {
                     stepX = dx > 0 ? 1 : -1;
-                    if (dx == 0) stepX = 1; 
+                    if (dx == 0) stepX = 1;
                     return new Position(Enemy.Position.X + stepX, Enemy.Position.Y);
                 }
             }
