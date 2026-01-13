@@ -47,4 +47,27 @@ class Fahrkarte
 
         //i >= j && i != 0
     }
+
+    public static void SchaltjahrPruefungNachFolgendenRegelnHahaha()
+    {
+        int jahreszahl;
+
+        if (int.TryParse(Console.ReadLine(), out int eingabe))
+        {
+            jahreszahl = eingabe;
+            if ((jahreszahl % 4 == 0 && jahreszahl % 100 != 0) || (jahreszahl % 400 == 0))
+            {
+                Console.WriteLine($"{jahreszahl} ist ein Schaltjahr.");
+            }
+            else
+            {
+                Console.WriteLine($"{jahreszahl} ist kein Schaltjahr.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Fehler: Bitte geben Sie ein gültiges Jahr ein.");
+        }
+        Console.ReadKey();
+    }   
 }
