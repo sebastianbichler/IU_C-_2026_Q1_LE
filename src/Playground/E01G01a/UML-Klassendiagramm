@@ -1,7 +1,8 @@
 UML Klassendiagramm - Rollenspiel
 
+'''
 classDiagram
-    %% Abstrakte Basisklasse
+    %% --- Abstrakte Basisklassen & Interfaces ---
     class Entity {
         <<Abstract>>
         #String name
@@ -11,13 +12,18 @@ classDiagram
         +isDead() bool
     }
 
-    %% Interface
     class IAttacker {
         <<Interface>>
         +attack(Entity target) void
     }
 
-    %% Hauptklassen
+    class Object {
+        <<Abstract>>
+        #string name
+        #bool isConsumeable
+    }
+
+    %% --- Haupt-Charakterklassen ---
     class Hero {
         +attack(Entity target) void
         +healing() void
@@ -28,7 +34,7 @@ classDiagram
         +healing() void
     }
 
-    %% Hero Unterklassen
+    %% --- Hero Unterklassen ---
     class Swordsman {
         +attack(Entity target) void
         +healing() void
@@ -39,7 +45,7 @@ classDiagram
         +healing() void
     }
 
-    %% Monster Unterklassen
+    %% --- Monster Unterklassen ---
     class Orc {
         +attack(Entity target) void
     }
@@ -48,13 +54,7 @@ classDiagram
         +attack(Entity target) void
     }
 
-    %% Object Hierarchie
-    class Object {
-        <<Abstract>>
-        #string name
-        #bool isConsumeable
-    }
-
+    %% --- Gegenstände ---
     class Potion {
         #bool hasBadeffect
         +usePotion() void
@@ -65,24 +65,22 @@ classDiagram
         +open() void
     }
 
-    %% Beziehungen
-
-    %% Implementierung (Interface)
-    IAttacker <|.. Hero
-    IAttacker <|.. Monster
-
-    %% Vererbung (Entity)
+    %% --- Beziehungen ---
+    
+    %% Vererbung (Inheritance) - Durchgezogene Linie mit Pfeil
     Entity <|-- Hero
     Entity <|-- Monster
-
-    %% Vererbung (Hero Subtypes)
+    
     Hero <|-- Swordsman
     Hero <|-- Mage
-
-    %% Vererbung (Monster Subtypes)
+    
     Monster <|-- Orc
     Monster <|-- Dragon
-
-    %% Vererbung (Object Subtypes)
+    
     Object <|-- Potion
     Object <|-- Chest
+
+    %% Implementierung (Realization) - Gestrichelte Linie mit Pfeil
+    IAttacker <|.. Hero
+    IAttacker <|.. Monster
+'''
