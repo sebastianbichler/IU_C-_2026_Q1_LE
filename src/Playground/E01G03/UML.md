@@ -136,46 +136,56 @@ classDiagram
 
 ```mermaid
 graph TD
-    %% --- STARTPUNKTE ---
-    Input([👤 Input: Touch/Button]) --> PlayerAction
-    Timer([⏰ Timer: Alle 2 Sek.]) --> EnemyAction
+    %% --- START ---
+    Start((◉ Start)) --> Idle[Warten auf Ereignis]
 
-    %% --- SPIELER ZYKLUS ---
-    subgraph PlayerLoop [Spieler Logik]
-        PlayerAction(Move Command) --> CalcPosP[Neue Position berechnen]
-        CalcPosP --> CheckColP{Kollision?}
-        CheckColP -- Wand/Stein --> StopP[Stop]
-        CheckColP -- Frei/Item --> UpdatePosP[Position setzen]
-        UpdatePosP --> CheckWin{Ziel erreicht?}
+    %% --- SWIMLANES ---
+    subgraph Player_Event [Spieler Input]
+        Idle -.-> |Taste gedrückt| CalcPlayer[Ziel-Position berechnen]
+        CalcPlayer --> CheckWalkable{Ist Feld begehbar?}
+        
+        CheckWalkable -- Nein/Wand --> MergeUI[Zusammenführung]
+        CheckWalkable -- Ja --> SetPPos[Spieler Position aktualisieren]
+        SetPPos --> CheckWin{Ziel erreicht?}
+        
+        CheckWin -- Ja --> Win((GEWONNEN))
+        CheckWin -- Nein --> MergeUI
     end
 
-    %% --- GEGNER ZYKLUS ---
-    subgraph EnemyLoop [Gegner Logik]
-        EnemyAction(Timer Tick) --> IsStunned{Betäubt?}
-        IsStunned -- Ja --> Wait[Warten]
-        IsStunned -- Nein --> Pathfind[Weg zum Spieler suchen]
-        Pathfind --> CheckColE{Objekt?}
+    subgraph Enemy_Tick [Timer Event alle 2s]
+        Idle -.-> |Timer Tick| CheckStun{Ist Gegner betäubt?}
         
-        CheckColE -- Leer --> MoveE[Bewegen]
-        CheckColE -- Stein --> Explode[💥 BOOM Event]
-        Explode --> StunE[Gegner 3s Betäuben]
-        Explode --> RemoveStone[Stein entfernen]
+        %% Der "Kein Warten" Pfad: Einfach überspringen
+        CheckStun -- Ja --> MergeUI
         
-        MoveE --> Catch{Spieler gefangen?}
-        Catch -- Ja --> GameOver((☠️ GAME OVER))
+        CheckStun -- Nein --> Pathfind[Weg zum Spieler berechnen]
+        Pathfind --> CheckObs{Was ist im Weg?}
+        
+        %% Fall: Weg frei
+        CheckObs -- Frei/Pfeil --> MoveEnemy[Gegner bewegen]
+        MoveEnemy --> CheckCatch{Spieler gefangen?}
+        CheckCatch -- Ja --> GameOver((GAME OVER))
+        CheckCatch -- Nein --> MergeUI
+
+        %% Fall: Stein (Explosion)
+        CheckObs -- Stein --> DestroyStone[Stein entfernen]
+        DestroyStone --> TriggerAnim[Event: Explosion & Sound]
+        TriggerAnim --> SetStun[Gegner: StunnedUntil setzen]
+        SetStun --> MergeUI
+        
+        %% Fall: Wand (Blockiert)
+        CheckObs -- Wand --> MergeUI
     end
 
-    %% --- RENDERING & UI ---
-    subgraph RenderLoop [UI Update / MVVM]
-        UpdatePosP --> EventChanged[⚡ Event: OnBoardChanged]
-        MoveE --> EventChanged
-        RemoveStone --> EventChanged
-        Explode --> AsyncAnim[📺 UI: Explosion GIF + Sound]
-        
-        EventChanged --> BuildVM[UpdateView: Kacheln neu berechnen]
-        BuildVM --> Bindings[DataBinding aktualisiert XAML]
-        Bindings --> Screen[📱 Bildschirm zeigt neues Bild]
-        
-        AsyncAnim -.-> |Nach 500ms| BuildVM
+    subgraph System_UI [Rendering & UI]
+        MergeUI --> UpdateView[UpdateView: Kacheln neu zeichnen]
+        UpdateView --> Idle
     end
-    ```
+    
+    %% Styling
+    style Start fill:#2ecc71,stroke:#27ae60,color:white
+    style Win fill:#f1c40f,stroke:#f39c12,color:black
+    style GameOver fill:#e74c3c,stroke:#c0392b,color:white
+    style Idle fill:#ecf0f1,stroke:#bdc3c7,stroke-dasharray: 5 5
+    style MergeUI fill:#3498db,stroke:#2980b9,color:white,shape:circle
+```
