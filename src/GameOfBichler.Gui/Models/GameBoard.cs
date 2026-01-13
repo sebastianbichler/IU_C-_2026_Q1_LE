@@ -7,7 +7,7 @@ namespace GameOfBichler.Gui.Models
     {
         private readonly Dictionary<Position, IGridObject> _grid;
 
-        public Player? Player { get; private set; }
+        public Player Player { get; private set; }
         public Enemy? Enemy { get; private set; }
         public bool IsGameOver { get; set; } = false;
 
@@ -18,15 +18,11 @@ namespace GameOfBichler.Gui.Models
         public event Action? OnBoardChanged;
         public event Action<Position>? OnExplosion;
 
-        public GameBoard(int width, int height)
+        public GameBoard(int width, int height, Player player)
         {
             Width = width;
             Height = height;
             _grid = new Dictionary<Position, IGridObject>();
-        }
-
-        public void Initialize(Player player)
-        {
             Player = player;
         }
 
