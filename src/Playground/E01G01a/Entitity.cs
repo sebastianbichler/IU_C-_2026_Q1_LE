@@ -8,9 +8,9 @@ namespace Rollenspiel
 {
     internal abstract class Entitity
     {
-        protected string name { get; set; }
-        protected int healthPoints { get; set; }
-        protected int maxDamage { get; set; }
+        public string Name { get; set; }
+        public int HealthPoints { get; set; }
+        public int MaxDamage { get; set; }
 
         public Entitity (string name, int healthPoints, int maxDamage)
         {
