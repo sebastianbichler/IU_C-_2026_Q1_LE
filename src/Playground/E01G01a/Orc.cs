@@ -11,7 +11,7 @@ namespace Rollenspiel
     {
         public Orc() : base("Grok the Orc", 200, 30) { }
 
-        public virtual void Attack(Entitity Target)
+        public new virtual void Attack(Entitity Target)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"{Name} spits fire on {Target.Name}!");
