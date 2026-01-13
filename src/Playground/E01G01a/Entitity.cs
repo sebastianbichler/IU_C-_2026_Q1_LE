@@ -12,7 +12,7 @@ namespace Rollenspiel
         public int HealthPoints { get; set; }
         public int MaxDamage { get; set; }
 
-        public Entitity (string Name, int HealthPoints, int MaxDamage)
+        public Entitity(string Name, int HealthPoints, int MaxDamage)
         {
             this.Name = Name;
             this.HealthPoints = HealthPoints;
@@ -22,7 +22,7 @@ namespace Rollenspiel
         public void TakeDamage(int Damage)
         {
             HealthPoints -= Damage;
-            if(HealthPoints < 0) HealthPoints = 0;
+            if (HealthPoints < 0) HealthPoints = 0;
             Console.WriteLine($"{Name} killed {Damage} damage! (Leftover-HP: {HealthPoints})");
         }
         public bool IsDeath()

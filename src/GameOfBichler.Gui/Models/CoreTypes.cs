@@ -1,4 +1,4 @@
-﻿namespace GameOfBichler.Gui.Models
+namespace GameOfBichler.Gui.Models
 {
     public enum Direction { Up, Down, Left, Right }
 
