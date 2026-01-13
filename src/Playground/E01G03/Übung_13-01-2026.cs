@@ -36,4 +36,15 @@ class Fahrkarte
         while (true);
 
     }
+
+    public static void Vergleichsausdruecke()
+    {
+        //(i - 4) > (j * j)
+
+        //i > 0 || i == j
+
+        //i > -j && i < j
+
+        //i >= j && i != 0
+    }
 }
