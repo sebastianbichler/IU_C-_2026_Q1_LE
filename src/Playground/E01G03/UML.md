@@ -132,3 +132,50 @@ classDiagram
 
     %% Binding Beziehung
     MainWindow ..> MainWindowViewModel : DataContext Binding
+```
+
+```mermaid
+graph TD
+    %% --- STARTPUNKTE ---
+    Input([👤 Input: Touch/Button]) --> PlayerAction
+    Timer([⏰ Timer: Alle 2 Sek.]) --> EnemyAction
+
+    %% --- SPIELER ZYKLUS ---
+    subgraph PlayerLoop [Spieler Logik]
+        PlayerAction(Move Command) --> CalcPosP[Neue Position berechnen]
+        CalcPosP --> CheckColP{Kollision?}
+        CheckColP -- Wand/Stein --> StopP[Stop]
+        CheckColP -- Frei/Item --> UpdatePosP[Position setzen]
+        UpdatePosP --> CheckWin{Ziel erreicht?}
+    end
+
+    %% --- GEGNER ZYKLUS ---
+    subgraph EnemyLoop [Gegner Logik]
+        EnemyAction(Timer Tick) --> IsStunned{Betäubt?}
+        IsStunned -- Ja --> Wait[Warten]
+        IsStunned -- Nein --> Pathfind[Weg zum Spieler suchen]
+        Pathfind --> CheckColE{Objekt?}
+        
+        CheckColE -- Leer --> MoveE[Bewegen]
+        CheckColE -- Stein --> Explode[💥 BOOM Event]
+        Explode --> StunE[Gegner 3s Betäuben]
+        Explode --> RemoveStone[Stein entfernen]
+        
+        MoveE --> Catch{Spieler gefangen?}
+        Catch -- Ja --> GameOver((☠️ GAME OVER))
+    end
+
+    %% --- RENDERING & UI ---
+    subgraph RenderLoop [UI Update / MVVM]
+        UpdatePosP --> EventChanged[⚡ Event: OnBoardChanged]
+        MoveE --> EventChanged
+        RemoveStone --> EventChanged
+        Explode --> AsyncAnim[📺 UI: Explosion GIF + Sound]
+        
+        EventChanged --> BuildVM[UpdateView: Kacheln neu berechnen]
+        BuildVM --> Bindings[DataBinding aktualisiert XAML]
+        Bindings --> Screen[📱 Bildschirm zeigt neues Bild]
+        
+        AsyncAnim -.-> |Nach 500ms| BuildVM
+    end
+    ```
