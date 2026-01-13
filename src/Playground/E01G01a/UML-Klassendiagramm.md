@@ -1,6 +1,6 @@
 UML Klassendiagramm - Rollenspiel
 
-'''
+```
 classDiagram
     %% --- Abstrakte Basisklassen & Interfaces ---
     class Entity {
@@ -83,4 +83,4 @@ classDiagram
     %% Implementierung (Realization) - Gestrichelte Linie mit Pfeil
     IAttacker <|.. Hero
     IAttacker <|.. Monster
-'''
+```
