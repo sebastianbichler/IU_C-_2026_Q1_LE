@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,9 @@ namespace Rollenspiel
 {
     internal abstract class Entitity
     {
-        public string name { get; set; }
-        public int healthPoints { get; set; }
-        public int maxDamage { get; set; }
+        protected string name { get; set; }
+        protected int healthPoints { get; set; }
+        protected int maxDamage { get; set; }
 
         public Entitity (string name, int healthPoints, int maxDamage)
         {
