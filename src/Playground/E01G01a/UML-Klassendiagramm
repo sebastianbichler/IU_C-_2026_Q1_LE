@@ -1,0 +1,88 @@
+UML Klassendiagramm - Rollenspiel
+
+classDiagram
+    %% Abstrakte Basisklasse
+    class Entity {
+        <<Abstract>>
+        #String name
+        #int healthPoints
+        #int maxDamage
+        +takeDamage() void
+        +isDead() bool
+    }
+
+    %% Interface
+    class IAttacker {
+        <<Interface>>
+        +attack(Entity target) void
+    }
+
+    %% Hauptklassen
+    class Hero {
+        +attack(Entity target) void
+        +healing() void
+    }
+
+    class Monster {
+        +attack(Entity target) void
+        +healing() void
+    }
+
+    %% Hero Unterklassen
+    class Swordsman {
+        +attack(Entity target) void
+        +healing() void
+    }
+
+    class Mage {
+        +attack(Entity target) void
+        +healing() void
+    }
+
+    %% Monster Unterklassen
+    class Orc {
+        +attack(Entity target) void
+    }
+
+    class Dragon {
+        +attack(Entity target) void
+    }
+
+    %% Object Hierarchie
+    class Object {
+        <<Abstract>>
+        #string name
+        #bool isConsumeable
+    }
+
+    class Potion {
+        #bool hasBadeffect
+        +usePotion() void
+    }
+
+    class Chest {
+        #bool isMimic
+        +open() void
+    }
+
+    %% Beziehungen
+
+    %% Implementierung (Interface)
+    IAttacker <|.. Hero
+    IAttacker <|.. Monster
+
+    %% Vererbung (Entity)
+    Entity <|-- Hero
+    Entity <|-- Monster
+
+    %% Vererbung (Hero Subtypes)
+    Hero <|-- Swordsman
+    Hero <|-- Mage
+
+    %% Vererbung (Monster Subtypes)
+    Monster <|-- Orc
+    Monster <|-- Dragon
+
+    %% Vererbung (Object Subtypes)
+    Object <|-- Potion
+    Object <|-- Chest
