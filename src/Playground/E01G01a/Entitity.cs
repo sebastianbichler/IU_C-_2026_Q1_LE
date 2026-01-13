@@ -12,22 +12,22 @@ namespace Rollenspiel
         public int HealthPoints { get; set; }
         public int MaxDamage { get; set; }
 
-        public Entitity (string name, int healthPoints, int maxDamage)
+        public Entitity (string name, int HealthPoints, int MaxDamage)
         {
-            this.name = name;
-            this.healthPoints = healthPoints;
-            this.maxDamage = maxDamage;
+            this.Name = name;
+            this.HealthPoints = HealthPoints;
+            this.MaxDamage = MaxDamage;
         }
 
-        public void takeDamage(int damage)
-        { 
-            healthPoints -= damage;
-            if(healthPoints < 0) healthPoints = 0;
-            Console.WriteLine($"{name} killed {damage} damage! (Leftover-HP: {healthPoints})");
+        public void takeDamage(int Damage)
+        {
+            HealthPoints -= Damage;
+            if(HealthPoints < 0) HealthPoints = 0;
+            Console.WriteLine($"{Name} killed {Damage} damage! (Leftover-HP: {HealthPoints})");
         }
         public bool isDeath()
         {
-            return healthPoints <= 0;
+            return HealthPoints <= 0;
         }
 
     }

@@ -29,7 +29,7 @@ public class Program : Launcher
         {
             if (player.isDeath()) break;
 
-            Console.WriteLine($"\n A Wild {enemy.name} appeard!");
+            Console.WriteLine($"\n A Wild {enemy.Name} appeard!");
 
             while (!enemy.isDeath() && !player.isDeath())
             {
@@ -51,12 +51,12 @@ public class Program : Launcher
                     enemy.Attack(player);
                 }
 
-                Console.WriteLine($"Player health: {player.healthPoints}");
-                Console.WriteLine($"Enemy health: {enemy.healthPoints}");
+                Console.WriteLine($"Player health: {player.HealthPoints}");
+                Console.WriteLine($"Enemy health: {enemy.HealthPoints}");
             }
 
             if (player.isDeath()) Console.WriteLine("You died...");
-            else Console.WriteLine($"{enemy.name} was slain.");
+            else Console.WriteLine($"{enemy.Name} was slain.");
 
         }
 

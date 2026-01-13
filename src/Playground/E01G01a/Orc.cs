@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,12 @@ namespace Rollenspiel
     {
         public Orc() : base("Grok the Orc", 200, 30) { }
 
-        public virtual void Attack(Entitity target)
+        public virtual void Attack(Entitity Target)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"{name} spits fire on {target.name}!");
+            Console.WriteLine($"{Name} spits fire on {Target.Name}!");
 
-            target.takeDamage(25);
+            Target.takeDamage(25);
             Console.ResetColor();
         }
     }
