@@ -1,10 +1,13 @@
+using System.Diagnostics.Contracts;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Playground.E01G02;
 
 public class Program : Launcher
 {
     public override void Run()
     {
-        Console.Clear();
-        Console.WriteLine("Put your code for Exercise 1 here.");
+        Automat.ProcessPayment();
     }
 }
