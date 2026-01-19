@@ -27,13 +27,11 @@
 ## (10) 2026-01-27 , Tuesday (3 UE)
 
 - Architektur & Daten
-
 - Design Patterns II
 
 ## (9) 2026-01-26, Monday (3 UE)
 
 - Design Patterns I
-
 - Metaprogrammierung
 
 ## (8) 2026-01-20 , Tuesday (3 UE)
@@ -41,16 +39,8 @@
 - Concurrency II
 
 ## (7) 2026-01-19, Monday (3 UE)
-
-- Concurrency I
-
-## (5, 6) 2026-01-13, Tuesday (6 UE)
-
-- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
-    - OOP Wenz/Kotz Kapitel 4
-    - [APO](concepts/APO.md)
-- recap of data types and control structures in C# with exercises (slides + live coding)
-- paper discussion::
+- TODO Build status in README.md- TODO: clean up code (update to conventions, exercises, oli)
+- paper discussion:
     - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
       Software Engineering, 30(4), pp. 250-265.
     - questions and answers session
@@ -65,6 +55,18 @@
     - Garbage Collection Generationen (Generation-Modell)
     - LOH (Large Object Heap)
     - IDisposable & Finalizer
+- Concurrency I
+
+## (5, 6) 2026-01-13, Tuesday (6 UE)
+
+- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
+    - OOP Wenz/Kotz Kapitel 4
+    - [APO](concepts/APO.md)
+- recap of data types and control structures in C# with exercises (slides + live coding)
+- paper reading::
+    - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
+      Software Engineering, 30(4), pp. 250-265.
+    - questions and answers session
 
 ## (4) 2026-01-12, Monday (3 UE)
 

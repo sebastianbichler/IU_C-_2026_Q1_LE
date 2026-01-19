@@ -25,7 +25,7 @@ möglich, um auf aktuelle Entwicklungen und Interessen der Studierenden einzugeh
 ### Einfache Übersicht
 
 | **Nr.** | **Thema**                | **Fokus**                                    | **Literatur (Kern)** |
-|---------|--------------------------|----------------------------------------------|----------------------|
+| ------- | ------------------------ | -------------------------------------------- | -------------------- |
 | 01      | **Setup & Tooling**      | GitHub Flow, CI/CD, .NET 8 CLI               | Kotz/Wenz Kap. 1-2   |
 | 02      | **Type System Theory**   | Value vs. Reference Types, Heap/Stack        | IU Skript Kap. 3     |
 | 03      | **Modern Paradigms**     | Records, Immutability, Pattern Matching      | Kotz/Wenz Kap. 4     |
@@ -45,7 +45,7 @@ möglich, um auf aktuelle Entwicklungen und Interessen der Studierenden einzugeh
 ### Detaillierter Plan
 
 | **Einheit** | **Thema**                             | **Fokus & Methodik**                                                                                  | **Literatur-Bezug**                |
-|-------------|---------------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------|
+| ----------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | **01**      | **Einführung & Toolchain**            | GitHub Flow, Pre-commit Hooks, .NET 8 SDK unter Linux/Mac, Linter (StyleCop/EditorConfig).            | Kotz/Wenz Kap. 1 & 2               |
 | **02**      | **Type Systems & Memory**             | Value vs. Reference Types (Structs vs. Classes). Heap vs. Stack. Reification (C#) vs. Erasure (Java). | IU Skript Kap. 3; Kotz/Wenz Kap. 3 |
 | **03**      | **Evolution der Paradigmen**          | Von imperativ zu funktional: Records, Pattern Matching, Immutability. Vergleich zu Java/Python.       | Kotz/Wenz Kap. 4 & 5               |
@@ -80,6 +80,7 @@ möglich, um auf aktuelle Entwicklungen und Interessen der Studierenden einzugeh
 ---
 
 ### Tools zur Modellierung
+
 - Empfohlen wird ein Markdown-Editor mit Diagramm-Support, z. B. **Obsidian** (https://obsidian.md/) mit dem **Mermaid**-Plugin.
 - **draw.io:** (https://app.diagrams.net/)
 - **PlantUML:** https://plantuml.com/de/
