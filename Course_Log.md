@@ -1,4 +1,4 @@
-﻿### Programmieren mit C# (DSPC016)
+### Programmieren mit C# (DSPC016)
 
 ---
 
