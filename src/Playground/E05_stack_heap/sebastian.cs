@@ -16,15 +16,15 @@ public class sebastian : Launcher
 
         Console.WriteLine("Multiply PointStruct:");
 
-        var pointStruct = Multiply(s1);
+        var s3 = Multiply(s1);
 
-        Console.WriteLine($"Modified PointStruct: X={pointStruct.X}, Y={pointStruct.Y}");
+        Console.WriteLine($"Modified PointStruct: X={s3.X}, Y={s3.Y}");
         Console.WriteLine($"Original PointStruct: X={s1.X}, Y={s1.Y}");
 
         Console.WriteLine("Multiply PointStruct with ref:");
-        var pointStruct2 = MultiplyRef(ref s1);
+        var s4 = MultiplyRef(ref s1);
 
-        Console.WriteLine($"Modified PointStruct: X={pointStruct.X}, Y={pointStruct.Y}");
+        Console.WriteLine($"Modified PointStruct: X={s3.X}, Y={s3.Y}");
         Console.WriteLine($"Original PointStruct: X={s1.X}, Y={s1.Y}");
     }
 
