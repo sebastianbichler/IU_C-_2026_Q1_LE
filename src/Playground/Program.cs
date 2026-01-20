@@ -13,6 +13,7 @@ class Program
         Console.WriteLine("4) Übung 01 - Gruppe 03");
         Console.WriteLine("5) Übung 01 - Gruppe 04");
         Console.WriteLine("----------------------------");
+        Console.WriteLine("(6) Übung 05 - Stack vs Heap");
 
         string choice = Console.ReadLine() ?? string.Empty;
 
@@ -37,6 +38,10 @@ class Program
                 break;
             case "5":
                 launcher = new Playground.E01G04.Program();
+                launcher.Run();
+                break;
+            case "6":
+                launcher = new Playground.E05_stack_heap.sebastian();
                 launcher.Run();
                 break;
             default:

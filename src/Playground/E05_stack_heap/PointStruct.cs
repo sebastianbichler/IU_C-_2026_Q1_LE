@@ -1,6 +1,7 @@
-﻿namespace Playground.E05_stack_heap;
+namespace Playground.E05_stack_heap;
 
-public class PointStruct
+public struct PointStruct
 {
-    
+    public int X;
+    public int Y;
 }
