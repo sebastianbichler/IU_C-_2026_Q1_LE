@@ -69,5 +69,5 @@ class Fahrkarte
             Console.WriteLine("Fehler: Bitte geben Sie ein gültiges Jahr ein.");
         }
         Console.ReadKey();
-    }   
+    }
 }

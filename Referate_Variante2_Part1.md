@@ -33,7 +33,7 @@ ein Ökosystem, in dem ein zentrales **Arcade-Dashboard (Host)** zur Laufzeit ve
 ## 2) Übersicht über die Referatsthemen
 
 | **Gruppe** | **Forschungsfeld**              | **Technischer C# Schwerpunkt**      | **Modul-Beitrag zum GAE**                  |
-|------------|---------------------------------|-------------------------------------|--------------------------------------------|
+| ---------- | ------------------------------- | ----------------------------------- | ------------------------------------------ |
 | **1**      | **Memory Safety & Performance** | `Span<T>`, `Memory<T>`, Pointers    | **High-Performance Asset Loader**          |
 | **2**      | **Declarative Engines**         | LINQ Provider, Expression Trees     | **Queryable Game Rule Engine**             |
 | **3**      | **Scalable Concurrency**        | `Channels<T>`, Async State Machines | **Multiplayer & Global Game Loop**         |
@@ -108,7 +108,7 @@ Da alle am selben Ökosystem arbeiten, ist Kommunikation essenziell:
 - **Auftrag:** Erstellt die Persistenzschicht für Spielerprofile, Inventare und Spielstände. Achtet darauf, dass die
   Spiel-Logik absolut unabhängig von der SQLite-Datenbank bleibt.
 
-### Gruppe 5 (Zusatz/Vertiefung): Der "Auto-Discovery" Orchestrator
+### Gruppe 5: Der "Auto-Discovery" Orchestrator
 
 - **Fokus:** Erhöhung der Start-Performance und Typsicherheit durch Kompilierzeit-Logik.
 

@@ -108,6 +108,28 @@ eignen sich hervorragend als Einstieg für die Literaturrecherche.
 
 ---
 
+## Gruppe 5: Der "Auto-Discovery" Orchestrator
+
+*Fokus: Metaprogrammierung, Source Generators und Reflection.*
+
+"Design and Implementation of Source Generators in .NET" (Microsoft Research / Dev Blogs)
+
+    Warum: Es erklärt den Wechsel von der alten ISourceGenerator-API zur performanten IIncrementalGenerator-API, die inkrementelles Caching nutzt, um die IDE nicht zu verlangsamen.
+
+"The Cost of Reflection in Managed Runtimes" (Diverse Informatik-Journals, z.B. ACM Digital Library)
+
+    Warum: Diese Studien quantifizieren den Overhead (Speicher und CPU), den Reflection beim Durchsuchen von Metadaten verursacht.
+
+"Ahead-of-Time Compilation for Managed Languages"
+
+    Warum: Wichtig für die Argumentation, warum moderne Apps (Cloud-Native/Mobile) Reflection vermeiden müssen, um "Native AOT"-kompatibel zu bleiben.
+
+"Type-Safe Metaprogramming" (z.B. Arbeiten von Sheard oder Taha)
+
+    Warum: Theoretische Grundlagen über Metaprogrammierung, die garantiert, dass der generierte Code typsicher ist und nicht erst zur Laufzeit abstürzt.
+
+--
+
 ## Tipps für die Studierenden zur weiteren Recherche:
 
 Um im Rahmen der Referate die geforderte wissenschaftliche Strenge zu erreichen, werden folgende

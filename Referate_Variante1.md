@@ -21,17 +21,17 @@ Nach Abschluss des Moduls sollen Studierende in der Lage sein:
 
 - **Prüfungsform:** „Referat“.
 - **Inhalt:**
-    - Entwicklung einer Anwendung bzw. eines Prototypen, Präsentation der Architektur/Funktionalität sowie kritische
-      Reflexion des
-      Vorgehens.
-    - Vorstellung der wissenschaftlichen Thesis, Modellierung (UML), Entwurfsmuster, C#-Spezifika.
+  - Entwicklung einer Anwendung bzw. eines Prototypen, Präsentation der Architektur/Funktionalität sowie kritische
+    Reflexion des
+    Vorgehens.
+  - Vorstellung der wissenschaftlichen Thesis, Modellierung (UML), Entwurfsmuster, C#-Spezifika.
 - **Vortragszeit:** Max. 15 Minuten pro Teammitglied.
 - **Bearbeitungszeit:** Max. 6 Wochen.
 - **Abgabebestandteile:**
-    - Entwickelte Anwendung in diesem Git-Repo
-    - Entwicklerdokumentation im Paket unter docs
-    - Entsprechend dokumentierter Quellcode (Kommentare, Readme-Dateien etc.)
-    - Testfälle im entsprechenden Testprojekt
+  - Entwickelte Anwendung in diesem Git-Repo
+  - Entwicklerdokumentation im Paket unter docs
+  - Entsprechend dokumentierter Quellcode (Kommentare, Readme-Dateien etc.)
+  - Testfälle im entsprechenden Testprojekt
 - **Code Contribution:** Regelmäßige Commits im Gruppen-Branch, dokumentiert durch aussagekräftige Pull Requests, werden
   erwartet.
 
@@ -53,7 +53,7 @@ Jedes Projekt muss zwingend folgende Kriterien erfüllen:
 Die Teamstärke beträgt jeweils 1–4 Personen18.
 
 | **Nr.** | **Themenbereich**                    | **Kurzbeschreibung**                                                                |
-|---------|--------------------------------------|-------------------------------------------------------------------------------------|
+| ------- | ------------------------------------ | ----------------------------------------------------------------------------------- |
 | 1       | **Fuhrparkverwaltung**               | PKW/LKW-Management, Fahrtenbuch, Reparaturbuch, Restbuchwerte.                      |
 | 2       | **Büromittelorganisation**           | Bestandsführung, Ausgabe an Nutzer/Teams, Abschreibungen (AfA), Nachbestell-Logik.  |
 | 3       | **Literaturdatenbank**               | Quellenverwaltung, Literaturverzeichnis (APA-Standard), Zitate, Suchfunktion.       |

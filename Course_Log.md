@@ -27,35 +27,38 @@
 ## (10) 2026-01-27 , Tuesday (3 UE)
 
 - Architektur & Daten
-
 - Design Patterns II
 
 ## (9) 2026-01-26, Monday (3 UE)
 
 - Design Patterns I
-
 - Metaprogrammierung
 
 ## (8) 2026-01-20 , Tuesday (3 UE)
 
-- Concurrency II
-
-## (7) 2026-01-19, Monday (3 UE)
-
-- paper discussion (check answers)
-- re-structure project structure (code)
-- Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
-    - P/Invoke, DllImport, COM Interop
-    - Is there anything like JNA/JNI in Java?
-- Modern paradigms in C#:
-    - Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability (Kotz/Wenz Kapitel 4 + 5)
-    - Functional programming features (lambdas, LINQ), Pattern Matching
-    - Monaden, Lazy Evaluation, Expression Trees
+- TODO Jyputer Notebooks integration fo C#
+- TODO Build status in README.md- TODO: clean up code (update to conventions, exercises, oli)
+- group and referats
+Modern paradigms in C#:
+- Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability (Kotz/Wenz Kapitel 4 + 5)
+- Functional programming features (lambdas, LINQ), Pattern Matching
+- Monaden, Lazy Evaluation, Expression Trees
 - Memory & Runtime:
     - Garbage Collection Generationen (Generation-Modell)
     - LOH (Large Object Heap)
     - IDisposable & Finalizer
 - Concurrency I
+- Concurrency II
+
+## (7) 2026-01-19, Monday (3 UE)
+
+- paper discussion:
+    - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
+      Software Engineering, 30(4), pp. 250-265.
+    - questions and answers session
+- Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
+    - P/Invoke, DllImport, COM Interop
+    - Is there anything like JNA/JNI in Java?
 
 ## (5, 6) 2026-01-13, Tuesday (6 UE)
 
@@ -63,8 +66,7 @@
     - OOP Wenz/Kotz Kapitel 4
     - [APO](concepts/APO.md)
 - recap of data types and control structures in C# with exercises (slides + live coding)
-- review and discussion of the first draft: game development (group Julius & Nico)
-- paper discussion::
+- paper reading::
     - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
       Software Engineering, 30(4), pp. 250-265.
     - questions and answers session

@@ -29,8 +29,8 @@ Um die Code-Qualität sicherzustellen, sind folgende Werkzeuge verpflichtend:
 - **Runtime:** .NET 8.0 SDK.
 - **GUI:** Avalonia UI (Cross-Platform).
 - **Quality Gate:** - `StyleCop.Analyzers` für statische Code-Analyse.
-    - GitHub Actions für Build & Test-Automatisierung.
-    - Pre-commit Hooks (Husky.Net) zur Einhaltung der Naming Conventions.
+  - GitHub Actions für Build & Test-Automatisierung.
+  - Pre-commit Hooks (Husky.Net) zur Einhaltung der Naming Conventions.
 
 ---
 
@@ -50,7 +50,7 @@ Die zugehörigen Testprojekte (PROJEKT_NAME.Tests) befinden sich im Ordner _test
 Die Projekte nutzen folgende Templates.
 
 | **Projektname**  | **Template**  | **Zweck**                                                 |
-|------------------|---------------|-----------------------------------------------------------|
+| ---------------- | ------------- | --------------------------------------------------------- |
 | **Shared.Core**  | Class Library | Interfaces, Domain Models, globale Konstanten (für alle). |
 | **Shared.Data**  | Class Library | Entity Framework Core, DB-Context, Repositories.          |
 | **Demo.Console** | Console App   | Schnelle Code-Demos, LINQ-Experimente, Algorithmen.       |
@@ -61,7 +61,7 @@ Die Projekte nutzen folgende Templates.
 (work in progress)
 
 | **Gruppe** | **Projektname**      | **Template**    | **Fokus**                                           |
-|------------|----------------------|-----------------|-----------------------------------------------------|
+| ---------- | -------------------- | --------------- | --------------------------------------------------- |
 | **1**      | **App.Performance**  | Console App     | High-Perf Telemetry (Span<T>, Structs).             |
 | **2**      | **App.Intelligence** | Console App/Lib | LINQ-Provider, Data Processing.                     |
 | **3**      | **App.Crawler**      | Avalonia App    | Async-Handling, Parallel Requests, GUI-Fortschritt. |
@@ -125,6 +125,6 @@ C#-spezifischen Richtlinien für alle Commits verbindlich:
 - dotnet.exe new install Avalonia.Templates
 - Define code convention in .github/workflows/main.yml
 - Husky:
-    - dotnet new tool-manifest
-    - dotnet tool install Husky
-    - dotnet husky install
+  - dotnet new tool-manifest
+  - dotnet tool install Husky
+  - dotnet husky install
