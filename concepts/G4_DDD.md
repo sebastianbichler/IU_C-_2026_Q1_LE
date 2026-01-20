@@ -1,6 +1,7 @@
 ﻿### Programmieren mit C# (DSPC016)
 
 ---
+
 ## Gruppe 4: DDD & Persistence
 
 **Der Fokus:** Domänen-Logik vor technischer Komplexität (wie Datenbanken) schützen.

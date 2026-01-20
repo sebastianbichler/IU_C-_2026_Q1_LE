@@ -108,7 +108,7 @@ Da alle am selben Ökosystem arbeiten, ist Kommunikation essenziell:
 - **Auftrag:** Erstellt die Persistenzschicht für Spielerprofile, Inventare und Spielstände. Achtet darauf, dass die
   Spiel-Logik absolut unabhängig von der SQLite-Datenbank bleibt.
 
-### Gruppe 5 (Zusatz/Vertiefung): Der "Auto-Discovery" Orchestrator
+### Gruppe 5: Der "Auto-Discovery" Orchestrator
 
 - **Fokus:** Erhöhung der Start-Performance und Typsicherheit durch Kompilierzeit-Logik.
 
