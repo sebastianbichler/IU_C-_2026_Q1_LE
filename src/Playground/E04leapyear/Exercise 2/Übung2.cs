@@ -1,7 +1,39 @@
-namespace E01G03;
-class Fahrkarte
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Playground.E01G01a.Exercise_2;
+internal class Übung2
 {
-    public static void Fahrkartenautomat()
+
+    bool IstSchaltjahr(int jahr)
+    {
+        //Jedes Jahr, in dem das westliche Kalenderjahr durch 4 teilbar ist,
+        //ist ein Schaltjahr. Ein Jahr, in dem das AD - Jahr durch 100 teilbar ist,
+        //ist üblicherweise ein normales Jahr. Allerdings ist jedes Jahr,
+        //in dem das westliche Kalenderjahr durch 400 teilbar ist, ein Schaltjahr.
+
+        if (jahr % 400 == 0)
+            return true;
+        else if (jahr % 100 == 0)
+            return false;
+        else if (jahr % 4 == 0)
+            return true;
+        else
+            return false;
+    }
+    public void Vergleichsausdruecke()
+    {
+
+        //(i - 4) > (j* j)
+        //(i > 0) || (i == j)
+        //(i > -j) && (i<j)
+        //(i >= j) && (i != 0)
+
+    }
+    public void Fahrkartenautomat()
     {
         int ticketPreis = 4;
         do
@@ -36,38 +68,5 @@ class Fahrkarte
         while (true);
 
     }
-
-    public static void Vergleichsausdruecke()
-    {
-        //(i - 4) > (j * j)
-
-        //i > 0 || i == j
-
-        //i > -j && i < j
-
-        //i >= j && i != 0
-    }
-
-    public static void SchaltjahrPruefungNachFolgendenRegelnHahaha()
-    {
-        int jahreszahl;
-
-        if (int.TryParse(Console.ReadLine(), out int eingabe))
-        {
-            jahreszahl = eingabe;
-            if ((jahreszahl % 4 == 0 && jahreszahl % 100 != 0) || (jahreszahl % 400 == 0))
-            {
-                Console.WriteLine($"{jahreszahl} ist ein Schaltjahr.");
-            }
-            else
-            {
-                Console.WriteLine($"{jahreszahl} ist kein Schaltjahr.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Fehler: Bitte geben Sie ein gültiges Jahr ein.");
-        }
-        Console.ReadKey();
-    }   
+}
 }

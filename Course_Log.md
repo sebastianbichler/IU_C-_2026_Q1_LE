@@ -1,4 +1,4 @@
-﻿### Programmieren mit C# (DSPC016)
+### Programmieren mit C# (DSPC016)
 
 ---
 
@@ -42,18 +42,8 @@
 
 ## (7) 2026-01-19, Monday (3 UE)
 
-- Concurrency I
-
-## (5, 6) 2026-01-13, Tuesday (6 UE)
-
-- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
-    - OOP Wenz/Kotz Kapitel 4
-    - [APO](concepts/APO.md)
-- recap of data types and control structures in C# with exercises (slides + live coding)
-- paper discussion::
-    - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
-      Software Engineering, 30(4), pp. 250-265.
-    - questions and answers session
+- paper discussion (check answers)
+- re-structure project structure (code)
 - Answer to question from Tuesday (2026-01-13): How to execute native code from C#?
     - P/Invoke, DllImport, COM Interop
     - Is there anything like JNA/JNI in Java?
@@ -65,6 +55,19 @@
     - Garbage Collection Generationen (Generation-Modell)
     - LOH (Large Object Heap)
     - IDisposable & Finalizer
+- Concurrency I
+
+## (5, 6) 2026-01-13, Tuesday (6 UE)
+
+- ReCap: Paradigmas (Imperativ, OOP, Functional, APO)
+    - OOP Wenz/Kotz Kapitel 4
+    - [APO](concepts/APO.md)
+- recap of data types and control structures in C# with exercises (slides + live coding)
+- review and discussion of the first draft: game development (group Julius & Nico)
+- paper discussion::
+    - Jakkula, V (2025) The role of Object-Oriented Programming Theorey in Modern Software Development. Journal of
+      Software Engineering, 30(4), pp. 250-265.
+    - questions and answers session
 
 ## (4) 2026-01-12, Monday (3 UE)
 
