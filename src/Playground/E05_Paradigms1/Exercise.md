@@ -3,7 +3,7 @@
 
 ---
 
-# 📔 Jupyter Notebook: Moderne C# Paradigmen
+# Moderne C# Paradigmen
 
 **Thema:** Performance, Immutability und Typsystem-Tricks
 
