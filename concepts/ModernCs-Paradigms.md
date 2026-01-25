@@ -3,7 +3,7 @@
 
 ---
 
-# 📔 Jupyter Notebook: Moderne C# Paradigmen
+# Moderne C# Paradigmen
 
 **Thema:** Performance, Immutability und Typsystem-Tricks
 
@@ -129,10 +129,8 @@ Diskutieren Sie im Plenum:
 
 ---
 
-### Hilfreiche Shortcuts für die Vorlesung:
+### Hilfreiche Shortcuts für die Übungen:
 
-* **F5 / Run Cell:** Code sofort ausführen.
 * **Kotz/Wenz S. 154:** Details zu Wertetypen.
 * **Kotz/Wenz S. 412:** Vertiefung zu Records und `init`-only Properties.
 
-**Möchten Sie, dass ich die Musterlösung für Übung 4 (den Span-Parser) bereits vorbereite?**
