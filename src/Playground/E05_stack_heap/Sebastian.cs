@@ -1,6 +1,6 @@
 namespace Playground.E05_stack_heap;
 
-public class sebastian : Launcher
+public class Sebastian : Launcher
 {
     public override void Run()
     {
