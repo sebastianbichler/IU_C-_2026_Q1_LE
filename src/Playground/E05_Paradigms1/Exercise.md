@@ -3,7 +3,7 @@
 
 ---
 
-# Moderne C# Paradigmen
+# Moderne C# Paradigmen Part 1
 
 **Thema:** Performance, Immutability und Typsystem-Tricks
 

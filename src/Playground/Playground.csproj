@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="E04leapyear\Exercise 2\" />
-      <Folder Include="E06_Records\" />
     </ItemGroup>
 
 </Project>
