@@ -3,4 +3,4 @@
 
 # Explizit für C# Dateien
 *.cs text eol=lf
-*.sln text eol=crlf
+*.sln text eol=lf
