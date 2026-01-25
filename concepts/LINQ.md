@@ -107,24 +107,19 @@ als kompiliertes Delegate übergeben, sondern als Expression Tree (ein abstrakte
 - Dadurch findet die Filterung in der Datenbank statt, nicht im Arbeitsspeicher der Applikation. Java benötigt hierfür
   oft separate Frameworks wie *QueryDSL* oder *Criteria API*, die weniger elegant integriert sind.
 
-### 4. Fazit für Ihre Vorlesung
+### 4. Fazit
 
-LINQ ist ein exzellentes Beispiel, um Studierenden zu zeigen, wie **deklarative Programmierung** ("Was möchte ich?") die
+LINQ ist ein exzellentes Beispiel, wie **deklarative Programmierung** ("Was möchte ich?") die
 **imperative Programmierung** ("Wie soll der Computer iterieren?") ersetzt.
 
-**Didaktischer Hinweis:** Ein interessanter Punkt für das höhere Semester wäre die Untersuchung von
-`Deferred Execution`. Ein häufiger Fehler ist das mehrfache Iterieren einer LINQ-Abfrage, was jedes Mal die Berechnung (
-oder Datenbankabfrage) neu auslöst, sofern nicht `.ToList()` aufgerufen wurde.
-
-Soll ich Ihnen ein Beispiel für einen **Expression Tree** vorbereiten, um zu zeigen, wie C# Code in Daten (und dann in
-SQL) verwandelt?
+Ein interessanter Punkt für das höhere Semester wäre die Untersuchung von `Deferred Execution`. Ein häufiger Fehler ist
+das mehrfache Iterieren einer LINQ-Abfrage, was jedes Mal die Berechnung (oder Datenbankabfrage) neu auslöst, sofern
+nicht `.ToList()` aufgerufen wurde.
 
 ---
 
 Das Konzept der **Expression Trees** ist einer der intellektuell spannendsten Aspekte von C#, da es die Grenze zwischen
 Code und Daten aufhebt (ähnlich wie bei Lisp-Makros, aber in einer statisch typisierten Welt).
-
-Hier ist die Aufarbeitung für Ihre Studierenden:
 
 ---
 
@@ -208,7 +203,7 @@ Wenn Sie `db.Students.Where(s => s.Semester > 5)` aufrufen, passiert folgendes:
 
 ## 5. Experiment für die Vorlesung
 
-Lassen Sie Ihre Studierenden einen eigenen kleinen "Compiler" schreiben, der einen Expression Tree analysiert:
+Schreiben Sie einen eigenen kleinen "Compiler", der einen Expression Tree analysiert:
 
 C#
 
