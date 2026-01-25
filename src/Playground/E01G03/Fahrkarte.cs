@@ -1,4 +1,5 @@
 namespace E01G03;
+
 class Fahrkarte
 {
     public static void Fahrkartenautomat()
@@ -31,20 +32,16 @@ class Fahrkarte
             {
                 Console.WriteLine("Fehler: Bitte geben Sie eine gültige Zahl ein.");
             }
-            Console.ReadKey();
-        }
-        while (true);
 
+            Console.ReadKey();
+        } while (true);
     }
 
     public static void Vergleichsausdruecke()
     {
         //(i - 4) > (j * j)
-
         //i > 0 || i == j
-
         //i > -j && i < j
-
         //i >= j && i != 0
     }
 
@@ -68,6 +65,7 @@ class Fahrkarte
         {
             Console.WriteLine("Fehler: Bitte geben Sie ein gültiges Jahr ein.");
         }
+
         Console.ReadKey();
     }
 }

@@ -35,6 +35,7 @@ eignen sich hervorragend als Einstieg für die Literaturrecherche.
 
 * *Warum:* Ein Blick auf die Komplexität von Build-Systemen und deren Einfluss auf die Performance großer Systeme.
 
+- Gordon, A. & Syme, D. () Typing a Multi-Language Intermediate Code. https://dl.acm.org/doi/epdf/10.1145/373243.360228
 ---
 
 ## Gruppe 2: Deklarative Programmierung & LINQ-Provider
