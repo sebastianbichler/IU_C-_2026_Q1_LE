@@ -20,35 +20,44 @@
 
 ## (13) 2026-02-09, Monday (3 UE)
 
+- Architektur & Daten
+- Design Patterns
+
 ## (12) 2026-02-03 , Tuesday (3 UE)
 
+- Metaprogrammierung
+-
 ## (11) 2026-02-02, Monday (3 UE)
+
+- TODO Jyputer Notebooks integration fo C#
+- Concurrency (exercises)
 
 ## (10) 2026-01-27 , Tuesday (3 UE)
 
-- Architektur & Daten
-- Design Patterns II
+- Collections (exercises)
+- TODO restructure src folder
 
 ## (9) 2026-01-26, Monday (3 UE)
 
-- Design Patterns I
-- Metaprogrammierung
+- Charly-App: assign oral exam dates
+- Exercises: ModernCs-Paradigms (structs, enums, records, functional features)
+- Find and read scientific paper about modern C# features
+- define concrete project tasks and milestones
+- Use-cases for groups (1: Load pics, ... 2: )
+- group work
 
-## (8) 2026-01-20 , Tuesday (3 UE)
+## (8) 2026-01-20, Tuesday (3 UE)
 
-- TODO Jyputer Notebooks integration fo C#
 - TODO Build status in README.md- TODO: clean up code (update to conventions, exercises, oli)
 - group and referats
-Modern paradigms in C#:
-- Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability (Kotz/Wenz Kapitel 4 + 5)
-- Functional programming features (lambdas, LINQ), Pattern Matching
-- Monaden, Lazy Evaluation, Expression Trees
+- Modern paradigms in C#:
+  - Ref, Struct, Span<T>, Record, Class, Deconstruction, Tuples, Immutability (Kotz/Wenz Kapitel 4 + 5)
+  - Functional programming features (lambdas, LINQ), Pattern Matching
+  - Monaden, Lazy Evaluation, Expression Trees
 - Memory & Runtime:
     - Garbage Collection Generationen (Generation-Modell)
     - LOH (Large Object Heap)
     - IDisposable & Finalizer
-- Concurrency I
-- Concurrency II
 
 ## (7) 2026-01-19, Monday (3 UE)
 
