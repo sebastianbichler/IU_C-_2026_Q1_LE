@@ -10,6 +10,7 @@ charset = utf-8
 
 [*.cs]
 # --- C# Coding Conventions ---
+dotnet_diagnostic.IDE1006.severity = suggestion
 
 # Namespaces: Nutze die moderne, kompakte Syntax von .NET 8
 csharp_style_namespace_declarations = file_scoped:suggestion
