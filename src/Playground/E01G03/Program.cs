@@ -6,6 +6,6 @@ public class Program : Launcher
     public override void Run()
     {
         Console.Clear();
-        Fahrkarte.SchaltjahrPruefungNachFolgendenRegelnHahaha();
+        Aufgabe.Parser();
     }
 }
