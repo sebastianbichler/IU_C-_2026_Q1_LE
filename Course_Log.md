@@ -18,10 +18,11 @@
 
 ## (14) 2026-02-10 , Tuesday (3 UE)
 
+- group work
+
 ## (13) 2026-02-09, Monday (3 UE)
 
-- Architektur & Daten
-- Design Patterns
+- group work
 
 ## (12) 2026-02-03 , Tuesday (3 UE)
 
@@ -34,7 +35,6 @@
 
 ## (10) 2026-01-27 , Tuesday (3 UE)
 
-- room: Launch (2 rooms before Kästner)
 - TODO Charly-App: assign oral exam dates
 - Collections (exercises)
 - TODO restructure src folder

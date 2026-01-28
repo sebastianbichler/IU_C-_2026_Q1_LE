@@ -2,7 +2,7 @@
 
 ---
 
-# Monads in C#
+# Monaden Part I - Anwendung in C#
 
 ## Definition
 

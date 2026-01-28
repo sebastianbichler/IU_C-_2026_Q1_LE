@@ -16,7 +16,9 @@ class Program
         Console.WriteLine("(6) Übung 05 - Stack vs Heap");
         Console.WriteLine("(7) Übung 07 - Oli");
         Console.WriteLine("(8) Übung Paradimgs2 (record)");
+        Console.WriteLine("(9) Übung Collections (struct vs class in lists)");
 
+        Console.Write("Bitte geben Sie die Nummer der Übung ein: ");
         string choice = Console.ReadLine() ?? string.Empty;
 
         Launcher launcher;
@@ -52,6 +54,10 @@ class Program
                 break;
             case "8":
                 launcher = new Playground.E06_Paradigms2.Exercise();
+                launcher.Run();
+                break;
+            case "9":
+                launcher = new Playground.E09_Collections.PositionExercise();
                 launcher.Run();
                 break;
             default:
