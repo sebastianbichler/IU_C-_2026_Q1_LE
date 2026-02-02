@@ -6,7 +6,7 @@
 
 ## Teil 1: Warum asynchron? (Die Theorie hinter der State Machine)
 
-**Hintergrund & Erzählstoff:**
+**Hintergrund:**
 
 * **Der Thread-Irrtum:** Früher dachte man: "Viel Arbeit = Viele Threads". Aber: Ein Thread kostet unter Windows ca. 1
   MB Stack-Speicher. Bei 1.000 wartenden Threads verschwenden wir 1 GB RAM nur für das "Nichtstun".
@@ -35,7 +35,7 @@ public async Task StarteLadevorgang()
 
 ## Teil 2: Synchronization & Context
 
-**Hintergrund & Erzählstoff:**
+**Hintergrund:**
 
 * **Kontext-Wechsel:** In einer Desktop-App (WPF/WinForms) darf nur der UI-Thread die GUI ändern. `await` sorgt
   standardmäßig dafür, dass wir in den richtigen Kontext zurückkehren.
@@ -49,7 +49,7 @@ public async Task StarteLadevorgang()
 
 ## Teil 3: System.Threading.Channels (Der Game-Changer)
 
-**Hintergrund & Erzählstoff:**
+**Hintergrund:**
 
 * **Weg von Locks:** `lock(obj)` ist wie eine rote Ampel. Alle müssen anhalten. Channels sind wie ein Fließband (
   Producer-Consumer).
@@ -88,7 +88,7 @@ await Task.WhenAll(producer, consumer);
 
 ## Teil 4: Orchestrierung & Abbruch
 
-**Hintergrund & Erzählstoff:**
+**Hintergrund:**
 
 * **CancellationToken (Kotz/Wenz Kap. 16.3):** Asynchrone Methoden sind wie Züge. Man kann sie nicht einfach "töten",
   man muss ihnen ein Signal zum Anhalten geben. Ein `CancellationToken` wird durchgereicht.
@@ -129,7 +129,7 @@ Console.WriteLine("Der Schnellste hat gewonnen, der Rest wurde abgebrochen.");
 
 ---
 
-### Tipps und Tricks und Fragen:
+### Tipps, Tricks und Fragen:
 
 1. "Was passiert, wenn der Consumer langsamer ist als der Producer?" (Stichwort: Backpressure).
 2. **Visualisierung:** Zeichnen Sie das Fließband (Channel) auf.

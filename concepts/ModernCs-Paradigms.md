@@ -1,6 +1,5 @@
 ﻿### Programmieren mit C# (DSPC016)
 
-
 ---
 
 # Moderne C# Paradigmen

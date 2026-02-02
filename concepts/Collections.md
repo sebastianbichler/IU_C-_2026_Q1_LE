@@ -1,4 +1,5 @@
-﻿
+﻿### Programmieren mit C# (DSPC016)
+
 ---
 
 # Vorlesung: Architekturen von Datenstrukturen in .NET 8
@@ -105,10 +106,9 @@ In C# liegen `structs` in einer `List<T>` **zusammenhängend (flat)** im Speiche
 
 ---
 
-### Dozenten-Tipp für den Abschluss:
+### Tipp für den Abschluss:
 
 *"In Java ist das System für den Programmierer da, in Python für die Bequemlichkeit, aber in C# gehört das System Ihnen.
 Nutzen Sie den Speicher direkt, aber nutzen Sie ihn weise."*
 
-**Soll ich für die Übung A den C#-Code für das "Race Condition"-Experiment vorbereiten, damit Sie ihn morgen live
-vorführen können?**
+

@@ -1,11 +1,14 @@
-﻿Wir bewegen uns hier an der Grenze zwischen klassischer Anwendungsentwicklung und System-Architektur.
-
-Inhaltlich stützen wir uns auf die Grundlagen von **Kotz/Wenz (Kapitel 14: Reflection & Attribute)** und erweitern diese
-massiv um das moderne Konzept der **Source Generators**, die für das **Grand Arcade Ecosystem (GAE)** essenziell sind.
+﻿### Programmieren mit C# (DSPC016)
 
 ---
 
 # Metaprogrammierung – Wenn Code Code schreibt
+
+Wir bewegen uns hier an der Grenze zwischen klassischer Anwendungsentwicklung und System-Architektur.
+
+Inhaltlich stützen wir uns auf die Grundlagen von **Kotz/Wenz (Kapitel 14: Reflection & Attribute)** und erweitern diese
+massiv um das moderne Konzept der **Source Generators**, die für das **Grand Arcade Ecosystem (GAE)** essenziell sind.
+
 
 **Fokus:** Reflection, Custom Attributes & Source Generators
 

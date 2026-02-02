@@ -1,4 +1,4 @@
-﻿
+﻿### Programmieren mit C# (DSPC016)
 
 ---
 
@@ -50,7 +50,7 @@ dort auf C-Erweiterungen wie *NumPy* ausweicht. C# bietet diese Performance nati
 
 **Ziel:** Warum `List<T>` im Multi-Threading gefährlich ist.
 
-### 🎤 Sprechernotizen:
+### Fakten:
 
 * Wenn zwei Threads gleichzeitig `list.Add()` aufrufen, lesen beide den aktuellen Index (z.B. 5). Beide schreiben ihren
   Wert an Stelle 5 und erhöhen den Index auf 6. Ein Wert geht verloren.
@@ -126,7 +126,7 @@ Console.WriteLine($"Score erfolgreich geparst: {score}");
 
 ---
 
-### Hintergrund-Info für Sie:
+### Hintergrund-Info:
 
 Dieses Skript deckt die Brücke von den Grundlagen (Kotz/Wenz) bis hin zu Master-Level-Konzepten ab.
 Sollten die Studierenden fragen: „Warum nicht einfach Python?“, lautet die Antwort: „Weil Python im GAE bei 100
