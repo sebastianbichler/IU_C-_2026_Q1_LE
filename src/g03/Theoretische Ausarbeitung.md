@@ -81,13 +81,13 @@ graph LR
     classDef consumer fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
     classDef bottleneck fill:#ffcdd2,stroke:#c62828,stroke-width:3px;
     
-    subgraph Classic_Locking ["❌ Ansatz A: Shared Memory (Bottleneck)"]
+    subgraph Classic_Locking ["Ansatz A: Shared Memory (Bottleneck)"]
         direction LR
         A1[Agent 1]:::producer
         A2[Agent 2]:::producer
         A3[Agent 3]:::producer
         
-        Lock{🔒 LOCK}:::bottleneck
+        Lock{LOCK}:::bottleneck
         
         State[(Shared State<br/>Mutable Object)]:::storage
         
@@ -101,7 +101,7 @@ graph LR
         Loop1 <-->|"Liest (Blockiert alle)"| Lock
     end
 
-    subgraph Channel_Arch ["✅ Ansatz B: Message Passing (Pipeline)"]
+    subgraph Channel_Arch ["Ansatz B: Message Passing (Pipeline)"]
         direction LR
         B1[Agent 1]:::producer
         B2[Agent 2]:::producer
@@ -147,8 +147,6 @@ Um diese Hypothese zu beweisen, muss der Shared Kernel eine Abstraktion bieten, 
 
 ## 6. Literaturverzeichnis
 
-# Literaturverzeichnis
-
 **Albahari, J. (2022).** *C# 10 in a Nutshell: The Definitive Reference*. O'Reilly Media.
 > *Verwendung:* Detaillierte Analyse der `Monitor`-Klasse und des `lock`-Keywords sowie der internen Funktionsweise von Threading in der CLR.
 
@@ -158,5 +156,10 @@ Um diese Hypothese zu beweisen, muss der Shared Kernel eine Abstraktion bieten, 
 **Microsoft. (2024).** *System.Threading.Channels Namespace*. Microsoft Learn. Abgerufen am 2. Februar 2026, von https://learn.microsoft.com/en-us/dotnet/api/system.threading.channels
 > *Verwendung:* Offizielle Spezifikation der API und des Verhaltens von `BoundedChannelOptions` (FullMode.Wait).
 
+**Pankratius, V., & Adl-Tabatabai, A.-R. (2011).** *A study of transactional memory vs. locks in practice. In Proceedings of the 23rd ACM Symposium on Parallelism in Algorithms and Architectures (SPAA '11) (S. 43–52).* Association for Computing Machinery. https://doi.org/10.1145/1989493.1989500
+
 **Toub, S. (2019, 19. November).** *An Introduction to System.Threading.Channels*. .NET Blog. https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/
 > *Verwendung:* Die interne Architektur von Channels und die Implementierung des Producer-Consumer-Patterns in .NET Core.
+
+**Yakovlev, S., 1, Strelchenko, A., 3, Khovrat, A., 3, Kobziev, V., 3, Lodz University of Technology, V.N. Karazin Kharkiv National University, & Kharkiv National University of Radio Electronics. (2025).** *Optimizing Lock-Free containers for multithreaded socially oriented information systems. In International Workshop on Computational Intelligence (Vol. 1, pp. 1–5).* https://ceur-ws.org/Vol-4035/Paper11.pdf
+
