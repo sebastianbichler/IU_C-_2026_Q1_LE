@@ -134,31 +134,47 @@ Architecture) und ermöglicht das "Plug-and-Play"-Prinzip.
 
 ### Die GAE Solution-Struktur
 
-Plaintext
+Die logische Gliederung der Solutions:
+```
+GAE.sln
+├── 01_Foundations (Der "Vertrag")
+│   ├── GAE.Core            <-- ALLE (Interfaces, Enums, IArcadeGame)
+│   └── GAE.Data            <-- ALLE (Shared Models, Highscore-Records)
+│
+├── 02_Engine (Die wissenschaftlichen Module)
+│   ├── GAE.Engine.Memory   <-- GRUPPE 1 (Span<T>, Asset-Loading)
+│   ├── GAE.Engine.Query    <-- GRUPPE 2 (LINQ Provider, Rule Engine)
+│   ├── GAE.Engine.Async    <-- GRUPPE 3 (Channels, Game-Loop)
+│   ├── GAE.Engine.Storage  <-- GRUPPE 4 (EF Core, Savegames)
+│   └── GAE.Engine.Gen      <-- GRUPPE 5 (Source Generators)
+│
+├── 03_Modules (Die Spielwiese)
+│   ├── GAE.Module.Snake    <-- Beispiel-Implementierung
+│   └── GAE.Module.Mines    <-- Weiteres Beispiel
+│
+└── 04_Host (Das Dashboard)
+    └── GAE.Host.Dashboard  <-- Zentrales Startprojekt (Avalonia/Console)
+```
+
+Im Repo wurde vereinfacht die folgende Struktur umgesetzt:
 
 ```
-GAE.Solution
-├── 01_Shared
-│   ├── GAE.Shared.Core         <-- Das Herzstück: IArcadeGame, Enums, Basis-Interfaces
-│   ├── GAE.Shared.Kernel       <-- Gruppe 1 & 3: High-Perf-Buffer, Async-Schnittstellen
-│   └── GAE.Shared.Domain       <-- Gruppe 4: Domain Models (Records), Repositories
+GAE.sln
+├─── Shared.Core            <-- ALLE (Interfaces, Enums, IArcadeGame)
+├─── Shared.Data            <-- ALLE (Shared Models, Highscore-Records)
 │
-├── 02_Infrastructure
-│   ├── GAE.Infra.Persistence   <-- Gruppe 4: EF Core Umsetzung, SQLite-Anbindung
-│   ├── GAE.Infra.Assets        <-- Gruppe 1: Asset-Loading-Logik (Span<T>, Memory<T>)
-│   └── GAE.Infra.Rules         <-- Gruppe 2: LINQ-Provider & Expression-Evaluation
+├─── Memory                 <-- GRUPPE 1 (Span<T>, Asset-Loading)
+├─── Query                  <-- GRUPPE 2 (LINQ Provider, Rule Engine)
+├─── Async                  <-- GRUPPE 3 (Channels, Game-Loop)
+├─── Storage                <-- GRUPPE 4 (EF Core, Savegames)
+├─── Generatos              <-- GRUPPE 5 (Source Generators)
 │
-├── 03_Modules (Die konkreten Spiele/Features)
-│   ├── GAE.Module.Snake        <-- Beispiel-Spiel (Nutzt Shared.Core)
-│   ├── GAE.Module.Minesweeper  <-- Beispiel-Spiel
-│   └── GAE.Module.Telemetry    <-- Gruppe 5: Dashboard-Metriken & Source Generators
+├─── Game.Snake             <-- Beispiel-Implementierung
+├─── Game.Mines             <-- Weiteres Beispiel
 │
-├── 04_Host
-│   └── GAE.Host.Dashboard      <-- Avalonia UI App: Lädt Module dynamisch zur Laufzeit
-│
-└── tests
-    ├── GAE.Tests.Unit
-    └── GAE.Tests.Integration
+├─── Dashboard              <-- Zentrales Startprojekt (Avalonia/Console)
 ```
+
+---
 
 ---
