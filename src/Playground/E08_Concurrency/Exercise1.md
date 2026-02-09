@@ -49,5 +49,3 @@ Manchmal sind bestimmte Events wichtiger als andere (z. B. "System_Crash" vor "P
 
 ---
 
----
-
