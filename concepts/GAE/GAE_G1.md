@@ -1,26 +1,37 @@
-Gruppe 1 - Memory
-
-Das Thema **Memory Safety** (Speichersicherheit) ist die perfekte Brücke zwischen der "trockenen" Theorie wissenschaftlicher Artikel und der harten Praxis im **Game-Hub**. In Sprachen wie C oder C++ führt ein falscher Zeigerzugriff zum Absturz oder zu Sicherheitslücken – in C# (Managed Code) nimmt uns die Runtime viel ab, aber "sicher" bedeutet nicht "unfehlbar".
-
-Hier ist der Schlachtplan für Gruppe 1, um heute in der verbleibenden Stunde den Code-Grundstein zu legen:
+### Programmieren mit C# (DSPC016)
 
 ---
 
-## 1. Theoretischer Einstieg (10 Min)
+Gruppe 1 - Memory
 
-Bevor sie programmieren, müssen sie definieren, was "Memory Safety" im Kontext des Game-Hubs bedeutet. Lassen Sie die Gruppe kurz diese drei Säulen fixieren:
+Das Thema **Memory Safety** (Speichersicherheit) ist die perfekte Brücke zwischen der "trockenen" Theorie
+wissenschaftlicher Artikel und der harten Praxis im **Game-Hub**. In Sprachen wie C oder C++ führt ein falscher
+Zeigerzugriff zum Absturz oder zu Sicherheitslücken – in C# (Managed Code) nimmt uns die Runtime viel ab, aber "sicher"
+bedeutet nicht "unfehlbar".
 
-- **Managed vs. Unmanaged:** Wir arbeiten in der CLR (Managed), aber Spiele könnten (theoretisch) durch falsches Ressourcen-Management "Memory Leaks" verursachen.
+Hier ist der Schlachtplan für Gruppe 1:
+
+---
+
+## 1. Theoretischer Einstieg
+
+Bevor sie programmieren, müssen sie definieren, was "Memory Safety" im Kontext des Game-Hubs bedeutet. Es sollen kurz
+diese drei Säulen fixiert werden:
+
+- **Managed vs. Unmanaged:** Wir arbeiten in der CLR (Managed), aber Spiele könnten (theoretisch) durch falsches
+  Ressourcen-Management "Memory Leaks" verursachen.
 
 - **Type Safety:** Ein Spiel darf nicht auf den Speicher eines anderen Spiels zugreifen können.
 
-- **Ressourcen-Hygiene:** Wenn ein Spiel geschlossen wird, müssen alle Texturen, Sounds und Variablen freigegeben werden.
+- **Ressourcen-Hygiene:** Wenn ein Spiel geschlossen wird, müssen alle Texturen, Sounds und Variablen freigegeben
+  werden.
 
 ---
 
-## 2. Praktische Umsetzung: Der "Safety Contract" (40 Min)
+## 2. Praktische Umsetzung: Der "Safety Contract"
 
-Gruppe 1 ist der "Gesetzgeber" (Core-Team). Ihr Code muss verhindern, dass unsauber programmierte Spiele das ganze System (den Hub) mit in den Abgrund reißen.
+Gruppe 1 ist der "Gesetzgeber" (Core-Team). Ihr Code muss verhindern, dass unsauber programmierte Spiele das ganze
+System (den Hub) mit in den Abgrund reißen.
 
 ### Die Aufgabe: IDisposable & Lifecycle
 
@@ -63,28 +74,34 @@ public abstract class BaseGame : IArcadeGame
 
 ---
 
-## 3. Die Forschungs-Komponente (Der wissenschaftliche Twist)
+## 3. Die Forschungs-Komponente
 
 Damit die Suche nach Artikeln nicht umsonst war, soll Gruppe 1 eine **"Resource Guard"**-Klasse skizzieren.
 
 - **Problemstellung:** Wie verhindern wir, dass ein Spiel 10GB RAM belegt?
 
-- **Implementierungsidee:** Ein einfacher Wrapper, der beim Laden eines Spiels den aktuellen Speicherverbrauch misst (`GC.GetTotalMemory`) und bei Überschreitung einer Grenze das Spiel zwangsweise via `Dispose()` beendet.
+- **Implementierungsidee:** Ein einfacher Wrapper, der beim Laden eines Spiels den aktuellen Speicherverbrauch misst (
+  `GC.GetTotalMemory`) und bei Überschreitung einer Grenze das Spiel zwangsweise via `Dispose()` beendet.
 
 ---
 
-## 4. Aufgaben für die heutige Reststunde
+## 4. Hilfestellung
 
-Geben Sie Gruppe 1 diese drei konkreten Checkpunkte:
+Checkpunkte:
 
-1. **Code-Definition:** Finalisiert das `IArcadeGame` Interface im Core-Projekt. Stellt sicher, dass `IDisposable` geerbt wird.
+1. **Code-Definition:** Finalisiert das `IArcadeGame` Interface im Core-Projekt. Stellt sicher, dass `IDisposable`
+   geerbt wird.
 
-2. **Referenz-Check:** Prüft im Buch von **Kotz/Wenz**, wie man das `Dispose`-Muster (Finalizer) korrekt implementiert, damit keine "Dangling Resources" übrig bleiben.
+2. **Referenz-Check:** Prüft im Buch von **Kotz/Wenz**, wie man das `Dispose`-Muster (Finalizer) korrekt implementiert,
+   damit keine "Dangling Resources" übrig bleiben.
 
-3. **Schnittstelle zu Gruppe 4 (Dashboard):** Sprecht mit Gruppe 4 ab, wie das Dashboard reagiert, wenn ein Spiel abstürzt (`try-catch` Block um den Game-Loop), um den Hub stabil zu halten.
+3. **Schnittstelle zum Dashboard:** Wie soll das Dashboard reagieren, wenn ein Spiel abstürzt (`try-catch` Block um den
+   Game-Loop), um den Hub stabil zu halten.
 
 ### Warum das für den Game-Hub wichtig ist:
 
-Wenn später Gruppe 2 (Input) oder Gruppe 3 (Registry) Fehler machen, sorgt der **Memory Safety Contract** von Gruppe 1 dafür, dass der Hub nicht abstürzt, sondern das fehlerhafte Modul einfach isoliert und entlädt.
+Wenn später Gruppe 2 (Input) Fehler machen, sorgt der **Memory Safety Contract** von Gruppe 1 dafür, dass der Hub nicht
+abstürzt, sondern das fehlerhafte Modul einfach isoliert und entlädt.
 
-**Soll ich Gruppe 1 zeigen, wie sie eine "Sandbox"-Überwachung bauen können, die den Speicherverbrauch des aktiven Spiels in Echtzeit überwacht?**
+**Möglichkeiten zur Lösung**: "Sandbox"-Überwachung bauen können, die den Speicerverbrauch des aktiven Spiels in
+Echtzeit überwacht?
