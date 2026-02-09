@@ -147,12 +147,6 @@ Um diese Hypothese zu beweisen, muss der Shared Kernel eine Abstraktion bieten, 
 
 ## 6. Literaturverzeichnis
 
-**Albahari, J. (2022).** *C# 10 in a Nutshell: The Definitive Reference*. O'Reilly Media.
-> *Verwendung:* Detaillierte Analyse der `Monitor`-Klasse und des `lock`-Keywords sowie der internen Funktionsweise von Threading in der CLR.
-
-**Amdahl, G. M. (1967).** Validity of the single processor approach to achieving large scale computing capabilities. *Proceedings of the AFIPS Spring Joint Computer Conference*, 483–485. https://doi.org/10.1145/1465482.1465560
-> *Verwendung:* Das theoretische Limit der Parallelisierung (Amdahls Gesetz), das die Basis für unsere Hypothese zur Skalierbarkeit unter Last bildet.
-
 **Microsoft. (2024).** *System.Threading.Channels Namespace*. Microsoft Learn. Abgerufen am 2. Februar 2026, von https://learn.microsoft.com/en-us/dotnet/api/system.threading.channels
 > *Verwendung:* Offizielle Spezifikation der API und des Verhaltens von `BoundedChannelOptions` (FullMode.Wait).
 
