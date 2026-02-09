@@ -1,3 +1,7 @@
+### Programmieren mit C# (DSPC016)
+
+---
+
 Für Gruppe 5 ist das Thema **„Metaprogrammierung & Source Generators“** der absolute technologische Vorreiter. Während Gruppe 3 (Reflection) zur Laufzeit nach Plugins sucht, sorgt Gruppe 5 dafür, dass der Hub bereits beim Kompilieren "weiß", welche Spiele fest im System verbaut sind.
 
 Euer Ziel ist es, den **"Zero-Overhead-Boilerplate"** zu realisieren. Niemand soll manuell Code schreiben müssen, um ein neues Spiel im System anzumelden.
