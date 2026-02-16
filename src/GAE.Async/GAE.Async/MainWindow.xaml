@@ -1,0 +1,90 @@
+<Window x:Class="GAE.Async.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GAE Concurrency Lab 2026" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen" Background="#0F111A"
+        AllowsTransparency="True" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Window.Resources>
+        <Style x:Key="GlassButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#2A2D3E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="12" 
+                                BorderBrush="#444" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#3D4259"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="20" Background="#161925" BorderBrush="#333" BorderThickness="1" Margin="10">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Margin="0,0,0,30">
+                <TextBlock Text="Benchmark-Test" 
+               FontSize="28" 
+               FontWeight="Bold" 
+               Foreground="White"/>
+                <TextBlock Text="Vergleich von klassischen Locks gegenüber asynchronen Channels bei der Synchronisierung" 
+               Foreground="#888" 
+               Margin="0,5,0,0"/>
+                <TextBlock Text="von hochfrequenten Spielzuständen in einer Multi-User-Umgebung." 
+                Foreground="#888" 
+                Margin="0,5,0,0"/>
+            </StackPanel>
+
+            <UniformGrid Grid.Row="1" Columns="2" Margin="-10,0">
+                <Border Background="#1E2235" CornerRadius="15" Margin="10" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Anzahl gleichzeitiger User" Foreground="#AAA" FontSize="10" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox Name="TxtUsers" Text="1000" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="18"/>
+                    </StackPanel>
+                </Border>
+                <Button Name="BtnStart" Style="{StaticResource GlassButtonStyle}" Content="Test starten" 
+                        Margin="10" Height="60" Click="BtnStart_Click"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="2" Columns="2" Margin="-10,20">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="LOCKS" Foreground="#FF6B6B" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Name="LblLock" Text="WAITING..." FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,15,0,0"/>
+                    <TextBlock Name="LblLockFps" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    <TextBlock Name="LblLockHistory" Text="" FontSize="10" Foreground="#666" 
+                               HorizontalAlignment="Center" Margin="0,10,0,0" FontStyle="Italic"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="ASYNC CHANNELS" Foreground="#51CF66" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Name="LblChannel" Text="WAITING..." FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,15,0,0"/>
+                    <TextBlock Name="LblChannelFps" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    <TextBlock Name="LblChannelHistory" Text="" FontSize="10" Foreground="#666" 
+                               HorizontalAlignment="Center" Margin="0,10,0,0" FontStyle="Italic"/>
+                </StackPanel>
+            </UniformGrid>
+
+            <Button Grid.Row="3" Content="SCHLIESSEN" Click="Close_Click" Background="Transparent" Foreground="#555" BorderThickness="0" HorizontalAlignment="Center"/>
+        </Grid>
+    </Border>
+</Window>
