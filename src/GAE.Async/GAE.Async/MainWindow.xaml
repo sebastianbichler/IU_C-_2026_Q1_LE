@@ -14,22 +14,57 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                                CornerRadius="12" 
-                                BorderBrush="#444" BorderThickness="1">
+                        <Border x:Name="ButtonBorder" 
+                        Background="{TemplateBinding Background}" 
+                        CornerRadius="12" 
+                        BorderBrush="#444" BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="#3D4259"/>
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush x:Name="RainbowBrush" StartPoint="0,0" EndPoint="1,1">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <RotateTransform x:Name="RainbowTransform" CenterX="0.5" CenterY="0.5" Angle="0" />
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#FF0000" Offset="0.0"/>
+                                            <GradientStop Color="#FF7F00" Offset="0.16"/>
+                                            <GradientStop Color="#FFFF00" Offset="0.33"/>
+                                            <GradientStop Color="#00FF00" Offset="0.5"/>
+                                            <GradientStop Color="#1F51FF" Offset="0.66"/>
+                                            <GradientStop Color="#4B0082" Offset="0.83"/>
+                                            <GradientStop Color="#8B00FF" Offset="1.0"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Name="RainbowBegin">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+                                        Storyboard.TargetName="ButtonBorder"
+                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.RelativeTransform).(RotateTransform.Angle)"
+                                        From="0" To="360" Duration="0:0:2" RepeatBehavior="Forever" />
+                                            <DoubleAnimation 
+                                        Storyboard.TargetName="ButtonBorder"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1.0" To="0.7" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="Forever" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="RainbowBegin"/>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#3D4259"/>
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" Value="0.5"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
     </Window.Resources>
 
@@ -47,7 +82,7 @@
                FontSize="28" 
                FontWeight="Bold" 
                Foreground="White"/>
-                <TextBlock Text="Vergleich von klassischen Locks gegenüber asynchronen Channels bei der Synchronisierung" 
+                <TextBlock Text="Vergleich von klassischen Locks gegenüber Channels bei der Synchronisierung" 
                Foreground="#888" 
                Margin="0,5,0,0"/>
                 <TextBlock Text="von hochfrequenten Spielzuständen in einer Multi-User-Umgebung." 
@@ -68,7 +103,7 @@
 
             <UniformGrid Grid.Row="2" Columns="2" Margin="-10,20">
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="LOCKS" Foreground="#FF6B6B" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="LOCKS" Foreground="#FF5F1F" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Name="LblLock" Text="WAITING..." FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,15,0,0"/>
                     <TextBlock Name="LblLockFps" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                     <TextBlock Name="LblLockHistory" Text="" FontSize="10" Foreground="#666" 
