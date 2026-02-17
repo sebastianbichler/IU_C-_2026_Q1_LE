@@ -10,7 +10,6 @@ public class LockBasedGame : IArcadeGame
     {
         lock (_syncRoot)
         {
-            // Der Netzwerk-Thread muss warten, bis er die Kollision prüfen darf
             if (GameLogic.IsMovementValid(update))
             {
                 _players[update.PlayerId] = update;

@@ -6,13 +6,13 @@ public record BenchmarkResult(
     long ElapsedMs,
     double AvgUpdateMs,
     int TotalFrames,
-    List<long> History // Neu: Speichert die 5 Einzelmessungen
+    List<long> History
 );
 public class BenchmarkRunner
 {
     public async Task<BenchmarkResult> RunSeriesAsync(IArcadeGame game, int userCount, int updatesPerUser, int iterations = 5)
     {
-        await RunTestAsync(game, userCount, 10); // Warm-up
+        await RunTestAsync(game, userCount, 10);
         var results = new List<BenchmarkResult>();
 
         for (int i = 0; i < iterations; i++)
@@ -25,7 +25,6 @@ public class BenchmarkRunner
         double avgUpdate = results.Average(r => r.AvgUpdateMs);
         int avgFrames = (int)results.Average(r => r.TotalFrames);
 
-        // Historie der Lastdauern extrahieren
         var history = results.Select(r => r.ElapsedMs).ToList();
 
         return new BenchmarkResult(avgDuration, avgUpdate, avgFrames, history);
@@ -60,7 +59,6 @@ public class BenchmarkRunner
         cts.Cancel();
         await loop;
 
-        // Präzise Zeitberechnung über Hardware-Frequenz
         double totalMs = (double)totalUpdateTicks / Stopwatch.Frequency * 1000;
         double avgMs = totalMs / Math.Max(1, frameCount);
 
