@@ -105,7 +105,6 @@
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="LOCKS" Foreground="#FF5F1F" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Name="LblLock" Text="WAITING..." FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,15,0,0"/>
-                    <TextBlock Name="LblLockFps" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                     <TextBlock Name="LblLockHistory" Text="" FontSize="10" Foreground="#666" 
                                HorizontalAlignment="Center" Margin="0,10,0,0" FontStyle="Italic"/>
                 </StackPanel>
@@ -113,7 +112,6 @@
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="ASYNC CHANNELS" Foreground="#51CF66" FontWeight="Bold" HorizontalAlignment="Center"/>
                     <TextBlock Name="LblChannel" Text="WAITING..." FontSize="14" Foreground="White" TextAlignment="Center" Margin="0,15,0,0"/>
-                    <TextBlock Name="LblChannelFps" Text="" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                     <TextBlock Name="LblChannelHistory" Text="" FontSize="10" Foreground="#666" 
                                HorizontalAlignment="Center" Margin="0,10,0,0" FontStyle="Italic"/>
                 </StackPanel>
