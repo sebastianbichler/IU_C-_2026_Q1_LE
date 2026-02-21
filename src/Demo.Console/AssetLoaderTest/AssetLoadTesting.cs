@@ -58,8 +58,10 @@ while (true)
 // --- optimierte Schleife ---
 async Task RunOptimizedLoop(IAssetProvider loader, string[] files)
 {
+    GC.Collect();
     Console.WriteLine("\n>>> Starte OPTIMIERTEN Modus...");
     var sw = Stopwatch.StartNew();
+    long startGarbage = GC.GetTotalAllocatedBytes(true);
     long totalBytes = 0;
 
     // durchlaufen
@@ -79,14 +81,21 @@ async Task RunOptimizedLoop(IAssetProvider loader, string[] files)
     }
 
     sw.Stop();
+    //GC auf Müll untersuchen
+    long endGarbage = GC.GetTotalAllocatedBytes(true);
+    long garbageErzeugt = (endGarbage - startGarbage) / 1024 / 1024; // in MB umrechnen
+
     Console.WriteLine($"\nFertig! Zeit: {sw.ElapsedMilliseconds}ms.");
+    Console.WriteLine($"NEUER MÜLL AUF DEM HEAP: {garbageErzeugt} MB");
 }
 
 // --- nicht optimierte Schleife ---
 async Task RunBadLoop(string[] files)
 {
+    GC.Collect();
     Console.WriteLine("\n>>> Starte NAIVEN Modus (Standard C# - Heap Allokation)...");
     var sw = Stopwatch.StartNew();
+    long startGarbage = GC.GetTotalAllocatedBytes(true);
     long totalBytes = 0;
 
     for (int frame = 0; frame <= loop; frame++)
@@ -107,7 +116,12 @@ async Task RunBadLoop(string[] files)
     }
 
     sw.Stop();
+    //GC auf Müll untersuchen
+    long endGarbage = GC.GetTotalAllocatedBytes(true);
+    long garbageErzeugt = (endGarbage - startGarbage) / 1024 / 1024; // in MB umrechnen
+
     Console.WriteLine($"\nFertig! Zeit: {sw.ElapsedMilliseconds}ms.");
+    Console.WriteLine($"NEUER MÜLL AUF DEM HEAP: {garbageErzeugt} MB");
 }
 
 
