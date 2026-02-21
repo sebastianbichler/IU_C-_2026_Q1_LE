@@ -1,12 +1,8 @@
-# Vorlesung: Moderne Synchronisationsmuster in Hochlast-Systemen
-
-**Thema:** `System.Threading.Channels` – Theorie, Implementierung und wissenschaftliche Einordnung  
-**Dauer:** ca. 12 Minuten  
-**Niveau:** Informatik-Master / Fortgeschrittene Vorlesung  
+# Channels in Hochlast-Systemen 
 
 ---
 
-## 1. Einleitung: Das Backpressure-Problem (2 Min.)
+## 1. Einleitung: Das Backpressure-Problem
 
 In der Entwicklung von verteilten Systemen oder Echtzeit-Applikationen stoßen wir auf eine fundamentale Herausforderung: Die Divergenz zwischen Datenankunft und Datenverarbeitung.
 
@@ -20,7 +16,7 @@ Wissenschaftlich wird dieses Phänomen als "Backpressure" bezeichnet. Laut Yakov
 
 ---
 
-## 2. Von Shared Memory zu Message Passing (2 Min.)
+## 2. Von Shared Memory zu Message Passing
 
 Klassische Ansätze nutzen Shared Memory, geschützt durch Primitiven wie `lock` (Monitors) oder `Mutex`. Bei Hochlast führt dies zu massiver Contention (Ressourcenkonkurrenz) und Context Switches, was den Durchsatz limitiert.
 
@@ -28,7 +24,7 @@ Der Paradigmenwechsel besteht im Übergang zu **Message Passing**. Anstatt den Z
 
 ---
 
-## 3. Theorie: Channels und das Lock-free Paradigma (3 Min.)
+## 3. Theorie: Channels und das Lock-free Paradigma
 
 Um die Nachteile herkömmlicher Locks zu umgehen, abstrahiert `System.Threading.Channels` in .NET komplexe, hardwareunterstützte atomare Operationen (wie Compare-And-Swap, CAS) in einem asynchronen Message-Passing-Modell, das das Producer-Consumer-Pattern abbildet.
 
@@ -85,7 +81,7 @@ flowchart TD
 ```
 ---
 
-## 4. Code-Demonstration: ChannelBasedGame (3 Min.)
+## 4. Code-Demonstration: ChannelBasedGame
 
 Betrachten wir die praktische Umsetzung in unserer Modell-Klasse `ChannelBasedGame`:
 
@@ -130,7 +126,7 @@ Der Game-Loop leert den Puffer in jedem Tick (asynchrone Entkopplung im synchron
 
 ---
 
-## 5. Fazit und Performance-Einordnung (2 Min.)
+## 5. Fazit und Performance-Einordnung
 
 **Zusammenfassung der Erkenntnisse:**
 
