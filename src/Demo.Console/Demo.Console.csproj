@@ -8,8 +8,330 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\GAE.Memory\GAE.Memory\GAE.Memory.csproj" />
       <ProjectReference Include="..\Shared.Core\Shared.Core.csproj" />
       <ProjectReference Include="..\Shared.Data\Shared.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="AssetLoaderTest\DemoPictures\00000000.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000000_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000001_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000002_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000003_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000004_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000005_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000006_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000007_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000008_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000009_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000010_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000011_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000012_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000013_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%285%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%286%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000014_%287%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000015.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000015_%282%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000015_%283%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="AssetLoaderTest\DemoPictures\00000015_%284%29.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
