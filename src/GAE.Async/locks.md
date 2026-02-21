@@ -71,7 +71,6 @@ Mit **.NET 9** und C# 13 wurde eine neue `Lock`-Klasse eingeführt, die die Verw
 - **Standardisierung**: Anstelle von `object` für das Locking bietet `Lock` eine dedizierte Struktur.
 - **Bessere Lesbarkeit**: Erhöht die Lesbarkeit des Codes, da die Absicht klarer wird.
 - **Performance**: Die neue `Lock`-Klasse verringert die Thread-Kontention und verbessert die Effizienz.
-- **Async/Await**: Unterstützt Asynchronen Aufrufe + Asynchronen Aquire
 
 ### Beispiel für die Verwendung der neuen Lock-Klasse
 
@@ -81,11 +80,6 @@ Die Syntax sieht folgendermaßen aus:
 private static Lock myLock = new();
 
 lock (_lockObj)
-{
-    // Zugriff auf geschützte Ressourcen
-}
-
-using (_lockObj.EnterScope())
 {
     // Zugriff auf geschützte Ressourcen
 }
@@ -129,4 +123,3 @@ Die **System.Threading.Monitor**-Klasse ist wesentlicher Bestandteil der Multith
 | **Lock Class** | [Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lock?view=net-11.0) |
 | **What's new in C# 13** | [Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13) |
 | **Better Locking with System.Threading.Lock** | [Medium Artikel](https://dogukanuhn.medium.com/better-locking-with-system-threading-lock-421a378ed3fe) |
-
