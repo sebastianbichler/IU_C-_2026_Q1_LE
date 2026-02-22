@@ -101,7 +101,7 @@ Diese Trennung (LINQ to Objects vs. LINQ to SQL, inkl. Deferred Execution) wird 
 | Fehlerbilder | meist zur Laufzeit/Logikfehler | häufig „nicht übersetzbar“/Validierungsfehler |
 | Typische Nutzung im Projekt | lokale Auswertung, kleine Hilfsqueries | zentrale, deklarative Regeln + austauschbare Backends |
 
-### 2.3 LINQ Provider & Expression Trees (Kern unseres technischen Fokus)
+### 2.3 LINQ Provider & Expression Trees
 
 Ein LINQ-Provider ist im Wesentlichen ein Übersetzer + Executor:
 
