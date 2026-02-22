@@ -119,10 +119,14 @@ Da wir den Channel mit `SingleReader = true` instanziiert haben, weiß die .NET 
 
 ## 5. Fazit & Architektur-Entscheidung für GAE
 
-Unsere Ausarbeitung und der Live-Beweis zeigen deutlich:
+Zu Beginn unserer Analyse haben wir basierend auf **Amdahls Gesetz** zentrale Hypothesen aufgestellt. Unser Live-Beweis bestätigt diese Theorie nun vollumfänglich:
 
-* **Geringe Last (< 10 User):** Hier kann das klassische `lock` leicht schneller sein, da der Queue-Overhead des Channels entfällt.
-* **Hohe Last (Sättigung):** Sobald die Netzwerk-Updates schneller eintreffen, als das System sie verarbeiten kann, führt Locking zu massivem Ruckeln und Thread-Starvation. Channels skalieren hier durch blockadefreies Task-Switching exzellent.
+* **Hypothese 1 bestätigt (Geringe Last < 10 User):** Hier kann das klassische `lock` leicht schneller sein. Da das System bei geringer Last noch nicht überlastet ist, bleiben die teuren Kontextwechsel aus. Zudem ist ein einfaches Lock hier im Vorteil, weil die Verwaltung der Channel-Warteschlange komplett entfällt.
+* **Hypothese 2 bestätigt (Sättigung):** Sobald die Netzwerk-Updates schneller eintreffen, als das System sie verarbeiten kann, führt Locking zu massivem Ruckeln und Thread-Starvation. Die Channel-basierte Architektur ist hier überlegen, weil sie durch blockadefreies Task-Switching:
+    1. Einen stabileren Frame-Takt (weniger Jitter) gewährleistet.
+    2. Den CPU-Durchsatz maximiert, indem sie blockierte Threads verhindert.
 
 **Die finale Empfehlung:**
-Für alle eingehenden Spielerdaten im GAE setzen wir klar auf die Channel-Architektur. Für den echten Live-Betrieb müssen wir nur noch eine Anpassung vornehmen: Statt einer endlos wachsenden Warteschlange nutzen wir ein festes Limit. Das verhindert, dass bei dauerhafter Überlastung der Arbeitsspeicher vollläuft. Wenn der Platz knapp wird, lassen wir alte, unwichtige Positionsdaten einfach fallen, um das System stabil und reaktionsschnell zu halten.
+Für alle eingehenden Spielerdaten im GAE setzen wir klar auf die Channel-Architektur. 
+
+Um abschließend auch unseren dritten Hypothesen-Punkt zu garantieren, müssen wir für den echten Live-Betrieb nur noch eine Anpassung vornehmen: Statt einer endlos wachsenden Warteschlange nutzen wir ein festes Limit. Das verhindert, dass bei dauerhafter Überlastung der Arbeitsspeicher vollläuft. Wenn der Platz knapp wird, greift der eingebaute Backpressure-Mechanismus und lässt alte, unwichtige Positionsdaten einfach fallen, um das System dauerhaft stabil und reaktionsschnell zu halten.
