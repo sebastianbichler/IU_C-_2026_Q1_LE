@@ -134,12 +134,6 @@ flowchart LR
   F --> G[Materialize / Map Results]
 ```
 
-**Weitere Diagramme (Einordnung + Verweis)**
-
-- [ClassDiagram.md](ClassDiagram.md): Überblick über die wichtigsten Typen und Verantwortlichkeiten in `Shared.Core` (Contracts, Datenzugriff) und `GAE.Query` (Engine/Analyzer/Compiler).
-- [ActivityDiagram_AST.md](ActivityDiagram_AST.md): zeigt die rekursive Traversierung/Validierung eines Expression Trees (AST) und passt direkt zu „Validate“/„Analyze“ in der Provider-Pipeline.
-- [Diagrams_Rule.md](Diagrams_Rule.md): bündelt Zustands-, Aktivitäts- und Sequenzdiagramm zum Lebenszyklus einer Regel (Discovery → Analyse → Caching → Ausführung) sowie zur Dashboard↔Engine↔Game-Plugin-Kommunikation.
-
 ### 2.4 Performance und Trade-offs
 
 Deklarative Abfragen sind nicht „automatisch schneller“. Typische Trade-offs:
@@ -219,14 +213,16 @@ Hinweise:
 - `ExpensiveScoreNormalization` sollte keine geteilten, mutablen Zustände nutzen (Thread-Safety).
 
 ## 3. Konzeption
-t.b.d.
+
+Die Konzeption wird im Wesentlichen durch folgende Diagramme getragen (jeweils mit grober Einordnung):
+
+- [Diagrams/Classes.md](Diagrams/Classes.md): Typen/Verantwortlichkeiten und Abhängigkeiten (Contracts in `Shared.Core` vs. Implementierung in `GAE.Query`).
+- [Diagrams/Activity.md](Diagrams/Activity.md): rekursive AST-Traversierung zur Operator-Analyse/Validierung (entspricht der „Validate/Analyze“-Phase).
+- [Diagrams/Rules.md](Diagrams/Rules.md): Lebenszyklus einer Regel (Discovery → Analyse → Caching/Compile → Execute) + Plugin-Kommunikation (Dashboard ↔ Engine ↔ Game-Module).
 
 ## 4. Umsetzung
-t.b.d.
 
-## 5. Evaluation und Ausblick
-
-### 5.1 Ausgangslage für die Evaluation: Demos & API-Lieferumfang
+### 4.1 Demos & API-Lieferumfang (Grundlegende Demonstration)
 
 **RuleEngineDemo** ([../Demo.Console/Query/RuleEngineDemo.cs](../Demo.Console/Query/RuleEngineDemo.cs))
 
@@ -249,6 +245,10 @@ t.b.d.
 - `IRuleProvider<T>` ([../Shared.Core/IRuleProvider.cs](../Shared.Core/IRuleProvider.cs)): Plugin-Schnittstelle, über die Spiele Regeln bereitstellen.
 - `IQueryEngine` ([../Shared.Core/IQueryEngine.cs](../Shared.Core/IQueryEngine.cs)): minimaler Contract, um Regeln auf `IQueryable<T>` anzuwenden.
 - `IHighscoreProvider` + `LocalHighscoreService` ([../Shared.Core/IHighscoreProvider.cs](../Shared.Core/IHighscoreProvider.cs), [../Shared.Core/LocalHighscoreService.cs](../Shared.Core/LocalHighscoreService.cs)): Datenzugriff abstrahiert + In-Memory-Default für Demos.
+
+## 5. Evaluation und Ausblick
+
+t.b.d.
 
 ---
 **Querverweise**
