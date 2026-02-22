@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\GAE.Memory\GAE.Memory\GAE.Memory.csproj" />
+      <ProjectReference Include="..\GAE.Query\GAE.Query\GAE.Query.csproj" />
       <ProjectReference Include="..\Shared.Core\Shared.Core.csproj" />
       <ProjectReference Include="..\Shared.Data\Shared.Data.csproj" />
     </ItemGroup>
