@@ -212,8 +212,15 @@ Hinweise:
 - Die Ergebnisreihenfolge ist bei PLINQ nicht garantiert; falls relevant, explizit ordnen (z. B. `AsOrdered()` oder `OrderBy(...)`).
 - `ExpensiveScoreNormalization` sollte keine geteilten, mutablen Zustände nutzen (Thread-Safety).
 
----
+## 3. Konzeption
+t.b.d.
 
+## 4. Umsetzung
+t.b.d.
+
+## 5. Evalution und Ausblick
+
+---
 **Querverweise**
 
 - Vorarbeit/Handout (Zichao): [Zichao_Handout.md](Zichao_Handout.md)
