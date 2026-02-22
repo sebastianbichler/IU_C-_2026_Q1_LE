@@ -134,6 +134,12 @@ flowchart LR
   F --> G[Materialize / Map Results]
 ```
 
+**Weitere Diagramme (Einordnung + Verweis)**
+
+- [ClassDiagram.md](ClassDiagram.md): Überblick über die wichtigsten Typen und Verantwortlichkeiten in `Shared.Core` (Contracts, Datenzugriff) und `GAE.Query` (Engine/Analyzer/Compiler).
+- [ActivityDiagram_AST.md](ActivityDiagram_AST.md): zeigt die rekursive Traversierung/Validierung eines Expression Trees (AST) und passt direkt zu „Validate“/„Analyze“ in der Provider-Pipeline.
+- [Diagrams_Rule.md](Diagrams_Rule.md): bündelt Zustands-, Aktivitäts- und Sequenzdiagramm zum Lebenszyklus einer Regel (Discovery → Analyse → Caching → Ausführung) sowie zur Dashboard↔Engine↔Game-Plugin-Kommunikation.
+
 ### 2.4 Performance und Trade-offs
 
 Deklarative Abfragen sind nicht „automatisch schneller“. Typische Trade-offs:
@@ -218,13 +224,36 @@ t.b.d.
 ## 4. Umsetzung
 t.b.d.
 
-## 5. Evalution und Ausblick
+## 5. Evaluation und Ausblick
+
+### 5.1 Ausgangslage für die Evaluation: Demos & API-Lieferumfang
+
+**RuleEngineDemo** ([../Demo.Console/Query/RuleEngineDemo.cs](../Demo.Console/Query/RuleEngineDemo.cs))
+
+- Definiert Spiel-spezifische Regel-Provider (`IRuleProvider<Highscore>`) mit mehreren Achievements (`IRule<Highscore>`), deren `Criteria` als `Expression<Func<Highscore,bool>>` formuliert ist.
+- Discovering/Plug-in-Prinzip wird demonstriert, indem Regel-Provider via Reflection aus der Assembly gefunden und instanziiert werden.
+- Die Engine (`RuleEngine`) evaluiert Regeln gegen Mockdaten (Highscores) und zeigt dabei zentrale Mechanismen:
+  - **Analyse/Validierung** des Expression Trees (z. B. erlaubte Operatoren)
+  - **Kompilierung** einer Regel zu einem Delegate
+  - **Caching** kompilierter Regeln (Key: `rule.Criteria.ToString()`)
+  - Fehlerfall: `InvalidOperationException` bei nicht erlaubten Operatoren
+
+**FluentApiDemo** ([../Demo.Console/Query/FluentApiDemo.cs](../Demo.Console/Query/FluentApiDemo.cs))
+
+- Zeigt eine konsumierbare „Query-API“ über Extension Methods (z. B. globale Top-N, Durchschnittswerte pro Spiel) auf Basis eines `IHighscoreProvider`.
+- Fokus liegt auf „klassischem“ LINQ-to-Objects/Aggregationen (Dashboard-nahe Auswertungen), nicht auf Expression-Tree-Analyse.
+
+**Was wird dabei in Shared.Core ausgeliefert?**
+
+- `IRule<T>` ([../Shared.Core/IRule.cs](../Shared.Core/IRule.cs)): Regelbeschreibung + Expression-Tree-Kriterium.
+- `IRuleProvider<T>` ([../Shared.Core/IRuleProvider.cs](../Shared.Core/IRuleProvider.cs)): Plugin-Schnittstelle, über die Spiele Regeln bereitstellen.
+- `IQueryEngine` ([../Shared.Core/IQueryEngine.cs](../Shared.Core/IQueryEngine.cs)): minimaler Contract, um Regeln auf `IQueryable<T>` anzuwenden.
+- `IHighscoreProvider` + `LocalHighscoreService` ([../Shared.Core/IHighscoreProvider.cs](../Shared.Core/IHighscoreProvider.cs), [../Shared.Core/LocalHighscoreService.cs](../Shared.Core/LocalHighscoreService.cs)): Datenzugriff abstrahiert + In-Memory-Default für Demos.
 
 ---
 **Querverweise**
 
 - Vorarbeit/Handout (Zichao): [Zichao_Handout.md](Zichao_Handout.md)
-- (Optional) LINQ-Konzeptnotizen im Kurs: [../../concepts/G2_LINQ.md](../../concepts/G2_LINQ.md)
 
 **Zusätzliche Quellen**
 

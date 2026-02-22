@@ -121,14 +121,14 @@ public class RuleEngineDemo
     private static LocalHighscoreService GetMockDataGame()
     {
         var storage = new LocalHighscoreService();
-        storage.AddHighscore(new Highscore("Player01",  100, new DateTime(2025, 10,  1), "Game1"));
-        storage.AddHighscore(new Highscore("Player02",  500, new DateTime(2025, 11,  1), "Game1"));
-        storage.AddHighscore(new Highscore("Player03", 1200, new DateTime(2025, 12,  1), "Game1"));
-        storage.AddHighscore(new Highscore("Player04", 1500, new DateTime(2026,  1,  1), "Game1"));
-        storage.AddHighscore(new Highscore("Player05", 2100, new DateTime(2026,  2,  1), "Game1"));
-        storage.AddHighscore(new Highscore("Player07",-   5, new DateTime(2025, 11,  1), "Game2"));
-        storage.AddHighscore(new Highscore("Player08",    0, new DateTime(2025, 12,  1), "Game2"));
-        storage.AddHighscore(new Highscore("Player09",    5, new DateTime(2026,  1,  1), "Game2"));
+        storage.AddHighscore(new Highscore("Player01", 100, new DateTime(2025, 10, 1), "Game1"));
+        storage.AddHighscore(new Highscore("Player02", 500, new DateTime(2025, 11, 1), "Game1"));
+        storage.AddHighscore(new Highscore("Player03", 1200, new DateTime(2025, 12, 1), "Game1"));
+        storage.AddHighscore(new Highscore("Player04", 1500, new DateTime(2026, 1, 1), "Game1"));
+        storage.AddHighscore(new Highscore("Player05", 2100, new DateTime(2026, 2, 1), "Game1"));
+        storage.AddHighscore(new Highscore("Player07", -5, new DateTime(2025, 11, 1), "Game2"));
+        storage.AddHighscore(new Highscore("Player08", 0, new DateTime(2025, 12, 1), "Game2"));
+        storage.AddHighscore(new Highscore("Player09", 5, new DateTime(2026, 1, 1), "Game2"));
         return storage;
     }
 }
