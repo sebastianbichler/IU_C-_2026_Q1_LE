@@ -7,6 +7,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Shared.Data\Shared.Data.csproj" />
+    </ItemGroup>
+
     <Target Name="InstallHusky" BeforeTargets="Restore">
         <Exec Command="dotnet tool restore"/>
         <Exec Command="dotnet husky install"/>
