@@ -126,13 +126,13 @@ async Task RunBadLoop(string[] files)
 
 
 // Diese Methode darf Span benutzen, weil sie NICHT 'async' ist.
-// Sie läuft komplett auf dem Stack ab (Superschnell).
+// Sie läuft komplett auf dem Stack ab
 long VerarbeiteDatenSynchron(ReadOnlyMemory<byte> memory)
 {
-    // HIER DARFST DU SPAN BENUTZEN!
+    // Span nutzen, um direkt auf die Daten zuzugreifen, ohne sie zu kopieren.
     ReadOnlySpan<byte> span = memory.Span;
 
-    // Wir simulieren Arbeit: Einfach die Länge zurückgeben.
-    // In einem echten Spiel würdest du hier Pixel parsen.
+    // simulieren Arbeit: Einfach die Länge zurückgeben.
+    // eigentlich hier Pixel parsen.
     return span.Length;
 }
