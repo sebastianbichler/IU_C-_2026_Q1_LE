@@ -48,6 +48,11 @@ Das MVP muss mindestens **Achievement-Management** unterstützen und daraus abge
 
 Erweiterungen (nach MVP): Rankings, Highscores, Event-Filter, weitere Storage-/Provider-Backends.
 
+**Arbeitshypothese**
+
+Für selten ausgeführte Queries (UI/Leaderboard/Achievements) ist der Overhead von LINQ/Provider akzeptabel; für Hot-Paths (Frame-Loop) ist er es nicht und erfordert Constraints oder Alternativen.
+
+
 ### 1.2 Ausblick / Anschlussfähigkeit
 
 Damit die README später als „Drehscheibe“ funktioniert, planen wir folgende Ergänzungen (Platzhalter):
@@ -85,6 +90,17 @@ Wichtig ist dabei die Unterscheidung:
 
 Diese Trennung (LINQ to Objects vs. LINQ to SQL, inkl. Deferred Execution) wird in der Vorarbeit explizit herausgearbeitet: vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 2.
 
+**Gegenüberstellung (Kurzüberblick)**
+
+| Aspekt | `IEnumerable<T>` (LINQ to Objects) | `IQueryable<T>` (Provider-LINQ) |
+|---|---|---|
+| Repräsentation | Delegates/Iteratoren | Expression Trees (`Expression`) |
+| Typische Datenquelle | In-Memory Collections | Externe Datenquellen oder eigene Engine |
+| Ausführung | i. d. R. direkt im Prozess | Übersetzung + Ausführung durch Provider |
+| Optimierung | begrenzt (primär durch .NET) | möglich (Rewrite/Optimize vor Execute) |
+| Fehlerbilder | meist zur Laufzeit/Logikfehler | häufig „nicht übersetzbar“/Validierungsfehler |
+| Typische Nutzung im Projekt | lokale Auswertung, kleine Hilfsqueries | zentrale, deklarative Regeln + austauschbare Backends |
+
 ### 2.3 LINQ Provider & Expression Trees (Kern unseres technischen Fokus)
 
 Ein LINQ-Provider ist im Wesentlichen ein Übersetzer + Executor:
@@ -100,7 +116,23 @@ Expression Trees sind dabei die zentrale Repräsentation:
 
 Für die technische Intuition (AST-Struktur, `Expression<Func<...>>`) und die Provider-Pipeline (Parse/Validate/Optimize/Translate/Execute/Map) siehe auch: [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 3–4.
 
-> Platzhalter: Hier später ein kleines Diagramm „Query → Expression Tree → Provider → Execution Plan“.
+Expression Trees kann man als „Code als Datenstruktur“ verstehen. Häufige Knotenarten sind z. B. `BinaryExpression` (Operatoren wie `&&`, `>=`), `MemberExpression` (Property-Zugriff), `ConstantExpression` (Konstanten) und `ParameterExpression`.
+
+Wichtig für Provider-LINQ:
+
+- **Compile vs. Translate:** `Compile()` macht aus einem Expression Tree einen Delegate und führt ihn In-Memory aus; ein Provider versucht dagegen, den Tree in eine Zielrepräsentation zu **übersetzen** (z. B. SQL oder eine eigene Query-Engine).
+- **Übersetzbarkeitsgrenzen:** Nicht jeder .NET-/C#-Ausdruck ist sinnvoll übersetzbar (z. B. beliebige Methodenaufrufe, I/O, Closures). Deshalb ist eine **Validate**-Phase zentral.
+- **Deferred Execution:** Viele Queries werden erst bei Enumeration/Materialisierung ausgeführt (z. B. `ToList()`), was für Debugging und Performance relevant ist.
+
+```mermaid
+flowchart LR
+  A[LINQ Query in C#] --> B[Expression Tree]
+  B --> C[Validate]
+  C --> D[Rewrite / Optimize]
+  D --> E[Translate]
+  E --> F[Execute]
+  F --> G[Materialize / Map Results]
+```
 
 ### 2.4 Performance und Trade-offs
 
@@ -110,7 +142,8 @@ Deklarative Abfragen sind nicht „automatisch schneller“. Typische Trade-offs
 - **Deferred Execution:** Viele LINQ-Abfragen werden erst bei Enumeration ausgeführt; das ist mächtig, kann aber zu unerwartetem Verhalten führen.
 - **Nebenwirkungen:** Deklarative Regeln funktionieren am besten, wenn Datenquellen/Operationen möglichst *pure* sind.
 
-Für Games ist besonders relevant, dass LINQ (v. a. LINQ-to-Objects) in Hot-Paths messbaren Overhead verursachen kann; als Faustregel eignet es sich eher für UI/Business-Logik/seltene Queries, aber nicht für `Update()`/FixedUpdate-Loops (vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 5).
+Für Games ist besonders relevant, dass LINQ (v. a. LINQ-to-Objects) in Hot-Paths messbaren Overhead verursachen kann; als Faustregel eignet es sich eher für UI/Business-Logik/seltene Queries, aber nicht für `Update()`/FixedUpdate-Loops (vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 5 & Arbeitshypothese).
+
 
 ### 2.5 Verwandte/alternative Ansätze (State-of-the-Art, kurz)
 
@@ -123,6 +156,14 @@ Zur Einordnung (und für spätere tabellarische Gegenüberstellung) betrachten w
   - **Effect:** schreibt Effekte (write-only)
   - **Update:** Engine berechnet neuen Zustand
   - Kerngedanke: Entwickler schreiben lokal imperativ, die Engine orchestriert deklarativ.
+
+**Vergleich (Template für spätere Ausarbeitung)**
+
+| Ansatz | Was wird beschrieben? | Optimierbarkeit | Stärken im Hub-Kontext | Typische Risiken/Trade-offs |
+|---|---|---|---|---|
+| LINQ / Provider (`IQueryable<T>`) | Queries über Daten/State | hoch (Rewrite/Optimize möglich) | wiederverwendbare Regeln, Backend-Austauschbarkeit, C#-integriert | Übersetzbarkeitsgrenzen, Debugging, Provider-Komplexität |
+| Rule Engine / Rete | IF-THEN Regeln / Pattern Matching | hoch (inkrementell, Caching) | effiziente Regel-Auswertung, viele Regeln | Modellierungsaufwand, Datenmodell/Working Memory |
+| State-Effect-Pattern | getrennte Query/Effect-Phasen | mittel (Engine-Orchestrierung) | klare Trennung von Lesen/Schreiben, deterministischer Update-Loop | Architektur-Disziplin, Expressivität vs. Einfachheit |
 
 ### 2.6 PLINQ (Parallel LINQ) – Möglichkeiten und Grenzen
 
