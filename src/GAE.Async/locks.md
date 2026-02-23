@@ -50,16 +50,27 @@ finally
 
 ### Objekt Header
 
-Locks in .NET werden nicht einfach als Feld im Objekt gespeichert. Jedes verwaltete Objekt hat einen kleinen Header — er enthält den MethodTable‑Pointer und einige Flags oder einen SyncBlock‑Index. Der Header ist sehr kompakt; umfangreiche Lock‑Metadaten liegen außerhalb in einer SyncBlock‑Struktur, auf die der Header bei Bedarf verweist.
+- Jedes verwaltete Objekt hat einen Header (Enthält den MethodTable‑Pointer und einige Flags oder einen SyncBlock‑Index)
+- umfangreiche Lock‑Metadaten liegen außerhalb in einer SyncBlock‑Struktur, auf die der Header bei Bedarf verweist
 
 ### Thin Locks
 
-Die CLR versucht zunächst, ein Lock direkt im Objekt‑Header zu setzen — das nennt man Thin Lock oder Fast‑Path. Das geschieht per CAS‑Operation. Gelingt das, hat der Thread sehr schnellen, kernel‑losen Zugriff. Im Header werden typischerweise der Owner‑Thread, Rekursionslevel und einige Flags kodiert. Thin Locks sind ideal für kurzlebige, uncontended Fälle.
+- CLR versucht zunächst das Lock im Header, per CAS‑Operation(Compare and Swap) zu setzen => _sehr schnellen, kernel‑losen Zugriff_
 
-### Sync Blocks
+### Fat Locks
 
-Thin Locks versagen bei Kontention oder speziellen Operationen wie Monitor.Wait, Thread‑Abbruch oder wenn Header‑Platz nicht reicht. In diesen Fällen "inflates" die CLR das Lock — also sie wandelt den Thin Lock in eine schwergewichtigere Struktur um.
-Bei Inflation wird ein Sync Block in einer zentralen SyncBlock‑Tabelle verwendet. Der Sync Block enthält den Owner, eine Warteliste für blockierte Threads, Rekursionstiefe und ggf. Wait‑Handles für Kernel‑Blocking. Sync Blocks werden außerdem für andere Laufzeitbedürfnisse wie HashCode oder COM‑Interop verwendet.
+- Thin Locks versagen bei Kontention oder speziellen Operationen wie Monitor.Wait, Thread‑Abbruch oder wenn Header‑Platz nicht reicht => _`GetHashCode()` Aufruf_
+- In diesen Fällen erweitert die CLR das Lock auf einen Sync Block in einer zentralen SyncBlock‑Tabelle
+- Enthält den Owner, eine Warteliste für blockierte Threads, Rekursionstiefe und ggf. Wait‑Handles für Kernel‑Blocking
+- Sync Blocks werden außerdem für andere Laufzeitbedürfnisse wie HashCode oder COM‑Interop verwendet.
+
+|                      Method |        Mean |    StdDev |
+|---------------------------- |------------ |---------- |
+|                NodeWithLock | 152.2947 ms | 1.4895 ms |
+|              NodeWithNoLock | 149.5015 ms | 2.7289 ms |
+|  NodeWithLockAndGetHashCode | 541.6314 ms | 4.0445 ms |
+
+[Quelle Tabelle](https://devblogs.microsoft.com/premier-developer/managed-object-internals-part-2-object-header-layout-and-the-cost-of-locking/)
 
 ---
 
@@ -74,7 +85,7 @@ Bei Inflation wird ein Sync Block in einer zentralen SyncBlock‑Tabelle verwend
 | **Einfachheit**: Leicht zu implementieren. | **Wartezeit**: Threads können blockiert werden. |
 | **Sicherheit**: Verhindert Race Conditions. | **Leistungsprobleme**: Bei hoher Konkurrenz können Deadlocks auftreten. |
 | **Klarheit**: Der Code ist verständlich. | **Komplexität**: Erfordert sorgfältiges Design. |
-| | **Async/Await**: Unterstützt keine Asynchronen Aufrufe |
+| | **Async/Await**: Unterstützt keine Asynchronen Aufrufe (Semaphore erlauben dies) |
 
 ---
 
@@ -139,3 +150,5 @@ Die **System.Threading.Monitor**-Klasse ist wesentlicher Bestandteil der Multith
 | **Lock Class** | [Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lock?view=net-11.0) |
 | **What's new in C# 13** | [Microsoft Docs](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13) |
 | **Better Locking with System.Threading.Lock** | [Medium Artikel](https://dogukanuhn.medium.com/better-locking-with-system-threading-lock-421a378ed3fe) |
+| **Managed object internals, Part 2. Object header layout and the cost of locking** | [Microsoft Devblog](https://devblogs.microsoft.com/premier-developer/managed-object-internals-part-2-object-header-layout-and-the-cost-of-locking/) |
+| **monitor.c** | [monitor.c](https://github.com/dotnet/runtime/blob/main/src/mono/mono/metadata/monitor.c) |
