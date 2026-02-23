@@ -90,7 +90,7 @@ Wichtig ist dabei die Unterscheidung:
 
 Diese Trennung (LINQ to Objects vs. LINQ to SQL, inkl. Deferred Execution) wird in der Vorarbeit explizit herausgearbeitet: vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 2.
 
-**Gegenüberstellung (Kurzüberblick)**
+**Kurze Gegenüberstellung**
 
 | Aspekt | `IEnumerable<T>` (LINQ to Objects) | `IQueryable<T>` (Provider-LINQ) |
 |---|---|---|
@@ -145,7 +145,7 @@ Deklarative Abfragen sind nicht „automatisch schneller“. Typische Trade-offs
 Für Games ist besonders relevant, dass LINQ (v. a. LINQ-to-Objects) in Hot-Paths messbaren Overhead verursachen kann; als Faustregel eignet es sich eher für UI/Business-Logik/seltene Queries, aber nicht für `Update()`/FixedUpdate-Loops (vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 5 & Arbeitshypothese).
 
 
-### 2.5 Verwandte/alternative Ansätze (State-of-the-Art, kurz)
+### 2.5 Verwandte/alternative Ansätze
 
 Zur Einordnung (und für spätere tabellarische Gegenüberstellung) betrachten wir weitere deklarative bzw. regelbasierte Ansätze:
 
@@ -157,7 +157,7 @@ Zur Einordnung (und für spätere tabellarische Gegenüberstellung) betrachten w
   - **Update:** Engine berechnet neuen Zustand
   - Kerngedanke: Entwickler schreiben lokal imperativ, die Engine orchestriert deklarativ.
 
-**Vergleich (Template für spätere Ausarbeitung)**
+**Vergleich**
 
 | Ansatz | Was wird beschrieben? | Optimierbarkeit | Stärken im Hub-Kontext | Typische Risiken/Trade-offs |
 |---|---|---|---|---|
@@ -222,7 +222,7 @@ Die Konzeption wird im Wesentlichen durch folgende Diagramme getragen (jeweils m
 
 ## 4. Umsetzung
 
-### 4.1 Demos & API-Lieferumfang (Grundlegende Demonstration)
+### 4.1 Demos & API-Lieferumfang (Demo)
 
 **RuleEngineDemo** ([../Demo.Console/Query/RuleEngineDemo.cs](../Demo.Console/Query/RuleEngineDemo.cs))
 
