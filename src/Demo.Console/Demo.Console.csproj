@@ -12,6 +12,9 @@
       <ProjectReference Include="..\GAE.Query\GAE.Query\GAE.Query.csproj" />
       <ProjectReference Include="..\Shared.Core\Shared.Core.csproj" />
       <ProjectReference Include="..\Shared.Data\Shared.Data.csproj" />
+      <ProjectReference Include="..\GAE.Generators\GAE.Generators\GAE.Generators.csproj"
+                        OutputItemType="Analyzer"
+                        ReferenceOutputAssembly="false" />
     </ItemGroup>
 
     <ItemGroup>
