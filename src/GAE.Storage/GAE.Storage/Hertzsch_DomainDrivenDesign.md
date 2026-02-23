@@ -326,5 +326,3 @@ C# Records und Non-Nullable Reference Types unterstützen Always-Valid Domain Mo
 - Konstruktorbasierte Invariantendurchsetzung
 - Compile-Time Null-Sicherheit
 - Strukturelle Konsistenz von Aggregaten
-
-Gerade in komplexen Persistenz-Szenarien (z. B. Savegames) erhöhen sie die Robustheit und verhindern inkonsistente Zustände bereits auf Sprachebene.
