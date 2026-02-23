@@ -44,6 +44,22 @@ finally
 
 3. **Lock Release (Freigabe des Locks)**:
    - Der Lock wird beim Verlassen des Codeblocks automatisch freigegeben.
+---
+
+## Interne Funktionsweise von Locks
+
+### Objekt Header
+
+Locks in .NET werden nicht einfach als Feld im Objekt gespeichert. Jedes verwaltete Objekt hat einen kleinen Header — er enthält den MethodTable‑Pointer und einige Flags oder einen SyncBlock‑Index. Der Header ist sehr kompakt; umfangreiche Lock‑Metadaten liegen außerhalb in einer SyncBlock‑Struktur, auf die der Header bei Bedarf verweist.
+
+### Thin Locks
+
+Die CLR versucht zunächst, ein Lock direkt im Objekt‑Header zu setzen — das nennt man Thin Lock oder Fast‑Path. Das geschieht per CAS‑Operation. Gelingt das, hat der Thread sehr schnellen, kernel‑losen Zugriff. Im Header werden typischerweise der Owner‑Thread, Rekursionslevel und einige Flags kodiert. Thin Locks sind ideal für kurzlebige, uncontended Fälle.
+
+### Sync Blocks
+
+Thin Locks versagen bei Kontention oder speziellen Operationen wie Monitor.Wait, Thread‑Abbruch oder wenn Header‑Platz nicht reicht. In diesen Fällen "inflates" die CLR das Lock — also sie wandelt den Thin Lock in eine schwergewichtigere Struktur um.
+Bei Inflation wird ein Sync Block in einer zentralen SyncBlock‑Tabelle verwendet. Der Sync Block enthält den Owner, eine Warteliste für blockierte Threads, Rekursionstiefe und ggf. Wait‑Handles für Kernel‑Blocking. Sync Blocks werden außerdem für andere Laufzeitbedürfnisse wie HashCode oder COM‑Interop verwendet.
 
 ---
 
