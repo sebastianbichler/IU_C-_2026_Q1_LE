@@ -40,7 +40,7 @@ Dabei steht **P/LINQ** in unserem Kontext für *Provider-LINQ*: LINQ-Abfragen ü
 
 **MVP-Fokus**
 
-Das MVP muss mindestens **Achievement-Management** unterstützen und daraus abgeleitet folgende funktionale Anforderungen erfüllen:
+Das MVP muss mindestens **Achievement-Management oder Highscore-Management** unterstützen und daraus abgeleitet folgende funktionale Anforderungen erfüllen:
 
 - **F01:** Regeldefinitionen deklarativ ermöglichen.
 - **F02:** P/LINQ (Provider) als Abstraktionsmechanismus nutzen.
