@@ -50,19 +50,18 @@ finally
 
 ### Objekt Header
 
-- Jedes verwaltete Objekt hat einen Header (Enthält den MethodTable‑Pointer und einige Flags oder einen SyncBlock‑Index)
+- Jedes verwaltete Objekt hat einen Header
 - umfangreiche Lock‑Metadaten liegen außerhalb in einer SyncBlock‑Struktur, auf die der Header bei Bedarf verweist
 
 ### Thin Locks
 
-- CLR versucht zunächst das Lock im Header, per CAS‑Operation(Compare and Swap) zu setzen => _sehr schnellen, kernel‑losen Zugriff_
+- CLR versucht zunächst das Lock im Header, per Compare And Swap Operation (atomar) zu setzen => _sehr schnellen, kernel‑losen Zugriff_
 
 ### Fat Locks
 
 - Thin Locks versagen bei Kontention oder speziellen Operationen wie Monitor.Wait, Thread‑Abbruch oder wenn Header‑Platz nicht reicht => _`GetHashCode()` Aufruf_
-- In diesen Fällen erweitert die CLR das Lock auf einen Sync Block in einer zentralen SyncBlock‑Tabelle
-- Enthält den Owner, eine Warteliste für blockierte Threads, Rekursionstiefe und ggf. Wait‑Handles für Kernel‑Blocking
-- Sync Blocks werden außerdem für andere Laufzeitbedürfnisse wie HashCode oder COM‑Interop verwendet.
+- In diesen Fällen erweitert die CLR das Lock auf einen Sync Block in einer zentralen SyncBlock‑Tabelle => **Fat Lock**
+- Enthält den Owner (zugreifender Thread), eine Warteliste für blockierte Threads, Rekursionstiefe und ggf. Wait‑Handles für Kernel‑Blocking
 
 |                      Method |        Mean |    StdDev |
 |---------------------------- |------------ |---------- |
@@ -78,15 +77,6 @@ finally
 
 [LockBasedGame](./GAE.Async/LockBasedGame.cs)
 
-## Vor- und Nachteile von Locks
-
-| **Vorteile**                              | **Nachteile**                             |
-|-------------------------------------------|-------------------------------------------|
-| **Einfachheit**: Leicht zu implementieren. | **Wartezeit**: Threads können blockiert werden. |
-| **Sicherheit**: Verhindert Race Conditions. | **Leistungsprobleme**: Bei hoher Konkurrenz können Deadlocks auftreten. |
-| **Klarheit**: Der Code ist verständlich. | **Komplexität**: Erfordert sorgfältiges Design. |
-| | **Async/Await**: Unterstützt keine Asynchronen Aufrufe (Semaphore erlauben dies) |
-
 ---
 
 ## Die neue Lock-Klasse in .NET 9
@@ -97,7 +87,6 @@ Mit **.NET 9** und C# 13 wurde eine neue `Lock`-Klasse eingeführt, die die Verw
 
 - **Standardisierung**: Anstelle von `object` für das Locking bietet `Lock` eine dedizierte Struktur.
 - **Bessere Lesbarkeit**: Erhöht die Lesbarkeit des Codes, da die Absicht klarer wird.
-- **Performance**: Die neue `Lock`-Klasse verringert die Thread-Kontention und verbessert die Effizienz.
 
 ### Beispiel für die Verwendung der neuen Lock-Klasse
 
@@ -136,6 +125,15 @@ if (_lockObj.TryEnter())
 Diese Klasse vereinfacht das Locking, indem sie den `Monitor` unter dem Deckmantel abstrahiert und gleichzeitig eine sichere Verwendung des `using`-Patterns bietet.
 
 ---
+
+## Vor- und Nachteile von Locks
+
+| **Vorteile**                              | **Nachteile**                             |
+|-------------------------------------------|-------------------------------------------|
+| **Einfachheit**: Leicht zu implementieren. | **Wartezeit**: Threads können blockiert werden. |
+| **Sicherheit**: Verhindert Race Conditions. | **Leistungsprobleme**: Bei hoher Konkurrenz können Deadlocks auftreten. |
+| **Klarheit**: Der Code ist verständlich. | **Komplexität**: Erfordert sorgfältiges Design. |
+| | **Async/Await**: Unterstützt keine Asynchronen Aufrufe (Semaphore erlauben dies) |
 
 ## Fazit
 
