@@ -48,11 +48,6 @@ Das MVP muss mindestens **Achievement-Management oder Highscore-Management** unt
 
 Erweiterungen (nach MVP): Rankings, Highscores, Event-Filter, weitere Storage-/Provider-Backends.
 
-**Arbeitshypothese**
-
-Für selten ausgeführte Queries (UI/Leaderboard/Achievements) ist der Overhead von LINQ/Provider akzeptabel; für Hot-Paths (Frame-Loop) ist er es nicht und erfordert Constraints oder Alternativen.
-
-
 ### 1.2 Ausblick / Anschlussfähigkeit
 
 Damit die README später als „Drehscheibe“ funktioniert, planen wir folgende Ergänzungen (Platzhalter):
@@ -142,7 +137,7 @@ Deklarative Abfragen sind nicht „automatisch schneller“. Typische Trade-offs
 - **Deferred Execution:** Viele LINQ-Abfragen werden erst bei Enumeration ausgeführt; das ist mächtig, kann aber zu unerwartetem Verhalten führen.
 - **Nebenwirkungen:** Deklarative Regeln funktionieren am besten, wenn Datenquellen/Operationen möglichst *pure* sind.
 
-Für Games ist besonders relevant, dass LINQ (v. a. LINQ-to-Objects) in Hot-Paths messbaren Overhead verursachen kann; als Faustregel eignet es sich eher für UI/Business-Logik/seltene Queries, aber nicht für `Update()`/FixedUpdate-Loops (vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 5 & Arbeitshypothese).
+Für Games ist besonders relevant, dass LINQ (v. a. LINQ-to-Objects) in Hot-Paths messbaren Overhead verursachen kann; als Faustregel eignet es sich eher für UI/Business-Logik/seltene Queries, aber nicht für `Update()`/FixedUpdate-Loops (vgl. [Zichao_Handout.md](Zichao_Handout.md), Abschnitt 5).
 
 
 ### 2.5 Verwandte/alternative Ansätze
