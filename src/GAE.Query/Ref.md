@@ -247,8 +247,6 @@ t.b.d.
 
 ---
 **Querverweise**
-
 - Vorarbeit/Handout (Zichao): [Zichao_Handout.md](Zichao_Handout.md)
 
-**Zusätzliche Quellen**
 
