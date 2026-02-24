@@ -29,16 +29,16 @@ public class RuleAnalyzer : ExpressionVisitor
         ExpressionType.Subtract
     };
 
+    // nur zu Demonstrationszwecken
+    private int _currentLevel = 0;
+    public List<(int Level, string Type)> DetectedOperatorsTree { get; } = new();
+
     public void Analyze<T>(IRule<T> rule)
     {
         _currentLevel = 0;
         DetectedOperatorsTree.Clear();
         Visit(rule.Criteria);
     }
-
-    // nur zu Demonstrationszwecken
-    private int _currentLevel = 0;
-    public List<(int Level, string Type)> DetectedOperatorsTree { get; } = new();
 
     public override Expression? Visit(Expression? node)
     {
